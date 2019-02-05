@@ -191,14 +191,15 @@
        // var material	= new THREE.MeshNormalMaterial(); 
        // var mesh	= new THREE.Mesh( geometry, material );
        // mesh.position.y	= 0.5 //position y equals how far away from target 
-       // arWorldRoot.add( mesh ); //instead of adding mesh to the scene right away we add only when the target is detected
+       arWorldRoot.add( mesh ); //instead of adding mesh to the scene right away we add only when the target is detected
         //end icosphere code
         geometry = new THREE.CubeGeometry(200, 200, 200);
 material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 mesh = new THREE.Mesh(geometry, material);
 mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.81;
+//KEEP tese
 mesh.position.y = 55.14;
-scene.add(mesh);
+//scene.add(mesh);
         ///////////////////////////////////////////////////////////
         
         
