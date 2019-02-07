@@ -40,9 +40,7 @@ material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 mesh = new THREE.Mesh(geometry, material);
 mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.81;
 mesh.position.y = 0.5;
-
-arWorldRoot.add( mesh );
-//scene.add(mesh);
+scene.add(mesh);
 
 			}
 
