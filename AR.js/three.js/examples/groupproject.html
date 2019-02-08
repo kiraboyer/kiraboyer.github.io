@@ -99,11 +99,11 @@
             backLight = new THREE.DirectionalLight(0xffffff, 1.0);
             backLight.position.set(100, 0, -100).normalize();
             /* Model */
-            var textureLoader = new THREE.TextureLoader();
+            var mtlLoader = new THREE.MTLLoader();
            // mtlLoader.setBaseUrl('assets/');
-            textureLoader.setPath('../../data/data/');
-            textureLoader.load('mayabox.png', function (materials) {
-               // materials.preload();
+            mtlLoader.setPath('../../data/data/');
+            mtlLoader.load('maya.mtl', function (materials) {
+                materials.preload();
                 //materials.materials.default.map.magFilter = THREE.NearestFilter;
                // materials.materials.default.map.minFilter = THREE.LinearFilter;
                 var objLoader = new THREE.OBJLoader();
