@@ -99,6 +99,7 @@
             backLight = new THREE.DirectionalLight(0xffffff, 1.0);
             backLight.position.set(100, 0, -100).normalize();
             /* Model */
+            THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
             var mtlLoader = new THREE.MTLLoader();
            // mtlLoader.setBaseUrl('assets/');
             mtlLoader.setPath('../../data/data/');
