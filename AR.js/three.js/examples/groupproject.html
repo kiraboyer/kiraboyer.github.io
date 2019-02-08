@@ -101,7 +101,7 @@
             /* Model */
             THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
             var mtlLoader = new THREE.MTLLoader();
-           // mtlLoader.setBaseUrl('assets/');
+           mtlLoader.setBaseUrl('../../data/data/');
             mtlLoader.setPath('../../data/data/');
 
             mtlLoader.load('maya.mtl', function (materials) {
@@ -110,7 +110,7 @@
                // materials.materials.default.map.minFilter = THREE.LinearFilter;
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
-                objLoader.setMaterialOptions(THREE.RepeatWrapping);
+
                 objLoader.setPath('../../data/data/');
                 objLoader.load('maya.obj', function (object) {
                 	object.scale.set(.4, .4, .4);
