@@ -110,10 +110,11 @@
                // materials.materials.default.map.minFilter = THREE.LinearFilter;
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
-                object.material.map = texture;
+
                 objLoader.setPath('../../data/data/');
                 objLoader.load('maya.obj', function (object) {
                 	object.scale.set(.4, .4, .4);
+                	   object.material.map = texture;
 object.scale.x = object.scale.y = object.scale.z = 0.1;
                     scene.add(object);
                 });
