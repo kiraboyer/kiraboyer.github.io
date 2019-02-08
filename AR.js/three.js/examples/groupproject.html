@@ -103,6 +103,7 @@
             var mtlLoader = new THREE.MTLLoader();
            // mtlLoader.setBaseUrl('assets/');
             mtlLoader.setPath('../../data/data/');
+            .resourcePath('../../data/data/mayabox.png');
             mtlLoader.load('maya.mtl', function (materials) {
                 materials.preload();
                 //materials.materials.default.map.magFilter = THREE.NearestFilter;
