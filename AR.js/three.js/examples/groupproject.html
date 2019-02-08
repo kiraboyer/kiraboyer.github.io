@@ -100,11 +100,15 @@
             backLight.position.set(100, 0, -100).normalize();
             /* Model */
             //THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+           
+
+
+
             var mtlLoader = new THREE.MTLLoader();
            // // mtlLoader.setBaseUrl('assets/');
             mtlLoader.setPath('../../data/data/');
 
-           mtlLoader.load('maya.mtl', function (materials) {
+           mtlLoader.load('bad.mtl', function (materials) {
                  materials.preload();
 
 
