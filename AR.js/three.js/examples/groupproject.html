@@ -102,7 +102,7 @@
             THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
             var mtlLoader = new THREE.MTLLoader();
            // mtlLoader.setBaseUrl('assets/');
-            mtlLoader.setPath('../../data/data/male02');
+            mtlLoader.setPath('../../data/data/male02/');
 
             mtlLoader.load('male02.mtl', function (materials) {
                 materials.preload();
