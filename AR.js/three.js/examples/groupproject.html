@@ -168,7 +168,7 @@
         //      you can copy source code for simple shape from the three.js playground here: http://threejsplaygnd.brangerbriz.net/gui/
         //      for more on using 3D models with AR.js and A-Frame see here: https://medium.com/@akashkuttappa/using-3d-models-with-ar-js-and-a-frame-84d462efe498
         //////////////////////////////////////////////////////////////////////////////////
-        var arWorldRoot = smoothedRoot;
+        //var arWorldRoot = smoothedRoot;
         var geometry, material, mesh;
         
 //        ///////////////////////////////////////////////////////////
@@ -307,8 +307,8 @@
                     .load( 'bad.obj', function ( object ) {
                         object.scale.set(.4, .4, .4);
                         object.position.y = 0.5;
-                         arWorldRoot.add( object );
-                        //scene.add(object);
+                         //arWorldRoot.add( object );
+                        scene.add(object);
                     }, onProgress, onError );
             } );
         
@@ -320,60 +320,60 @@
         
         
         //////////FROM FBX IMPORT
-        stats = new Stats();
-        container.appendChild( stats.dom );
+        // stats = new Stats();
+        // container.appendChild( stats.dom );
         
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
 	
-        var stats2 = new Stats();
-        document.body.appendChild( stats2.dom );
-        // render the scene
-        onRenderFcts.push(function(){
-            renderer.render( scene, camera );
-            stats2.update();
-        })
+        // var stats2 = new Stats();
+        // document.body.appendChild( stats2.dom );
+        // // render the scene
+        // onRenderFcts.push(function(){
+        //     renderer.render( scene, camera );
+        //     stats2.update();
+        // })
 
         // run the rendering loop
-        var lastTimeMsec= null
-        requestAnimationFrame(function animate(nowMsec){
-            // keep looping
-            requestAnimationFrame( animate );
-            // measure time
-            lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
-            var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
-            lastTimeMsec	= nowMsec
-            // call each update function
-            onRenderFcts.forEach(function(onRenderFct){
-                onRenderFct(deltaMsec/1000, nowMsec/1000)
-            })
-        })
+   //      var lastTimeMsec= null
+   //      requestAnimationFrame(function animate(nowMsec){
+   //          // keep looping
+   //          requestAnimationFrame( animate );
+   //          // measure time
+   //          lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+   //          var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+   //          lastTimeMsec	= nowMsec
+   //          // call each update function
+   //          onRenderFcts.forEach(function(onRenderFct){
+   //              onRenderFct(deltaMsec/1000, nowMsec/1000)
+   //          })
+   //      })
         
-    animate();
+   //  animate();
         
-        function animate() {
-				requestAnimationFrame( animate );
-				if ( mixers.length > 0 ) {
-					for ( var i = 0; i < mixers.length; i ++ ) {
-						mixers[ i ].update( clock.getDelta() );
-					}
-				}
-				renderer.render( scene, camera );
-				stats.update();
-			}
-			// function draw() {
-
-			// 	requestAnimationFrame( draw );
-				
-			// 	// experiment with code from the snippets menu here
-
+   //      function animate() {
+			// 	requestAnimationFrame( animate );
+			// 	if ( mixers.length > 0 ) {
+			// 		for ( var i = 0; i < mixers.length; i ++ ) {
+			// 			mixers[ i ].update( clock.getDelta() );
+			// 		}
+			// 	}
 			// 	renderer.render( scene, camera );
-
+			// 	stats.update();
 			// }
+			function draw() {
 
-			// setup();
-			// draw();
+				requestAnimationFrame( draw );
+				
+				// experiment with code from the snippets menu here
+
+				renderer.render( scene, camera );
+
+			}
+
+			setup();
+			draw();
 
     
 </script></body>
