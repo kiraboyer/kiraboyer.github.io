@@ -35,11 +35,11 @@
 				
 				
 				// paste your code from the geometryGUI here
-				texture = new THREE.TextureLoader.load( '../../data/data/dr.png' );
-				 geometry = new THREE.CubeGeometry( 200, 200, 200 );
-				 material = new THREE.MeshBasicMaterial( { map: texture } );
+				var texture = new THREE.TextureLoader().load( '../../data/data/dr.png' );
+				var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+				var material = new THREE.MeshBasicMaterial( { map: texture } );
 				mesh = new THREE.Mesh( geometry, material );
-				//scene.add( mesh );
+				scene.add( mesh );
 //geometry = new THREE.CubeGeometry(200, 200, 200);
 //material = new material.load( '../../data/data/bad.mtl');
 
