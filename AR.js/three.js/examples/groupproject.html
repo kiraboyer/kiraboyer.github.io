@@ -104,22 +104,21 @@
 
 
 
-            var mtlLoader = new THREE.MTLLoader();
-           // // mtlLoader.setBaseUrl('assets/');
-            mtlLoader.setPath('../../data/data/');
+           //  var mtlLoader = new THREE.MTLLoader();
+           // // // mtlLoader.setBaseUrl('assets/');
+           //  mtlLoader.setPath('../../data/data/');
 
-           mtlLoader.load('maya.mtl', function (materials) {
-                 materials.preload();
+           // mtlLoader.load('maya.mtl', function (materials) {
+           //       materials.preload();
                  //materials.minFilter = THREE.LinearFilter;
 
-               //  mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( "../../data/data/maya.mtl" )} ));
+                mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( '../../data/data/maya.mtl', function (materials)} ));
 
-
+materials.preload();
                  
 
                 //materials.materials.default.map.magFilter = THREE.NearestFilter;
                // materials.materials.default.map.minFilter = THREE.LinearFilter;
-               materials.materials.default.map.minFilter = THREE.LinearFilter;
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
 
