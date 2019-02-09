@@ -104,17 +104,17 @@
 
 
 
-           //  var mtlLoader = new THREE.MTLLoader();
-           // // // mtlLoader.setBaseUrl('assets/');
-           //  mtlLoader.setPath('../../data/data/');
+            var mtlLoader = new THREE.MTLLoader();
+           // // mtlLoader.setBaseUrl('assets/');
+            mtlLoader.setPath('../../data/data/');
 
-           // mtlLoader.load('maya.mtl', function (materials) {
-           //       materials.preload();
+           mtlLoader.load('boc.mtl', function (materials) {
+                 materials.preload();
                  //materials.minFilter = THREE.LinearFilter;
 
-                mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( '../../data/data/maya.mtl', function (materials)} ));
+               //  mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( '../../data/data/maya.mtl', function (materials)} ));
 
-materials.preload();
+
                  
 
                 //materials.materials.default.map.magFilter = THREE.NearestFilter;
@@ -123,7 +123,7 @@ materials.preload();
                 objLoader.setMaterials(materials);
 
                 objLoader.setPath('../../data/data/');
-                objLoader.load('maya.obj', function (object) {
+                objLoader.load('mboc.obj', function (object) {
                 	object.scale.set(.4, .4, .4);
                 	   //object.material.map = texture;
 object.scale.x = object.scale.y = object.scale.z = 0.1;
