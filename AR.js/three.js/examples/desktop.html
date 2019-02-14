@@ -5,21 +5,131 @@
     body{
      background-image: url("../../data/data/desktop.jpg");
      background-size: cover;}
+     #mydiv {
+ position: absolute;
+  z-index: 9;
+top:120px;
+  text-align: center;
+
+}
+ #mydiv2 {
+  position: absolute;
+  z-index: 9;
+ top:65px;
+  text-align: center;
+;
+}
+#mydiv3 {
+  position: absolute;
+  z-index: 9;
+ 
+  text-align: center;
+  
+}
+
+
+.rotateimg180 {
+  -webkit-transform:rotate(110deg);
+  -moz-transform: rotate(110deg);
+  -ms-transform: rotate(110deg);
+  -o-transform: rotate(110deg);
+  transform: rotate(110deg);
+}
+
+
     
     </style>
     <body>
-        <IMG SRC="../../data/data/mayaapp.jpg" HEIGHT=50 ALT="Maya" BORDER="0" <a onclick="window.open('https://kiraboyer.github.io/AR.js/three.js/examples/groupproject.html', '_blank', 'location=yes,height=570,width=720,scrollbars=yes,status=yes');"
+        
+ 
+        
+
+
+<!-- <div id="mydiv4"> 
+ <img src="../../data/data/trashcan.png" width="200" alt="up" <a onclick="document.getElementById('example2').src='../../data/data/trashcan.png'"
+</a> 
+ </div> 
+ <div id="mydiv5"> 
+<img src="../../data/data/trashcan.png"  alt="down" width="200" class="rotateimg180"
+</a> 
+ </div> 
+<img src= "../../data/data/trashcan.png" HEIGHT=50 ALT="Trashcan" onclick=".rotateimg180" BORDER="0"</a>
+ -->
+
+<div id="mydiv">
+ <IMG SRC="../../data/data/mayaapp.jpg" HEIGHT=50 ALT="Maya" BORDER="0" <a onclick="window.open('https://kiraboyer.github.io/AR.js/three.js/examples/groupproject.html', '_blank', 'location=yes,height=570,width=720,scrollbars=yes,status=yes');"
 
 
 </a>
-  <IMG SRC="../../data/data/icon.png" HEIGHT=50  ALT="Fortnite" BORDER="0" <a onclick="window.open('https://lmchun.github.io/net_art/p1/fortnite.html', '_blank', 'location=yes,scrollbars=yes,status=yes');"
+    </div>
+
+    <div id="mydiv2">
+<IMG SRC="../../data/data/icon.png" HEIGHT=50  ALT="Fortnite" BORDER="0" <a onclick="window.open('https://lmchun.github.io/net_art/p1/fortnite.html', '_blank', 'location=yes,scrollbars=yes,status=yes');"
         
 
 </a>
-  <IMG SRC="../../data/data/xbox.png" HEIGHT=50 ALT="Xbox" BORDER="0" <a onclick="window.open('https://kiraboyer.github.io/calvin/index.html', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');"
+
+    </div>
+        <div id="mydiv3">
+<IMG SRC="../../data/data/xbox.png" HEIGHT=50 ALT="Xbox" BORDER="0" <a onclick="window.open('https://kiraboyer.github.io/calvin/index.html', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');"
         
 
 </a> 
-         
+
+    </div>
+
+
+
+<script>
+dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("mydiv2"));
+dragElement(document.getElementById("mydiv3"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+   </script> 
+
+
+
+ 
+
     </body>
     </html>
