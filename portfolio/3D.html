@@ -71,7 +71,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="section-title">Letest Blog</h2>
+					<h2 class="section-title">3D Renders and Prints</h2>
 				</div>
 			</div>
 		</div>
@@ -83,20 +83,106 @@
 	<div class="page-section">
 		<div class="container">
 			<div class="row mb-5">
-				<!-- blog item -->
+
+				<!-- blog item 1-->
 				<div class="col-md-10">
-					<div class="blog-item">
-						<figure class="thumb">
-							<img src="img/portfolio/3D/1.jpeg" alt="">
-						</figure>
-						<article class="blog-content">
-							<h2>Underwater</h2>
-							<div class="blog-meta">Kira Boyer,<i> Under Water</i>, video, 00:00:40. 2018.</div>
-							<p>As someone with a diagnosed general anxiety disorder, I often find myself dealing with irrational, debilitating episodes of symptoms that leave me too weak to do anything. Most people with this disorder seek medicine and years of therapy. I find art to be my own form of therapy. Through this self portrait animation, I capture the essence of what an anxiety attack feels and looks like. In this virtual space, am free to break physical boundaries to exhibit this attack in a dramatized fashion that even those with anxiety can relate to. The figure is grayscale and lacks any vibrancy, she folds herself into a fetal position to close herself off from her surroundings, and a body of water with aggressive waves surrounds her. This animation mimics the irrational fear, pressure, depression, shortness of breath, and rapid heart rate of an anxiety attack.</p>
+  <div class="blog-item">
+    <img src="img/portfolio/3D/5.png" style="width:100%" onclick="openModal2();currentSlide(1)" class="hover-shadow cursor2">
+    <article class="blog-content">
+    	<br>
+							<h2>Time</h2>
+							<div class="blog-meta">Kira Boyer. <i>Time</i>. 00:00:34. 2018.</div>
+							<p>Time moves quickly, seemingly at the blink of an eye. Days lapse into nights and we age as fast as the Earth orbits. Long after our generations are gone, the mountains and oceans will continue to grow for billions of years. The man and woman sit, passively, and observe the passing of time. In the short 34 second time span of the video, they age from children, to adults, to elders, until they are no longer visible. Time is linear, always moving forward, and humans will live on Earth and pass away in the blink of an eye.</p>
 						<!-- 	<a href="" class="read-more">Read More</a> -->
 						</article>
-					</div>
-				</div>
+  </div>
+</div>
+
+<div id="myModal" class="modal2">
+  <span class="close2 cursor" onclick="closeModal2()">&times;</span>
+  <div class="modal-content2">
+
+    <div class="mySlides2">
+      <div class="numbertext2">1 / 2</div>
+      <img src="5.png" style="width:100%">
+    </div>
+
+   <!--  <div class="mySlides2">
+      <div class="numbertext2">2 / 4</div>
+      <img src="img/portfolio/3D/1.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides2">
+      <div class="numbertext2">3 / 4</div>
+      <img src="img/portfolio/3D/1.jpeg" style="width:100%">
+    </div> -->
+    
+    <div class="mySlides2">
+      <div class="numbertext2">2 / 2</div>
+       <iframe src="https://player.vimeo.com/video/298203396" width="640" height="460" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    
+    <a class="prev2" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next2" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container2">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column2">
+      <img class="demo cursor2" src="img/portfolio/3D/5.png" style="width:100%" onclick="currentSlide(1)" alt="Image">
+    </div>
+   <!--  <div class="column2">
+      <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+    </div>
+    <div class="column2">
+      <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div> -->
+    <div class="column2">
+      <img class="demo cursor2" src="img/portfolio/3D/5.png" style="width:100%" onclick="currentSlide(2)" alt="Video">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal2() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal2() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides2");
+  var dots = document.getElementsByClassName("demo2");
+  var captionText = document.getElementById("caption2");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 
 
@@ -105,7 +191,7 @@
 
 
 
-				<!--test-->
+				<!--2-->
 				<div class="col-md-10">
   <div class="blog-item">
     <img src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="openModal2();currentSlide(1)" class="hover-shadow cursor2">
@@ -124,11 +210,11 @@
   <div class="modal-content2">
 
     <div class="mySlides2">
-      <div class="numbertext2">1 / 4</div>
+      <div class="numbertext2">1 / 2</div>
       <img src="img/portfolio/3D/1.jpeg" style="width:100%">
     </div>
 
-    <div class="mySlides2">
+    <!-- <div class="mySlides2">
       <div class="numbertext2">2 / 4</div>
       <img src="img/portfolio/3D/1.jpeg" style="width:100%">
     </div>
@@ -136,10 +222,10 @@
     <div class="mySlides2">
       <div class="numbertext2">3 / 4</div>
       <img src="img/portfolio/3D/1.jpeg" style="width:100%">
-    </div>
+    </div> -->
     
     <div class="mySlides2">
-      <div class="numbertext2">4 / 4</div>
+      <div class="numbertext2">2/ 2</div>
        <iframe src="https://player.vimeo.com/video/302366628" width="640" height="460" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
     </div>
@@ -153,16 +239,16 @@
 
 
     <div class="column2">
-      <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+      <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Image">
     </div>
-    <div class="column2">
+   <!--  <div class="column2">
       <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
     </div>
     <div class="column2">
       <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
+    </div> -->
     <div class="column2">
-      <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      <img class="demo cursor2" src="img/portfolio/3D/1.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Video">
     </div>
   </div>
 </div>
