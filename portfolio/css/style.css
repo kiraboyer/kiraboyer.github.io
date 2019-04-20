@@ -924,7 +924,7 @@ img.hover-shadow {
 .contect-tect {
   text-align: center;
   margin-bottom: 70px;
-  padding-left: 200px;
+ 
   display:block;
 
 
@@ -933,12 +933,21 @@ img.hover-shadow {
 .contect-tect h2 {
   font-size: 24px;
   margin-bottom: 30px;
+text-align: center;
+
 
 }
 
 .contect-tect p {
   font-size: 17px;
-  
+text-align: center;
+  position: relative;
+
+
+ left:10%;
+ right:20%;
+display:block;
+width:80%;
 }
 
 .contact-form {
