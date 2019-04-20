@@ -924,6 +924,10 @@ img.hover-shadow {
 .contect-tect {
   text-align: center;
   margin-bottom: 70px;
+  padding-left: 160px;
+  display:block;
+
+
 }
 
 .contect-tect h2 {
