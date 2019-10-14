@@ -1,7 +1,113 @@
-body{
-	width: 300px;
-	height: 200px;
+
+.myGrid {
+  display: grid; /*displaying the grid*/
+  grid-gap: 20px; /*gap width between grid areas*/
+  grid-template-columns: repeat(2, 1fr); /*ammount of colums, width of columns*/
+  grid-template-rows:  /*200px 25em 40% ;*/
+ 						 fit-content; /*height of each row*/
+/*   grid-template-areas: "side1 main main"
+                       "side2 main main"
+                       "side3 main main"; */
+  
+  
+/*   grid-template-areas: "main main side1"
+                          "main main side2"
+                          "main main side3"; */
+  
+  grid-template-areas:    "main main"
+  						   "side1 side3"
+                         /* "main main main"
+                          "main main main"*/
+                          "side2  side4"
+
+                          ; 
+}
+
+.main {
+  grid-area: main;
+  background-color: crimson;
+
+    
 }
 p{
-	color:red;
+	padding
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top:3em;
+   padding-left:3em;
+    padding-right:3em;
+     padding-bottom:3em;
+}
+
+ #target{
+ 	color:black;
+ 	  display: inline-block;
+  margin: 100vh auto 100vh;
+ 
+  padding: 4em 3em;
+  position: relative;
+ }
+
+ .child {
+  background: orange;
+  text-align: center;
+  padding: 25px;
+  
+  display: flex;
+  justify-content: space-between;
+}
+.child > span {
+  height: 50px;
+  background: darkred;
+  flex: 0 1 30%;
+}
+
+
+.side1,.side2 {
+  grid-area: side1, side2;
+  background-color: yellow;
+
+  text-align:left;
+}
+/*a,li{
+  font-size: 20pt;
+  text-decoration: none;
+  list-style:none;
+  color:grey;
+}*/
+
+/*.side2 {
+  grid-area: side2;
+  background-color: none;
+   text-align:center; 
+}*/
+
+.side3,.side4 {
+  grid-area: side3, side4;
+  background-color: none;
+   text-align:right;
+/*   writing-mode: vertical-rl;
+  text-orientation: upright;
+  use for messed up secret page*/
+ 
+
+}
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 1em/1.4 Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
