@@ -4,7 +4,7 @@
   grid-gap: 20px; /*gap width between grid areas*/
   grid-template-columns: repeat(2, 1fr); /*ammount of colums, width of columns*/
   grid-template-rows:  /*200px 25em 40% ;*/
- 						 fit-content; /*height of each row*/
+ 						 auto-fit; /*height of each row*/
 /*   grid-template-areas: "side1 main main"
                        "side2 main main"
                        "side3 main main"; */
@@ -19,8 +19,10 @@
                          /* "main main main"
                           "main main main"*/
                           "side2  side4"
+                          "side5 side6"
 
                           ; 
+  padding:20px;
 }
 
 .main {
@@ -30,17 +32,10 @@
     
 }
 p{
-	padding
+	padding:1em;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-  padding-top:3em;
-   padding-left:3em;
-    padding-right:3em;
-     padding-bottom:3em;
-}
+ 
 
  #target{
  	color:black;
@@ -66,10 +61,12 @@ p{
 }
 
 
-.side1,.side2 {
-  grid-area: side1, side2;
-  background-color: yellow;
-
+.side1,.side2,.side5 {
+  grid-area: side1, side2,side5;
+  background-color: none;
+ background-image: url("../../images/paper.png");
+ background-size: auto-fit;
+   background-repeat: no-repeat;
   text-align:left;
 }
 /*a,li{
@@ -85,14 +82,14 @@ p{
    text-align:center; 
 }*/
 
-.side3,.side4 {
-  grid-area: side3, side4;
+.side3,.side4,.side6 {
+  grid-area: side3, side4,side6;
   background-color: none;
    text-align:right;
 /*   writing-mode: vertical-rl;
   text-orientation: upright;
   use for messed up secret page*/
- 
+ background-image: url("../art175_website2/images/paper.png");
 
 }
 
