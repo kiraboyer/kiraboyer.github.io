@@ -22,6 +22,7 @@
                           "main main main"*/
                           "side2  side4"
                           "side5 side6"
+                          "keyClick keyClick"
 
                           ; 
   padding:20px;
@@ -77,6 +78,17 @@ p{
    background-repeat: no-repeat;
   text-align:left;
   padding:4em;
+
+}
+.keyClick{
+  grid-area: keyClick;
+  background-color: none;
+  padding:4em;
+   background-image: url("../../art175_website2/images/key.svg");
+    background-size:5em ;
+   background-position: center;
+   background-repeat: no-repeat;
+
 }
 /*a,li{
   font-size: 20pt;
@@ -237,4 +249,3 @@ body {
   cursor: pointer;
 }
 
- 
