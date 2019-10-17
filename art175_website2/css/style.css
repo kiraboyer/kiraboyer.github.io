@@ -5,7 +5,7 @@
   grid-row-gap: 26em;
   grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
  /*ammount of colums, width of columns*/
-grid-template-rows:repeat(5,1067px);
+grid-template-rows:repeat(6,1067px);
  						  /*height of each row*/
 /*   grid-template-areas: "side1 main main"
                        "side2 main main"
@@ -16,11 +16,11 @@ grid-template-rows:repeat(5,1067px);
                           "main main side2"
                           "main main side3"; */
   
-  grid-template-areas:    "main main"
+  grid-template-areas:    /*"main main"*/
   						   "side1 side3"
-  						   "pic pic"
-                         /* "main main main"
-                          "main main main"*/
+  						   "side1_1 pic"
+  						   /*"pic pic"*/
+                           "side1_2 pic1_2"
                           "side2  side4"
                           "side5 side6"
                           " keyClick"
@@ -47,12 +47,16 @@ p{
  
 
  #target{
- 	color:black;
+ 	/*color:black;
  	  display: inline-block;
   margin: 100vh auto 100vh;
  
   padding: 4em 3em;
-  position: relative;
+  position: relative;*/
+
+/*  grid-area:side1_2;
+    text-align:left;
+  padding:4em;*/
  }
 
  .child {
@@ -70,8 +74,8 @@ p{
 }
 
 
-.side1,.side2,.side5,.side7,.pic {
-  grid-area: side1, side2,side5,side7,pic;
+.side1,.side2,.side5,.side7,.side1_1,.side1_2{
+  grid-area: side1, side2,side5,side7,side1_1,side1_2;
   background-color: none;
  background-image: url("../../art175_website2/images/paper.png");
  background-size: cover ;
@@ -109,8 +113,8 @@ opacity: 100;
    text-align:center; 
 }*/
 
-.side3,.side4,.side6,.side8 {
-  grid-area: side3, side4,side6,side8;
+.side3,.side4,.side6,.side8,.pic,.pic1_2 {
+  grid-area: side3, side4,side6,side8,pic, pic1_2; 
   background-color: none;
    text-align:right;
 /*   writing-mode: vertical-rl;
