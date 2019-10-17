@@ -3,9 +3,9 @@
   display: grid; /*displaying the grid*/
   grid-gap: 20px; /*gap width between grid areas*/
   grid-row-gap: 26em;
-  grid-template-columns: repeat(2, 1fr); /*ammount of colums, width of columns*/
-  grid-template-rows:  /*200px 25em 40% ;*/
- 						 auto-fit;
+  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+ /*ammount of colums, width of columns*/
+grid-template-rows:repeat(5,1067px);
  						  /*height of each row*/
 /*   grid-template-areas: "side1 main main"
                        "side2 main main"
@@ -18,11 +18,12 @@
   
   grid-template-areas:    "main main"
   						   "side1 side3"
+  						   "pic pic"
                          /* "main main main"
                           "main main main"*/
                           "side2  side4"
                           "side5 side6"
-                          "keyClick keyClick"
+                          " keyClick"
 
                           ; 
   padding:20px;
@@ -69,8 +70,8 @@ p{
 }
 
 
-.side1,.side2,.side5,.side7 {
-  grid-area: side1, side2,side5,side7;
+.side1,.side2,.side5,.side7,.pic {
+  grid-area: side1, side2,side5,side7,pic;
   background-color: none;
  background-image: url("../../art175_website2/images/paper.png");
  background-size: cover ;
@@ -83,12 +84,17 @@ p{
 .keyClick{
   grid-area: keyClick;
   background-color: none;
-  padding:4em;
+  padding:1em;
    background-image: url("../../art175_website2/images/key.svg");
     background-size:5em ;
    background-position: center;
    background-repeat: no-repeat;
+   opacity: 0;
+   filter:invert(1);
 
+}
+.keyClick:hover{
+opacity: 100;
 }
 /*a,li{
   font-size: 20pt;
@@ -132,6 +138,7 @@ html {
 
 body {
   font: 1em/1.4 Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color:black;
 
 }
 
@@ -249,3 +256,50 @@ body {
   cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*parallax css----------*/
+
+ 
+
+/* foreground (balloons/landscape)*/
+.parallax-bg-1{
+	position: fixed;
+	width: 1200px;
+	top: 0;
+	left: 50%; 
+	margin-left: -600px; 
+	z-index: 1;
+}
+/* background middle layer*/
+div#parallax-bg-2{
+	position: fixed;
+	width: 1200px;
+	top: 0;
+	left: 50%; 
+	margin-left: -600px; 
+	z-index: 2;
+}
+/* background layer */
+div#parallax-bg-3{
+	position: fixed;
+	width: 960px;
+	top: 0;
+	left: 50%; 
+	margin-left: -470px; 
+	z-index: 3;
+}
+
+
+
+/* ----------------------*/
