@@ -46,7 +46,7 @@ p{
 
  
 
- #target{
+ #target,#target2{
  	/*color:black;
  	  display: inline-block;
   margin: 100vh auto 100vh;
@@ -54,9 +54,7 @@ p{
   padding: 4em 3em;
   position: relative;*/
 
-/*  grid-area:side1_2;
-    text-align:left;
-  padding:4em;*/
+
  }
 
  .child {
@@ -141,7 +139,7 @@ html {
 }
 
 body {
-  font: 1em/1.4 Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*  font: 1em/1.4 Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   background-color:black;
 
 }
@@ -263,47 +261,14 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-/*parallax css----------*/
-
- 
-
-/* foreground (balloons/landscape)*/
-.parallax-bg-1{
-	position: fixed;
-	width: 1200px;
-	top: 0;
-	left: 50%; 
-	margin-left: -600px; 
-	z-index: 1;
+/* ----------------------*/
+button{
+	display:flex;
+	position:center;
+	width:300px;
 }
-/* background middle layer*/
-div#parallax-bg-2{
-	position: fixed;
-	width: 1200px;
-	top: 0;
-	left: 50%; 
-	margin-left: -600px; 
-	z-index: 2;
-}
-/* background layer */
-div#parallax-bg-3{
-	position: fixed;
-	width: 960px;
-	top: 0;
-	left: 50%; 
-	margin-left: -470px; 
-	z-index: 3;
-}
-
-
+button:hover{
+	
+background-color:red;}
 
 /* ----------------------*/
