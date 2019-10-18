@@ -151,113 +151,91 @@ body {
 
 .myGridkeys {
   display: grid; /*displaying the grid*/
-  grid-gap: 20px; /*gap width between grid areas*/
-  grid-row-gap: 26em;
-  grid-template-columns: repeat(4, .5fr); /*ammount of colums, width of columns*/
-  grid-template-rows:  /*200px 25em 40% ;*/
- 						 auto-fit;
- 						  /*height of each row*/
-/*   grid-template-areas: "side1 main main"
-                       "side2 main main"
-                       "side3 main main"; */
+  grid-gap: .2em; /*gap width between grid areas*/
+  grid-row-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+ /*ammount of colums, width of columns*/
+grid-template-rows:repeat(auto-fill, minmax(200px,1fr));
+ 						  /*height of each row22*/
+
   
-  
-/*   grid-template-areas: "main main side1"
-                          "main main side2"
-                          "main main side3"; */
-  
-  grid-template-areas:    "key key key key"
-  						  
+  grid-template-areas:    /*"main main"*/
+  						   "key key"
+  						   /*"key1 key1 key1 key1"*/
+                           "key2 key2"
+                          "key3 key3 "
+                          "key4 key4 "
+                          " key5 key5 "
+                           "key6 key6 "
+                          " key7 key7 "
 
                           ; 
   padding:20px;
+margin-left:-20px;
 }
 
-.key {
-  grid-area: key;
+.key,.key2,.key3,.key4,.key5,.key5,.key6,.key6,.key7 {
+  grid-area: key,key2,key3,key4,key5,key5,key6,key6,key7;
    
-   text-align:right;
+
 }
 
-#myImg {
-  border-radius: 5px;
+
+
+/*------------------------------------*/
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+ /* width: 160px;*/
+  background-color: #555;
+  color: white;
   text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
+  border-radius: 6px;
+  padding: 8px 0;
   position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
+  z-index: 5;
+ /* bottom: 125%;*/
+/*  left: 50%;*/
+  margin-left: -80px;
+}
+ 
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
 }
 
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 
 
 
