@@ -2,65 +2,100 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content= "width=device-width"> 
+	<meta name="viewport" content= "width=device-width"> <!-- for responsive web design between different screen sizes--> 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="../art175_website2/css/style.css"/>
-	<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
- 
-	 <script language="JavaScript"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-	 <script src="../art175_website2/js/audioOnScroll.min.js"></script>
+	<link rel="stylesheet" href="../art175_website2/css/style.css"/> <!-- referencing style sheet --> 
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet"> <!-- referencing google font --> 
+
+	 <script language="JavaScript"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script><!-- referencing web jquery script--> 
+	 <script src="../art175_website2/js/audioOnScroll.min.js"></script> <!-- referencing audio triggering javascript --> 
+	 
 	 <script>
-$(document).ready(function(){
-	 $(".wrapper").hide();
-  $("button").click(function(){
+		$(document).ready(function(){
+			 $(".wrapper").hide();
+  		$("button").click(function(){
 
-    $(".wrapper").show();
-    $("button").hide();
-  });
-});
-</script>
+   		 $(".wrapper").show();
+   		 $("button").hide();
+ 		 });
+		});
+	 </script>
+		<!-- javascript for button --> 
 
-<!-- clean up code, add alt tags, add drawings, add comments -->
 
-	<!----------------->
+	<!-------audio files---------->
 <audio loop src="../art175_website2/sounds/forest_night.wav" id="soundTour"></audio>
 <audio loop src="../art175_website2/sounds/forest_footsteps.wav" id="soundTour1"></audio>
 <audio loop src="../art175_website2/sounds/owl.wav"  id="soundTour2"></audio>
 <audio loop src="../art175_website2/sounds/forest_night.wav"  id="soundTour3"></audio>
 
+	<!------ webpage title ------------> 
+
 	<title>Index</title>
 </head>
-<body><button>This website is meant to preserve and provide accessible documentation for the general public. We warn you that to reveal this content will, not only subject you to the horific atrocities that befell the Williamson family, but also expose you to the entity that brought on their grim fate. Click here to continue at your own risk.</button>
-<div class="wrapper">
-<div class="myGrid">
-  <!-- <div class="main">background of divs should look like old pages torn out of a journal. Use font that looks like old currsive.</div>  -->
-<div class="side1" id="target"><p>January 23rd, 1908</p><p>Mary and I arrived in New Havington before sunset. It is to my utmost relief that she was asleep throughout most of the journey, for I fear to think of the night terrors that the forest would have brought upon her. The trees seem so much more alive and sinister at the witching hour. The forest breaths like a dying man. Every hoot of an owl reverberated in the mind as a demonic howl. Every moonlit shadow takes on the form of a ghostly specter. What was almost just as frightening about our journey through the forest was the fact that Mary remained completely silent in her slumber. It almost appeared as if she was dead.</p><p>New Havington is located just outside of the forest. This town feels entirely different from the woodlands, as if a barrier separates the two lands. I believe this town will be a fine place to settle down and raise our family. If not, I know Mary will say, “George, I can’t say I didn’t warn you; moving West was a bad idea.” I wish she would trust my judgement a bit more.</p><span id="statusText"></span> </div>
- <!--  <div class="side2"><a href src="index.html">Side2</a></div> -->
-  <div id="target1" class="child side3"><img src="../art175_website2/images/map.png"></img><span id="statusText"></span><!-- <img src="../art175_website2/images/map.png"></img> --></div>
+<body>
+	<button>This website is meant to preserve and provide accessible documentation for the general public. We warn you that to reveal this content will, not only subject you to the horific atrocities that befell the Williamson family, but also expose you to the entity that brought on their grim fate. Click here to continue at your own risk.</button> <!-- button click triggers the user input so audio will successfully autoplay (chrome security) --> 
+
+<div class="wrapper"> <!-- hides the page for button warning --> 
+<div class="myGrid"> <!-- contains the grid styling--> 
+
+ <!-- grid content begin --> 
+<div class="side1" id="target"><!-- styling: class is a grid object, target activates audio play area--> 
+	<p>January 23rd, 1908</p><p>Mary and I arrived in New Havington before sunset. It is to my utmost relief that she was asleep throughout most of the journey, for I fear to think of the night terrors that the forest would have brought upon her. The trees seem so much more alive and sinister at the witching hour. The forest breaths like a dying man. Every hoot of an owl reverberated in the mind as a demonic howl. Every moonlit shadow takes on the form of a ghostly specter. What was almost just as frightening about our journey through the forest was the fact that Mary remained completely silent in her slumber. It almost appeared as if she was dead.</p><p>New Havington is located just outside of the forest. This town feels entirely different from the woodlands, as if a barrier separates the two lands. I believe this town will be a fine place to settle down and raise our family. If not, I know Mary will say, “George, I can’t say I didn’t warn you; moving West was a bad idea.” I wish she would trust my judgement a bit more.</p><p>The trees seem so much more alive and sinister at the witching hour. The forest breaths like a dying man. Every hoot of an owl reverberated in the mind as a demonic howl. Every moonlit shadow takes on the form of a ghostly specter. What was almost just as frightening about our journey through the forest was the fact that Mary remained completely silent in her slumber. It almost appeared as if she was dead.</p><p>New Havington is located just outside of the forest. This town feels entirely different from the woodlands, as if a barrier separates the two lands. I believe this town will be a fine place to settle down and raise our family. If not, I know Mary will say, “George, I can’t say I didn’t warn you; moving West was a bad idea.” I wish she would trust my judgement a bit more.</p>
+	<span id="statusText"></span> <!-- for tracking when audio section is in view/playing and when it is not --> 
+</div>
+
+  <div id="target1" class="child side3">
+  	<img src="../art175_website2/images/map.png" alt="map of New Havington"></img>
+  	<img  src="../art175_website2/images/forest.jpg" alt="the forest"><!-- target1 id activates audio play area, child is grid child object (for multiple images in 1 parent object, side3 is grid object --> 
+  	<span id="statusText"></span></img></div><!-- for tracking when audio section is in view/playing and when it is not --> 
 
 
 
 
-  <div class="side1_1" id="target2"><p>The trees seem so much more alive and sinister at the witching hour. The forest breaths like a dying man. Every hoot of an owl reverberated in the mind as a demonic howl. Every moonlit shadow takes on the form of a ghostly specter. What was almost just as frightening about our journey through the forest was the fact that Mary remained completely silent in her slumber. It almost appeared as if she was dead.</p><p>New Havington is located just outside of the forest. This town feels entirely different from the woodlands, as if a barrier separates the two lands. I believe this town will be a fine place to settle down and raise our family. If not, I know Mary will say, “George, I can’t say I didn’t warn you; moving West was a bad idea.” I wish she would trust my judgement a bit more.</p><span id="statusText"></span></div>
-
-   <div class="child pic" id="target3"><img  src="../art175_website2/images/forest.jpg"></img><span id="statusText"></span></div> 
-
-
-
-   <div class="side1_2" ><p>text</p></div>
-   <div class="child pic1_2"><p>hi2</p></div> 
-
-
-
- <div class="side2"><p>January 25th, 1908</p><p>We have finally settled into the new house. Just a bit of cleaning and a few new curtains should make this place feel like a home. The floorboards creak incessantly, and the fireplace needs a cleaning, but I think we’ve got a good deal on this place. The bank had little information on the previous owners; said they kept to themselves and, one night, just up and left. Mary has hardly slept since we’ve been here; I think she is just homesick. Once the baby is born, she’ll be a lot happier</p></div>
-   <div class="child side4"><span>Side3</span><span>Side3</span></div>
+<!-- the following repeats structure --> 
+ <div class="side2">
+ 	<p>January 25th, 1908</p><p>We have finally settled into the new house. Just a bit of cleaning and a few new curtains should make this place feel like a home. The floorboards creak incessantly, and the fireplace needs a cleaning, but I think we’ve got a good deal on this place. The bank had little information on the previous owners; said they kept to themselves and, one night, just up and left. Mary has hardly slept since we’ve been here; I think she is just homesick. Once the baby is born, she’ll be a lot happier</p>
+ </div>
+   
+   <div class="child side4">
+   	<img src="../art175_website2/images/house.jpg" alt="house"></img></div>
 
 
  <div class="side5"><p>Febuary 2nd, 1908</p><p>There is a view of the forest from our bedroom window. About an acre of the forest is part of our land, but I won’t dare go near it. Mary tells me I’m overreacting. She says she would like to see the rest of our land, perhaps build a conservatory out there. I tell her, “maybe after the baby is born.” It should not be long now, just about 4 months. That should give me some time to work up the nerve.</p></div>
-   <div class="child side6"><span>Side3</span><span>Side3</span></div>
+   <div class="child side6"><img src="../art175_website2/images/forest_view.jpg" alt="forest view from window"></img></div>
+
     <div class="side7"><p>Febuary 4th, 1908</p><p>I returned home from work today to Mary standing out on the porch. She looked positively spooked as she ran to me in tears and refused to enter the house. I asked her what had happened, to which she replied, “someone was watching me through the locks.” I had no reason to not believe her, considering the state she was in. I grabbed the axe from the shed and Mary reluctantly followed me into the house.</p><p>Everything was dead silent except for the occasional sound of a floorboard creaking. Which could not be pinpointed to source from any one area of the house. We searched the first floor, seeing nothing of interest. Mary, refusing to leave my side, followed me up the stairs to the second floor. Our bedroom door was the only open door in the house, so we made our way there. I was nervous, likely secondhand nerves from the vice-like grip my wife’s hands had as she bit her nails into my arm.</p><p>I raised my axe as we edged through the doorway. A floorboard creaked once again from somewhere in the house, making both me and Mary stop and hold our breaths. I looked around the room and under the bed, but no one was in the room. I determined it was safe and left Mary there as I checked the rest of the house. Not a single thing was misplaced. The doors were locked and the windows were closed, it seemed that Mary had not touched a single thing since I had left that morning. </p><p>It took some convincing, but Mary agreed to stay in the house that night despite her worries. I worried as well, but most of my worry was placed on Mary. Perhaps she still has not settled into the new house, or the baby is messing with her emotions. She has some friends in town and she has agreed to spend some time with them tomorrow. Best she not stay locked up in the house all day. That could certainly drive anyone to madness.</p><p>As I’m writing this, Mary is fast asleep, she would not come into the room until I did. Poor thing is genuinely afraid of something. I would be asleep too if I didn’t have this itch at the back of my head as if someone is watching me. And maybe it is Mary’s ideas getting in my head, but I have the distinct sense that someone, or something, is looking through the bedroom door’s keyhole. </p></div>
-   <div class="child side8"><span>Side3</span><span>Side3</span></div>
-<a href="https://kiraboyer.github.io/art175_website2/keyholes.html"><div class="keyClick"></div></a>
+   <div class="child side8"><img  src="../art175_website2/images/keyhole.jpg" alt="vintage keyhole"></img></div>
+
+
+
+
+
+   <div class="side9"><p>March 4th, 1908</p><p>If the walls could speak, what would these four walls say of the people who lived here before us? Mary found some of their things left behind in the attic and although their items were fairly normal- clothing, artifacts, photographs- we found a strange engraving, no, more of a carving; a hastily etched and burnt circular shape, nearly a perfect circle. We’ve asked around town if the family before us were perhaps partisans of the occult, but the townspeople seemed uninterested and turned down the notion immediately. They seemed so sure, yet they could not find a reason as to why or how this circle came to be.</p><p>Mary is surprisingly unmoved by our findings, she’s collected some texts and photographs that the previous family left behind. Maybe she can find out what exactly happened here.
+After our scare last month I thought of sending Mary home until our child was born; the stress is unhealthy for a woman in her condition. She seemed so frantic that day she thought someone was in our house, I thought she would be begging to return to her family, yet the morning after she seemed nonchalant, I nearly thought she had forgotten about the whole thing however, she remembers and she says that it must have been nerves from living in this new town where she is not familiar with all the residences.
+</p><p>I’ve taken her word for it, yet I still find myself eyeing the keyholes of every closed door and staying away from that dreaded forest.</p></div>
+   <div class="child side10"><img src="../art175_website2/images/burn.png" alt="page burn"></img></div>
+
+<div class="side11"><p>March 10th, 1908</p><p>I came home today with no signs of Mary; not even a note. I panicked and nearly ran back to town to find her. Only just as I was to leave, she walked in through the back door. She had come from the forest, said she was taking a walk. We argued. She shouldn’t be outside alone in her condition, after her scare. I don’t trust the forest, anyone or anything may be in there.</p></div>
+   <div class="child side12"></div>
+
+   <div class="side13"><p>March 12th, 1908</p><p>Mary’s ill, I don’t doubt it is from her time in the forest. For some reason she also seems to have grown melancholy. Could my eyes be deceiving me or is Mary also an inch or 2 taller? Perhaps I’m just tired. I’m reminded of the tales I heard as a child . My father spoke of Irish fairies. Changelings, they were called, evil spirits set on replacing loved ones; finding indulgence in deceiving humans. Could these strange woods be home to supernatural beings? Is Mary not who she says she is?</p><p>Living just outside of the forest, they could find our home easily. Perhaps they are the beings that are looking through the keyholes? I will keep watch.</p></div>
+   <div class="child side14"><img src="../art175_website2/images/sick.png" alt="sick woman"></img></div>
+
+      <div class="side15"><p>March 20th, 1908</p><p>Mary’s condition has worsened. The doctor says not to worry; he’s been administering medication. She still seems different, unlike the cheery, optimistic Mary I married. I’ve been thinking... she has acted oddly since we left for New Havington.</p><p>Please tell me it isn’t true Mary. Please tell me you are you.</p></div>
+   <div class="child side16"> </div>
+
+   <div class="side17"><p>April 13th, 1908</p><p>I talked with some co-workers from town, Jack and Ernest. They agree that the family before us acted just as Mary has been acting. I showed them the circle in the attic, they have encouraged that we sort this out. If I ever want to see my Mary, the real Mary again. We have to defeat this evil presence that has taken her place.</p></div>
+   <div class="child side18"><img src="../art175_website2/images/blood_splatter.png" alt="blood splatter"></img></div>
+
+
+
+<a href="https://kiraboyer.github.io/art175_website2/keyholes.html"><!-- linking to 2nd webpage --> 
+	<div class="keyClick"><!-- svg key image --> 
+		
+	</div>
+</a>
 </div>
 </body></div>
 </html>

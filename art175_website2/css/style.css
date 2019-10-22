@@ -5,24 +5,21 @@
   grid-row-gap: 26em;
   grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
  /*ammount of colums, width of columns*/
-grid-template-rows:repeat(6,1067px);
+grid-template-rows:repeat(9,1067px);
  						  /*height of each row*/
-/*   grid-template-areas: "side1 main main"
-                       "side2 main main"
-                       "side3 main main"; */
+
   
-  
-/*   grid-template-areas: "main main side1"
-                          "main main side2"
-                          "main main side3"; */
-  
-  grid-template-areas:    /*"main main"*/
+  grid-template-areas:    
   						   "side1 side3"
-  						   "side1_1 pic"
-  						   /*"pic pic"*/
-                           "side1_2 pic1_2"
+  						  /* "side1_1 pic"
+                           "side1_2 pic1_2"*/
                           "side2  side4"
                           "side5 side6"
+                           "side9 side10"
+  						   "side11 side12"
+                           "side13 side14"
+                          "side15  side16"
+                          "side17 side18"
                           " keyClick"
 
                           ; 
@@ -32,12 +29,7 @@ grid-template-rows:repeat(6,1067px);
 
  
 
-.main {
-  grid-area: main;
-  background-color: crimson;
 
-    
-}
 p{
 
 	  font-family: 'Special Elite', cursive;
@@ -46,20 +38,9 @@ p{
 
  
 
- #target,#target2{
- 	/*color:black;
- 	  display: inline-block;
-  margin: 100vh auto 100vh;
- 
-  padding: 4em 3em;
-  position: relative;*/
-
-
- }
  .page2{
  	background-image: url("../../art175_website2/images/smoke.gif");
  background-size: cover ;
-/*   background-position: center;*/
    background-repeat: no-repeat;
  }
 
@@ -86,69 +67,56 @@ p{
 }*/
 .myLastGrid {
   display: grid; /*displaying the grid*/
-  grid-gap: 20px; /*gap width between grid areas*/
-  grid-row-gap: 26em;
+  grid-gap: 10px; /*gap width between grid areas*/
+  grid-row-gap: 10em;
   grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
  /*ammount of colums, width of columns*/
-grid-template-rows:repeat(6,1067px);
+grid-template-rows:repeat(3,300px);
  						  /*height of each row*/
-/*   grid-template-areas: "side1 main main"
-                       "side2 main main"
-                       "side3 main main"; */
+
   
-  
-/*   grid-template-areas: "main main side1"
-                          "main main side2"
-                          "main main side3"; */
-  
-  grid-template-areas:    /*"main main"*/
+  grid-template-areas:    
   						   "news1 news1"
-  						   "news2 news3"
-  						   /*"pic pic"*/
-                           "news4 news5"
-                          "news6  news6"
-                          "news7 news7"
+  						   "news1 news2"
+                           "news3 ."
+                     
                           
 
                           ; 
   padding:20px;
 }
 
-.news3,.news4,.news6,.news7 {
-  grid-area: news3,news4,news6,news5; 
+.news3, {
+  grid-area: news3 
   background-color: none;
-   text-align:center;
-/*   writing-mode: vertical-rl;
-  text-orientation: upright;
-  use for messed up secret page*/
- background-image: url("../../art175_website2/images/paper.png");
- background-size: auto;
-   background-repeat: no-repeat;
+   text-align:left;
+ 
    justify-content:left;
   
 
 }
-.news1,.news2,.news5{
-  grid-area: news1, news2,news5; 
+.news2{
+  grid-area: news2 
   background-color: none;
-   text-align:center;
-/*   writing-mode: vertical-rl;
-  text-orientation: upright;
-  use for messed up secret page*/
- background-image: url("../../art175_website2/images/paper.png");
- background-size: auto;
+   text-align:right;
+
 justify-content:right;
    background-repeat: no-repeat;
-  
-
+ 
+}
+.news1{
+  grid-area: news1 
+  background-color: red;
+  background-size: cover ;
+ 
 }
 
 
 
 
 
-.side1,.side2,.side5,.side7,.side1_1,.side1_2{
-  grid-area: side1, side2,side5,side7,side1_1,side1_2;
+.side1,.side2,.side5,.side7, .side9,.side11,.side13,.side15,.side17{
+  grid-area: side1, side2,side5,side7, side9,side11,side13,side15,side17;
   background-color: none;
  background-image: url("../../art175_website2/images/paper.png");
  background-size: cover ;
@@ -158,6 +126,21 @@ justify-content:right;
   padding:4em;
 
 }
+
+
+.side3,.side4,.side6,.side8,.side10,.side12,.side14,.side16,.side18 {
+  grid-area: side3, side4,side6,side8, side10,side12,side14,side16,side18; 
+  background-color: none;
+   text-align:center;
+ background-image: url("../../art175_website2/images/paper.png");
+ background-size: auto;
+   background-position: center;
+   background-repeat: no-repeat;
+  
+
+}
+ 
+ 
 .keyClick{
   grid-area: keyClick;
   background-color: none;
@@ -178,24 +161,6 @@ opacity: 100;
 	color:transparent;
 }
 
-.side3,.side4,.side6,.side8,.pic,.pic1_2 {
-  grid-area: side3, side4,side6,side8,pic, pic1_2; 
-  background-color: none;
-   text-align:center;
-/*   writing-mode: vertical-rl;
-  text-orientation: upright;
-  use for messed up secret page*/
- background-image: url("../../art175_website2/images/paper.png");
- background-size: auto;
-   background-position: center;
-   background-repeat: no-repeat;
-  
-
-}
- 
- 
-
-
 
 html {
   box-sizing: border-box;
@@ -208,7 +173,6 @@ html {
 }
 
 body {
-/*  font: 1em/1.4 Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   background-color:black;
 
 }
@@ -228,9 +192,8 @@ grid-template-rows:repeat(auto-fill, minmax(200px,1fr));
  						  /*height of each row22*/
 
   
-  grid-template-areas:    /*"main main"*/
+  grid-template-areas:   
   						   "key key"
-  						   /*"key1 key1 key1 key1"*/
                            "key2 key2"
                           "key3 key3 "
                           "key4 key4 "
@@ -266,7 +229,6 @@ margin-left:-20px;
 /* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
- /* width: 160px;*/
   background-color: #555;
   color: white;
   text-align: center;
@@ -274,8 +236,6 @@ margin-left:-20px;
   padding: 8px 0;
   position: absolute;
   z-index: 5;
- /* bottom: 125%;*/
-/*  left: 50%;*/
   margin-left: -80px;
 }
  
@@ -311,15 +271,7 @@ margin-left:-20px;
 }
 
 
-.target{
 
-}
-.statusText{
-
-}
-.soundTour{
-
-}
 /* ----------------------*/
 button{
 	display:flex;
