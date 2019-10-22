@@ -56,6 +56,12 @@ p{
 
 
  }
+ .page2{
+ 	background-image: url("../../art175_website2/images/smoke.gif");
+ background-size: cover ;
+/*   background-position: center;*/
+   background-repeat: no-repeat;
+ }
 
  .child {
   
@@ -78,6 +84,67 @@ p{
   
   flex: 0 1 30%;
 }*/
+.myLastGrid {
+  display: grid; /*displaying the grid*/
+  grid-gap: 20px; /*gap width between grid areas*/
+  grid-row-gap: 26em;
+  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+ /*ammount of colums, width of columns*/
+grid-template-rows:repeat(6,1067px);
+ 						  /*height of each row*/
+/*   grid-template-areas: "side1 main main"
+                       "side2 main main"
+                       "side3 main main"; */
+  
+  
+/*   grid-template-areas: "main main side1"
+                          "main main side2"
+                          "main main side3"; */
+  
+  grid-template-areas:    /*"main main"*/
+  						   "news1 news1"
+  						   "news2 news3"
+  						   /*"pic pic"*/
+                           "news4 news5"
+                          "news6  news6"
+                          "news7 news7"
+                          
+
+                          ; 
+  padding:20px;
+}
+
+.news3,.news4,.news6,.news7 {
+  grid-area: news3,news4,news6,news5; 
+  background-color: none;
+   text-align:center;
+/*   writing-mode: vertical-rl;
+  text-orientation: upright;
+  use for messed up secret page*/
+ background-image: url("../../art175_website2/images/paper.png");
+ background-size: auto;
+   background-repeat: no-repeat;
+   justify-content:left;
+  
+
+}
+.news1,.news2,.news5{
+  grid-area: news1, news2,news5; 
+  background-color: none;
+   text-align:center;
+/*   writing-mode: vertical-rl;
+  text-orientation: upright;
+  use for messed up secret page*/
+ background-image: url("../../art175_website2/images/paper.png");
+ background-size: auto;
+justify-content:right;
+   background-repeat: no-repeat;
+  
+
+}
+
+
+
 
 
 .side1,.side2,.side5,.side7,.side1_1,.side1_2{
