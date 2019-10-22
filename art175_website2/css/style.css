@@ -1,4 +1,31 @@
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color:black;
+
+}
+p{
+
+	  font-family: 'Special Elite', cursive; /*google font family*/
+  font-size:1em/1.4;  /*font size for all <p> tag text*/
+}
+
+
+
+
+
+
+
+/*index.html*/
 .myGrid {
   display: grid; /*displaying the grid*/
   grid-gap: 20px; /*gap width between grid areas*/
@@ -24,90 +51,11 @@ grid-template-rows:repeat(9,1067px);
   padding:20px; /*padding space of grid in viewport*/
 }
 
-
- 
-
-
-p{
-
-	  font-family: 'Special Elite', cursive; /*google font family*/
-  font-size:1em/1.4;  /*font size for all <p> tag text*/
+.wrapper{
+	width:1450px;
 }
-
- 
-
- .page2{
- 	background-image: url("../../art175_website2/images/smoke.gif"); /*background*/
- background-size: cover ;
-   background-repeat: no-repeat;
- }
-
- .child {
-  
-  text-align: center;
-  padding: 2em;
-  padding-top:7em;
-  
-  display: flex-contain;
-  flex-direction:column;
-  justify-content: center;
-  height:auto;
-   text-align:left;
-    width:100%;
-}
- 
-.myLastGrid {
-  display: grid; /*displaying the grid*/
-  grid-gap: 10px; /*gap width between grid areas*/
-  grid-row-gap: 10em;
-  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
- /*ammount of colums, width of columns*/
-grid-template-rows:repeat(3,300px);
- 						  /*height of each row*/
-
-  
-  grid-template-areas:    
-  						   "news1 news1"
-  						   "news1 news2"
-                           "news3 ."
-                     
-                          
-
-                          ; 
-  padding:20px;
-}
-
-.news3, {
-  grid-area: news3 
-  background-color: none;
-   text-align:left;
- 
-   justify-content:left;
-  
-
-}
-.news2{
-  grid-area: news2 
-  background-color: none;
-   text-align:right;
-
-justify-content:right;
-   background-repeat: no-repeat;
- 
-}
-.news1{
-  grid-area: news1 
-  background-color: red;
-  background-size: cover ;
- 
-}
-
-
-
-
-
-.side1,.side2,.side5,.side7, .side9,.side11,.side13,.side15,.side17{
-  grid-area: side1, side2,side5,side7, side9,side11,side13,side15,side17;
+ .side1,.side2,.side5,.side7, .side9,.side11,.side13,.side15,.side17{
+  grid-area: side1, side2,side5,side7, side9,side11,side13,side15,side17; /*grid areas for myGrid display*/
   background-color: none;
  background-image: url("../../art175_website2/images/paper.png");
  background-size: cover ;
@@ -120,19 +68,36 @@ justify-content:right;
 
 
 .side3,.side4,.side6,.side8,.side10,.side12,.side14,.side16,.side18 {
-  grid-area: side3, side4,side6,side8, side10,side12,side14,side16,side18; 
+  grid-area: side3, side4,side6,side8, side10,side12,side14,side16,side18; /*img grid areas for myGrid display*/
   background-color: none;
    text-align:center;
  background-image: url("../../art175_website2/images/paper.png");
  background-size: auto;
    background-position: center;
    background-repeat: no-repeat;
+
   
 
 }
- 
- 
-.keyClick{
+ .child {
+  
+  text-align: center; /*all text positioned to center*/
+  padding: 2em; /*padding on all 4 sides*/
+  padding-top:7em; /*padding on just top*/
+  
+  display: inline-flex; /*image placement in flex*/
+  flex-direction:column; /*stack images*/
+  justify-content: center; /*bring all content to center*/
+  height:100%; 
+   text-align:center; /*bring text to center*/
+    width:auto;
+
+}
+.picSize{
+	width:80%; /*child img sizes*/
+
+}
+.keyClick{ /*svg*/
   grid-area: keyClick;
   background-color: none;
   padding:1em;
@@ -153,37 +118,88 @@ opacity: 100;
 }
 
 
-html {
-  box-sizing: border-box;
+
+
+ 
+/*page 2*/
+ .page2{
+ 	background-image: url("../../art175_website2/images/smoke.gif"); /*background img*/
+ background-size: cover ; /*background image, cover space with entire img */
+   background-repeat: no-repeat; /*don't repeat background img to fill space*/
+ }
+
+
+ 
+.myLastGrid {
+  display: grid; /*displaying the grid*/
+  grid-gap: 10px; /*gap width between grid areas*/
+  grid-row-gap: 10em;
+  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+ /*ammount of colums, minimum (500px) and maximum (1fr) width of columns, repeat for all columns*/
+grid-template-rows:repeat(3,300px);
+ 						  /*height of each row*/
+
+  
+  grid-template-areas:   /*gap areas layout*/
+  						   "news1 news1"
+  						   ". news2"
+                           " news3 ."
+                     
+                          
+
+                          ; 
+  padding:20px;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  background-color:black;
+.news3, {
+  grid-area: news3 ; /*myLastGrid area name*/
+  background-color: none; /*transparent background*/
+   justify-content:left; /*place content on left*/
+  
 
 }
+.news2{
+  grid-area: news2 ;
+  background-color: none;
+justify-content:right;
+ 
+ 
+}
+.news1{
+  grid-area: news1 ;
+  background-color: none;
+  background-size: cover ;
+ 
+}
 
 
 
 
-/*keyholes.html start*/
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+/*keyholes.html */
 
 .myGridkeys {
   display: grid; /*displaying the grid*/
   grid-gap: .2em; /*gap width between grid areas*/
   grid-row-gap: 2em;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
- /*ammount of colums, width of columns*/
+/* width of columns, minimum 200px and max 1fr, repeated for each grid area, fill area*/
 grid-template-rows:repeat(auto-fill, minmax(200px,1fr));
- 						  /*height of each row22*/
+ 		/* width of rows, minimum 500px and max 1fr, repeated for each grid area*/
 
   
-  grid-template-areas:   
+  grid-template-areas:  /* grid areas layout*/
   						   "key key"
                            "key2 key2"
                           "key3 key3 "
@@ -213,11 +229,11 @@ margin-left:-20px;
   cursor: pointer;
 
 }
-.inverted:hover{
+.inverted:hover{ /*img filter*/
 	filter:invert(1);
 }
 
-/* The actual popup (appears on top) */
+/* video popup */
 .popup .popuptext {
   visibility: hidden;
   background-color: #555;
@@ -243,7 +259,7 @@ margin-left:-20px;
   border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
+/* Toggle this class when clicking on the popup img (hide and show the popup) */
 .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
@@ -275,6 +291,4 @@ background-color:red;}
 
 /* ----------------------*/
 
-.wrapper{
-	width:1450px;
-}
+ 

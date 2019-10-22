@@ -8,13 +8,13 @@
 
 // When the user clicks on <div>, open the popup
 function myFunction(n) {
-  var popup = document.getElementsByClassName("myPopup"+n);
-  var p = document.querySelectorAll(".popup")[n];
+  var popup = document.getElementsByClassName("myPopup"+n); //mypoup + number of function being used
+  var p = document.querySelectorAll(".popup")[n]; //number list of popup
  
-  myFunction(p);
+  myFunction(p); //myFunction + number of popup from list 
  
   function myFunction(el) {
-  var v = el.querySelector(".popuptext")
-  v.classList.toggle('show');
+  var v = el.querySelector(".popuptext") //video popup
+  v.classList.toggle('show'); //show and hide popup toggle
 }
 }
