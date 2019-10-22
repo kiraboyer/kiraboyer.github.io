@@ -10,9 +10,7 @@ grid-template-rows:repeat(9,1067px);
 
   
   grid-template-areas:    
-  						   "side1 side3"
-  						  /* "side1_1 pic"
-                           "side1_2 pic1_2"*/
+  						   "side1 side3" 
                           "side2  side4"
                           "side5 side6"
                            "side9 side10"
@@ -57,14 +55,7 @@ p{
    text-align:left;
     width:100%;
 }
-/*.childShadow{
-	box-shadow:5px 10px 15px 0 rgba(0, 0, 0, .5);
-}
-*//*.child > span {
-  height: auto;
-  
-  flex: 0 1 30%;
-}*/
+ 
 .myLastGrid {
   display: grid; /*displaying the grid*/
   grid-gap: 10px; /*gap width between grid areas*/
