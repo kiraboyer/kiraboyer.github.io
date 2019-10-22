@@ -3,10 +3,10 @@
   display: grid; /*displaying the grid*/
   grid-gap: 20px; /*gap width between grid areas*/
   grid-row-gap: 26em; /*grid space between rows*/
-  grid-template-columns: repeat(auto-fill, minmax(750px,40%));
+  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
  /*ammount of colums, width of columns, minimum 500px and max 1fr, repeated for each grid area*/
 grid-template-rows:repeat(9,1067px);
- 						  /*height of each row*/
+ 						  /*height of each row, 9 rows, 1067px each*/
 
   
   grid-template-areas:    /*layout of grid sections*/
@@ -274,3 +274,7 @@ button:hover{
 background-color:red;}
 
 /* ----------------------*/
+
+.wrapper{
+	width:1450px;
+}
