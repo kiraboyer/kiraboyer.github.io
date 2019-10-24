@@ -245,10 +245,10 @@ input[type=reset] {
  }
 @media only screen and (max-width: 600px){
   html{font-size: 100%}
-.video-item{justify-content: :center; padding:0px; margin:0px;}
+.video-item{justify-content :center; padding:0px; margin:0px;}
 img{width:100%;height:100%;}
-.art-item{justify-content: :center;width:100%;height:100%;}
-.bio{justify-content: :center;width:100%;height:100%;padding:0px;}
+.art-item{justify-content:center;width:100%;height:100%;}
+.bio{justify-content :left;width:100%;height:100%;padding:0px;}
 }
 
 
