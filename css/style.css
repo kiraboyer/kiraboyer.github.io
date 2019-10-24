@@ -277,7 +277,7 @@ input[type=reset] {
 	width:700px;
 	margin-top:150px;
 	float:right;
-	display:inline-block;
+	display:block;
 	margin-right:50px;
 	margin-left:50px;
 }
@@ -286,7 +286,7 @@ input[type=reset] {
   width:700px;
  
   float:right;
-  display:inline-block;
+  display: block;
  
   
 }
