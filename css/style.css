@@ -246,6 +246,7 @@ input[type=reset] {
 @media only screen and (max-width: 600px){
   html{font-size: 100%}
 .video-item{justify-content: :center;}
+img{width:100%;}
 .art-item{justify-content: :center;}
 .bio{justify-content: :center;}
 }
