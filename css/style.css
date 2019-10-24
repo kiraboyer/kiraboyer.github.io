@@ -243,6 +243,7 @@ input[type=reset] {
  	padding-bottom:100px;
  	padding-left:50px;
  }
+ @media(min-width:60em){html{font-size: 100%}}
 
 
 /*------------------------
@@ -275,7 +276,7 @@ input[type=reset] {
 
 .art-item {
   
-	width:50%;
+	width:60%;
 	margin-top:150px;
 	float:right;
 	/*display:block;*/
@@ -285,8 +286,9 @@ input[type=reset] {
 
 .video-item {
    
-  width:700px;
- margin:0px;
+  width:60%;
+  height:80%;
+ margin-right:50px;
   float:right;
   display: block;
  
