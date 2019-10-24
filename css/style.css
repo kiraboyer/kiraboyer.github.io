@@ -245,10 +245,12 @@ input[type=reset] {
  }
 @media only screen and (max-width: 600px){
   html{font-size: 100%}
-.video-item{justify-content :center; padding:0px; margin:0px;}
-img{width:100%;height:100%;}
-.art-item{justify-content:center;width:100%;height:100%;}
-.bio{justify-content :left;width:100%;height:100%;padding:0px;}
+.video-item{justify-content :center;width:100%!important;margin:0px!important;}
+img{width:100%;}
+body-pad{padding:10px}
+.art-item{justify-content: center!important; padding:0px; margin-top:10px!important; width:100%!important;float:none!important; margin:0px!important;}
+.bio{justify-content :center; padding-left:0px!important; padding-bottom:0px!important; padding-top:30px!important;}
+p{font-size:16px!important; }
 }
 
 
