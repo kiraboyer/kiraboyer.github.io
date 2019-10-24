@@ -250,7 +250,7 @@ img{width:100%;}
 .body-pad{padding:10px}
 .art-item{justify-content: center!important; padding:0px; margin-top:15px!important; width:100%!important;float:none!important;
  margin-left:0px!important; margin-right:0px!important;margin-bottom:0px!important;}
-.bio{justify-content :center; padding-left:0px!important; padding-bottom:0px!important; padding-top:30px!important;}
+.bio{justify-content :center; padding-left:0px!important; padding-bottom:0px!important; padding-top:30px!important; margin-left:5px;}
 p{font-size:16px!important; }
 h2.site-logo{justify-content: center!important; margin:0px!important;display:flex!important;padding-bottom:5px!important;}
 .a2:hover,
@@ -263,14 +263,19 @@ h2.site-logo{justify-content: center!important; margin:0px!important;display:fle
   padding:10px 0 5px!important;
   margin:20px 0 5px 15px;
 }
-.me { ;
- float:none!important;
-justify-content:center!important;
-margin-left:0px!important;
-margin-right:0px!important;
-margin-top:15px!important;}
+.me { width:50%!important;
+  
+ 
+margin-left:30px!important;
+margin-right:10px!important;
+margin-top:75px!important;
 
+}
 
+.art-left{
+  margin-left:0px!important; width:100%!important; margin:0px!important; justify-content:center!important;padding-top:15px!important;
+}
+.container-flex{padding:0px!important; margin-top:15px!important;}
 
 
 }
