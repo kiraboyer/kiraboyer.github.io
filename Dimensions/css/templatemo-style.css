@@ -767,7 +767,7 @@ hr { display: block;
      border: 0; 
      border-top: 1px solid #fff;
      margin: 1em 0; 
-     padding: 0;  }
+     margin-top: 90px;  }
 
 .tm-dma-text {
 	/*background-color: rgba(0, 0, 0, 0.2);*/
