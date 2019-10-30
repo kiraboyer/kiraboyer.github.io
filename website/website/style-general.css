@@ -5,13 +5,17 @@ background-color:black;
 }
 
 .bgimg {
-  background-position: center;
-  background-size: contain;
-  background-image: url("images/posterc.png");
+ /* background-position: center;
+  background-size: 50% 100%;
+  background-image: url("images/posterc.png");*/
+   position:cover;
+   background-color:white;
+   justify-content:center;
+   background-size:contain;
+
   width:100%;
-  height:100%;
   margin-top:50px;
-  min-height: 75%;  
+  /*min-height: 75%; */ 
 }
 
 .menu {
@@ -19,4 +23,69 @@ background-color:black;
 }
 body {font-family: "Karma", sans-serif; color:#fff;}
 .w3-bar-block .w3-bar-item {padding:20px}
-h1,h2,h3,h4,h5,h6{color:rgb(232,65,168);}
+h1,h2,h4,h5,h6{color:rgb(232,65,168);}
+h3{#fff;}
+
+ 
+.light:hover{-webkit-box-shadow:0px 0px 9px 4px rgba(232,65,168,1);
+-moz-box-shadow:0px 0px 9px 4px rgba(232,65,168,1);
+box-shadow: 0px 0px 9px 4px rgba(232,65,168,1);}
+
+}
+
+
+
+
+
+
+.myGrid {
+  display: grid; /*displaying the grid*/
+ /*grid space between rows*/
+
+  grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+ /*ammount of colums, width of columns, minimum 500px and max 1fr, repeated for each grid area*/
+grid-template-rows:repeat(3,1000px);
+ 						  /*height of each row, 9 rows, 1067px each*/
+
+  
+  grid-template-areas:    /*layout of grid sections*/
+  						   "art1 art1 art1" 
+                          "art2 art2 art2"
+                          "art3 art3 art3"
+                          
+
+                          ; grid-row-gap: 10px;
+ grid-column-gap: 40px;
+  /*padding space of grid in viewport*/
+}
+
+ .art1,.art4,.art7{
+  grid-area: art1,art4,art7; /*grid areas for myGrid display*/
+  background-color: red;
+ 
+  padding:2em; 
+
+display:flex;
+flex-wrap: wrap;  justify-content: center;
+}
+
+ .art2,.art5,.art8{
+ grid-area: art2,art5,art8; /*grid areas for myGrid display*/
+  background-color: green;
+ /*display:flex;
+  padding:4em; flex-direction: row; flex-wrap: wrap;  justify-content: center;
+*/display:flex;
+flex-wrap: wrap;  justify-content: center;
+ padding:4em;
+ grid-column-gap: 40px;
+}
+ .art3,.art6,.art9{
+ grid-area: art3,art6,art9; /*grid areas for myGrid display*/
+  background-color: blue;
+ /*display:flex; flex-direction: row;
+  padding:4em; flex-wrap: wrap;  justify-content: center;*/
+ padding:4em;display:flex;
+flex-wrap: wrap;  justify-content: center;
+grid-column-gap: 40px;
+}
+
