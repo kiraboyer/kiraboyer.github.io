@@ -436,7 +436,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 .tm-copyright-text {
 	/*background-color: rgba(0, 0, 0, 0.2);*/
 	color: white;
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 400;
 	text-align: center;
     padding: 30px;
