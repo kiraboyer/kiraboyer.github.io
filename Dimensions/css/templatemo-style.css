@@ -152,11 +152,11 @@ button:focus { outline: none; }
 }
 
 /* Background & menu colors */
-.cd-hero-slider li:nth-of-type(1) { background-color: rgba(56, 182, 230, 0.62); }
-.cd-hero-slider li:nth-of-type(2) { background-color: rgba(237, 84, 76, 0.62); }
-.cd-hero-slider li:nth-of-type(3) { background-color: rgba(234, 163, 25, 0.62); }
-.cd-hero-slider li:nth-of-type(4) { background-color: rgba(22, 181, 163, 0.62); }
-.cd-hero-slider li:nth-of-type(5) { background-color: rgba(68, 127, 202, 0.62); }
+.cd-hero-slider li:nth-of-type(1) { background-color: #000; }
+.cd-hero-slider li:nth-of-type(2) { background-color: #000; }
+.cd-hero-slider li:nth-of-type(3) { background-color: #000; }
+.cd-hero-slider li:nth-of-type(4) { background-color: #000; }
+.cd-hero-slider li:nth-of-type(5) { background-color: #000; }
 
 .cd-slider-nav .nav-item:nth-of-type(1).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(1) .nav-link:hover,
@@ -486,6 +486,13 @@ figure.effect-sadie p {
 	transition: opacity 0.35s, transform 0.35s;
 }
 
+.embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
 figure.effect-sadie p {
 	position: absolute;
 	bottom: 10px;
@@ -508,7 +515,18 @@ figure.effect-sadie:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+
 }
+
+figure.effect-sadie:hover figcaption::before,
+figure.effect-sadie:hover img {
+	opacity: 1;
+	filter:none!important;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+
+}
+/*.tm-img:hover{filter:invert(1);}*/
 
 .grid-item figure figcaption, .grid-item figure figcaption > a {
     position: absolute;
@@ -552,7 +570,7 @@ figure.effect-sadie:hover p {
 	color: white;
 	text-shadow: 2px 2px 6px #000;
 }
-.cd-hero-slider .selected .cd-full-width p.tm-figure-description {
+.cd-hero-slider .selected .cd-full-width p.tm-figure-description   {
     font-weight: 600;
     font-size: 1.5rem;
     margin: 0;
@@ -561,14 +579,18 @@ figure.effect-sadie:hover p {
 	-webkit-transform: translate3d(0,10px,0);
 	transform: translate3d(0,10px,0);
 }
+ .img2:hover{
+ 	filter: none!important;
+ }
 
 .cd-hero-slider .selected .cd-full-width figure.effect-sadie:hover .tm-figure-title,
-.cd-hero-slider .selected .cd-full-width figure.effect-sadie:hover p.tm-figure-description {
+.cd-hero-slider .selected .cd-full-width figure.effect-sadie:hover p.tm-figure-description   {
     opacity: 1;
     text-shadow:  2px 2px 6px #000;	
+    filter:none;
 }
 
-.cd-hero-slider .selected .cd-full-width figure.effect-sadie:hover p.tm-figure-description {
+.cd-hero-slider .selected .cd-full-width figure.effect-sadie:hover p.tm-figure-description   {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
@@ -749,7 +771,7 @@ figure.effect-sadie:hover p {
 
 
 
-.fonty{font-family:Bauhaus93,"Bauhaus 93";
+.fonty{font-family: 'Gilroy', sans-serif;
 font-size: 54px;
  
 fill:#fff;}
@@ -777,4 +799,16 @@ hr { display: block;
 	text-align: center;
     padding: 20px;
     width:80%
+}
+
+
+@font-face {
+font-family: "Gilroy";
+/*src: url("../Dimensions/typeface/Gilroy/Gilroy-ExtraBold.eot");*/
+src: url("../typeface/Gilroy/gilroy-extrabold-webfont.woff") format("woff"),
+ url("../typeface/Gilroy/gilroy-extrabold-webfont.woff2") format("woff2"),
+
+url("../typeface/Gilroy/Gilroy-ExtraBold.otf") format("opentype"),
+/*url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");*/
+  font-weight: bold;
 }
