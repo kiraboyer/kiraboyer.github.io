@@ -412,6 +412,11 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 @media (min-width: 480px) {
 	.tm-img-gallery { margin: 0 auto; }
 }
+/*@media only screen and (min-width: 400px){
+	.tm-img-gallery-container-2 { padding: 3em ; }
+}
+.tm-img-gallery-container-2 {margin: 3em ;}*/
+
 
 .tm-img {
 	max-width: 320px;
