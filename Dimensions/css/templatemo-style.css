@@ -142,7 +142,7 @@ button:focus { outline: none; }
 .cd-slider-nav .nav-item.selected .nav-link,
 .cd-slider-nav .nav-link:hover,
 .cd-slider-nav .nav-link:focus {
-	color: #ffffff;
+	color: #d1d1d1;
 }
 
 /* Hero Slider */
@@ -170,14 +170,14 @@ button:focus { outline: none; }
 .cd-slider-nav .nav-item:nth-of-type(2) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(2) .nav-link:focus {
 			
-	background-color: rgba(232,65,168,1);
+	background-color: yellow;
 }
 
 .cd-slider-nav .nav-item:nth-of-type(3).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(3) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(3) .nav-link:focus {
 		
-	background-color: yellow;	
+	background-color: rgba(232,65,168,1);	 
 }
 
 .cd-slider-nav .nav-item:nth-of-type(4).selected .nav-link,
@@ -221,6 +221,11 @@ button:focus { outline: none; }
 .cd-hero-slider h2.tm-text-title {
 	color: #000002;
     font-size: 1.6em;
+    font-weight: 400;
+}
+h1.tm-text-title {
+	color: #000002;
+    font-size: 2.5em;
     font-weight: 400;
 }
 
@@ -622,6 +627,7 @@ figure.effect-sadie:hover img {
 
 @media only screen and (min-width: 480px) {
 	.cd-hero-slider h2.tm-text-title { font-size: 1.8em; }
+	.cd-hero-slider h1.tm-text-title { font-size: 1.9em; }
 	.tm-textbox-padding { padding: 30px 40px; }
 	.tm-textbox-padding-contact { padding: 30px; }
 	.grid-item { width: 50%; }
@@ -815,4 +821,11 @@ src: url("../typeface/Gilroy/gilroy-extrabold-webfont.woff") format("woff"),
 url("../typeface/Gilroy/Gilroy-ExtraBold.otf") format("opentype"),
 /*url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");*/
   font-weight: bold;
+}
+
+.img_filter{
+	filter:grayscale(100%)invert(95%);
+}
+.img_filterAlt{
+filter:grayscale(100%);
 }
