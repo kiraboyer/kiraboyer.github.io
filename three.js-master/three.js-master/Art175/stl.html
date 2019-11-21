@@ -17,12 +17,13 @@
 		<script src="./js/three.js"></script>
 
 		<script type="module">
-			import * as THREE from './js/three.module.js';
+			import * as THREE from 'three';
 			import Stats from './js/stats.module.js';
 
 
 			//import { STLLoader } from './js/STLLoader.js';
-			import * as THREESTLLoader from './js/STLLoader.js';
+			import * as THREESTLLoader from 'three-stl-loader';
+
 
 			var container, stats;
 			var camera, cameraTarget, scene, renderer;
