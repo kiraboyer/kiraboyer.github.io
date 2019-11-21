@@ -17,13 +17,11 @@
 		<script src="./js/three.js"></script>
 
 		<script type="module">
-			import * as THREE from 'three';
+			import * as THREE from './js/three.module.js';
 			import Stats from './js/stats.module.js';
 
 
-			//import { STLLoader } from './js/STLLoader.js';
-			import * as THREESTLLoader from 'three-stl-loader';
-
+			import { STLLoader } from './js/STLLoader.js';
 
 			var container, stats;
 			var camera, cameraTarget, scene, renderer;
@@ -48,7 +46,6 @@
 				scene.add( plane );
 				plane.receiveShadow = true;
 				// ASCII file
-				var STLLoader = new THREESTLLoader(THREE)
 				var loader = new STLLoader();
 				loader.load( './models/fox.stl', function ( geometry ) {
 					var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
