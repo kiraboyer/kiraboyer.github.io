@@ -8,29 +8,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- import the three.js library --> <!-- import the three.js library -->
-<script type="text/javascript"  charset="UTF-8"></script><script src='./js/three.min.js'></script>
-<script src="./js/stats.min.js"></script>
+<script type="text/javascript"  charset="UTF-8"></script><script src='js/three.min.js'></script>
+<script src="js/stats.min.js"></script>
 
 
 
 
 
-<!-- //////import the ar.js library -->
-<!-- <script src="../build/ar.js"></script>
-<script>THREEx.ArToolkitContext.baseURL = '../'</script> -->
+<!-- import the ar.js library -->
 
-     <script src="./js/three.js"></script>
+
+     <script src="js/three.js"></script>
     
-    <script src="./js/OBJLoader.js"></script>
-      <script src="./js/MTLLoader.js"></script>  
-    <script src="./js/DDSLoader.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/MTLLoader.js"></script>
+    <script src="js/DDSLoader.js"></script>
 
-    <script src="./js/inflate.min.js"></script>
-    <script src="./js/loaders/FBXLoader.js"></script>
+    <script src="js/inflate.min.js"></script>
+    <script src="js/FBXLoader.js"></script>
 
-    <script src="./js/controls/OrbitControls.js"></script>
+    <script src="js/controls/OrbitControls.js"></script>
 
-    <script src="./js/Detector.js"></script>
+    <script src="js/Detector.js"></script>
     <style>
         body {
             overflow: hidden;
@@ -68,7 +67,38 @@
 </head>
 <body>
 
+<!-- <MAP NAME="popupImgMap">
+  <AREA SHAPE=RECT HREF= 
+  ALT="My Popup" COORDS="10,10,120,120" <a onclick="window.open('https://kiraboyer.github.io/index.html', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');">
+  Share Page
+</a>  
+  onClick="return popup(this, 'gloss')">
+  <!-- <AREA SHAPE=RECT HREF="yourpopup.html" ALT="Your Popup" COORDS="140,10,180,50"  onClick="return popup(this, 'gloss')"> -->
+ <!-- <AREA SHAPE=DEFAULT NOHREF>
+</MAP> -->
 
+
+<!--working img pop-up-->
+<!--<IMG SRC="../../data/data/dr.png" HEIGHT=130 WIDTH=190 ALT="Image Map Example" BORDER="0" <a onclick="window.open('https://kiraboyer.github.io/index.html', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');"
+
+</a>  
+-->
+
+
+   <!--   <script> var popupScreenParameters = [ 'height='+screen.height, 'width='+screen.width, 'fullscreen=yes' ].join(','); var windowVariable = window.open('https://kiraboyer.github.io/index.html',"popupName",popupScreenParameters); windowVariable .moveTo(0,0); </script> -->
+
+    <!-- <div class="left"> -->
+       <!--  <p>Maya<p>
+        <p><a href="https://kiraboyer.github.io/index.html" target="_top">exit</a></p> -->
+    <!-- </div> -->
+    <!-- <a class="left" href="https://kiraboyer.github.io/index.html" target="_top">
+
+        <img src="../../data/data/exit.png" width="30px">
+    </a> -->
+ <!-- <a class="right" href="https://kiraboyer.github.io/index.html" target="_top">
+
+        <img src="../../data/data/exit.png">
+    </a>   -->
  
     <script>
         if (!Detector.webgl) {
@@ -102,27 +132,32 @@
 
 
 
-          var mtlLoader = new THREE.MTLLoader();
-           mtlLoader.setPath('../Art175/models/');
+            var mtlLoader = new THREE.MTLLoader();
+           // // mtlLoader.setBaseUrl('assets/');
+            mtlLoader.setPath('../Art175/models');
 
-            mtlLoader.load('Withgun.mtl', function (materials) {
-                materials.preload();
-                
+           mtlLoader.load('Withgun.mtl', function (materials) {
+                 materials.preload();
+                 //materials.minFilter = THREE.LinearFilter;
+
+               //  mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( '../../data/data/maya.mtl', function (materials)} ));
+
 
                  
 
-            
+                //materials.materials.default.map.magFilter = THREE.NearestFilter;
+               // materials.materials.default.map.minFilter = THREE.LinearFilter;
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
 
-                objLoader.setPath('../Art175/models/');
+                objLoader.setPath('../Art175/models');
                 objLoader.load('Withgun.obj', function (object) {
                 	object.scale.set(.4, .4, .4);
-                	   ///object.material.map = texture;
+                	   //object.material.map = texture;
 object.scale.x = object.scale.y = object.scale.z = 0.1;
                     scene.add(object);
                 });
-             });
+            });
             /* Renderer */
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio(window.devicePixelRatio);
