@@ -25,7 +25,7 @@
     <script src="js/DDSLoader.js"></script>
 
     <script src="js/inflate.min.js"></script>
-    <script src="js/FBXLoader.js"></script>
+<!--     <script src="js/FBXLoader.js"></script> -->
 
     <script src="js/controls/OrbitControls.js"></script>
 
@@ -134,7 +134,7 @@
 
             var mtlLoader = new THREE.MTLLoader();
            // // mtlLoader.setBaseUrl('assets/');
-            mtlLoader.setPath('../Art175/models');
+            mtlLoader.setPath('../Art175/models/');
 
            mtlLoader.load('Withgun.mtl', function (materials) {
                  materials.preload();
@@ -150,7 +150,7 @@
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
 
-                objLoader.setPath('../Art175/models');
+                objLoader.setPath('../Art175/models/');
                 objLoader.load('Withgun.obj', function (object) {
                 	object.scale.set(.4, .4, .4);
                 	   //object.material.map = texture;
