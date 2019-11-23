@@ -24,9 +24,8 @@
 			import Stats from './js/stats.module.js';
 
 
-			import * as STLLoader from './js/loaders/STLLoader.js';
-			 var STLLoader = require('three-stl-loader')(THREE) 
-//mfggg
+			import { STLLoader } from './js/loaders/STLLoader.js';
+
 
 			var container, stats;
 			var camera, cameraTarget, scene, renderer;
@@ -62,7 +61,7 @@
 					mesh.receiveShadow = true;
 					scene.add( mesh );
 				} );
-				// Binary files
+				// Binary filescx
 				var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
 				loader.load( './models/fox.stl', function ( geometry ) {
 					var mesh = new THREE.Mesh( geometry, material );
