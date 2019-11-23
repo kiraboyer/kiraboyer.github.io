@@ -101,15 +101,15 @@
 
 
 
-           //  var mtlLoader = new THREE.MTLLoader();
+             var mtlLoader = new THREE.MTLLoader();
            // // // mtlLoader.setBaseUrl('assets/');
-           //  mtlLoader.setPath('../Art175/models/');
+             mtlLoader.setPath('../Art175/models/');
 
-           // mtlLoader.load('Withgun.mtl', function (materials) {
-           //       materials.preload();
+             mtlLoader.load('Withgun.mtl', function (materials) {
+                  materials.preload();
                   
                 var objLoader = new THREE.OBJLoader();
-                // objLoader.setMaterials(materials);
+                  objLoader.setMaterials(materials);
 
                 objLoader.setPath('../Art175/models/');
                 objLoader.load('Withgun.obj', function (object) {
@@ -118,7 +118,7 @@
 object.scale.x = object.scale.y = object.scale.z = 0.1;
                     scene.add(object);
                 });
-            // });
+             });
             /* Renderer */
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio(window.devicePixelRatio);
