@@ -148,7 +148,7 @@
                 var stlLoader = new THREE.STLLoader();
                 // stlLoader.setMaterials(materials);
 
-                stlLoader.setPath('./model');
+                stlLoader.setPath('./models/');
                 stlLoader.load('fox.stl', function (object) {
                 	object.scale.set(.4, .4, .4);
                 	   //object.material.map = texture;
