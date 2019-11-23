@@ -17,12 +17,12 @@ https://threejs.org/editor/-->
 		  <script src="js/three.js"></script>
 		 <script src='js/three.min.js'></script>
 <script src="js/stats.min.js"></script>
-<script src="js/DDSLoader.js"></script>
+<!-- <script src="js/DDSLoader.js"></script> -->
 <script src="js/OBJLoader.js"></script>
 <script src="js/MTLLoader.js"></script>
 		<script type="module">
 			import * as THREE from '../build/three.module.js';
-			 import { DDSLoader } from './js/DDSLoader.js';
+			 // import { DDSLoader } from './js/DDSLoader.js';
 			// import { MTLLoader } from './js/MTLLoader.js';
 			// import { OBJLoader } from './js/OBJLoader.js';
 
@@ -54,7 +54,7 @@ https://threejs.org/editor/-->
 				};
 				var onError = function () { };
 				var manager = new THREE.LoadingManager();
-				manager.addHandler( /\.dds$/i, new DDSLoader() );
+				// manager.addHandler( /\.dds$/i, new DDSLoader() );
 				// comment in the following line and import TGALoader if your asset uses TGA textures
 				// manager.addHandler( /\.tga$/i, new TGALoader() );
 				new MTLLoader( manager )
