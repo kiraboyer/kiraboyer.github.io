@@ -1,150 +1,186 @@
-<!--  HELLOOOOO
- -->
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>three.js webgl - STL</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
-	</head>
-	<body>
-		<div id="info">
-			<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> -
-			STL loader test by <a href="https://github.com/aleeper" target="_blank" rel="noopener">aleeper</a>.<br/>
-			PR2 head from <a href="http://www.ros.org/wiki/pr2_description">www.ros.org</a>
-		</div>
-<script src="./js/STLLoader.js"></script>
-		<script src="./js/three.min.js"></script>
-		<script src="./js/three.js"></script>
 
-		<script type="module">
-			import * as THREE from './js/three.module.js';
-			import Stats from './js/stats.module.js';
+<title>AR on the web for SJSU</title>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+<!-- import the three.js library --> <!-- import the three.js library -->
+<script src='vendor/three.js/build/three.min.js'></script>
+<script src="vendor/three.js/examples/js/libs/stats.min.js"></script>
 
 
-			// import { STLLoader } from './js/loaders/STLLoader.js';
-//mgg
-//ggv
 
-			var container, stats;
-			var camera, cameraTarget, scene, renderer;
-			init();
-			animate();
-			function init() {
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
-				camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 15 );
-				camera.position.set( 3, 0.15, 3 );
-				cameraTarget = new THREE.Vector3( 0, - 0.25, 0 );
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0x72645b );
-				scene.fog = new THREE.Fog( 0x72645b, 2, 15 );
-				// Ground
-				var plane = new THREE.Mesh(
-					new THREE.PlaneBufferGeometry( 40, 40 ),
-					new THREE.MeshPhongMaterial( { color: 0x999999, specular: 0x101010 } )
-				);
-				plane.rotation.x = - Math.PI / 2;
-				plane.position.y = - 0.5;
-				scene.add( plane );
-				plane.receiveShadow = true;
-				// ASCII file
-				var loader = new THREE.STLLoader();
-				loader.load( './models/fox.stl', function ( geometry ) {
-					var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.set( 0, - 0.25, 0.6 );
-					mesh.rotation.set( 0, - Math.PI / 2, 0 );
-					mesh.scale.set( 0.5, 0.5, 0.5 );
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-					scene.add( mesh );
-				} );
-				// Binary filescxx
-				var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
-				loader.load( './models/fox.stl', function ( geometry ) {
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.set( 0, - 0.37, - 0.6 );
-					mesh.rotation.set( - Math.PI / 2, 0, 0 );
-					mesh.scale.set( 2, 2, 2 );
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-					scene.add( mesh );
-				} );
-				loader.load( './models/fox.stl', function ( geometry ) {
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.set( 0.136, - 0.37, - 0.6 );
-					mesh.rotation.set( - Math.PI / 2, 0.3, 0 );
-					mesh.scale.set( 2, 2, 2 );
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-					scene.add( mesh );
-				} );
-				// Colored binary STL
-				loader.load( './models/fox.stl', function ( geometry ) {
-					var meshMaterial = material;
-					if ( geometry.hasColors ) {
-						meshMaterial = new THREE.MeshPhongMaterial( { opacity: geometry.alpha, vertexColors: THREE.VertexColors } );
-					}
-					var mesh = new THREE.Mesh( geometry, meshMaterial );
-					mesh.position.set( 0.5, 0.2, 0 );
-					mesh.rotation.set( - Math.PI / 2, Math.PI / 2, 0 );
-					mesh.scale.set( 0.3, 0.3, 0.3 );
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-					scene.add( mesh );
-				} );
-				// Lights
-				scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ) );
-				addShadowedLight( 1, 1, 1, 0xffffff, 1.35 );
-				addShadowedLight( 0.5, 1, - 1, 0xffaa00, 1 );
-				// renderer
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				renderer.gammaInput = true;
-				renderer.gammaOutput = true;
-				renderer.shadowMap.enabled = true;
-				container.appendChild( renderer.domElement );
-				// stats
-				stats = new Stats();
-				container.appendChild( stats.dom );
-				//
-				window.addEventListener( 'resize', onWindowResize, false );
-			}
-			function addShadowedLight( x, y, z, color, intensity ) {
-				var directionalLight = new THREE.DirectionalLight( color, intensity );
-				directionalLight.position.set( x, y, z );
-				scene.add( directionalLight );
-				directionalLight.castShadow = true;
-				var d = 1;
-				directionalLight.shadow.camera.left = - d;
-				directionalLight.shadow.camera.right = d;
-				directionalLight.shadow.camera.top = d;
-				directionalLight.shadow.camera.bottom = - d;
-				directionalLight.shadow.camera.near = 1;
-				directionalLight.shadow.camera.far = 4;
-				directionalLight.shadow.bias = - 0.002;
-			}
-			function onWindowResize() {
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-				renderer.setSize( window.innerWidth, window.innerHeight );
-			}
-			function animate() {
-				requestAnimationFrame( animate );
-				render();
-				stats.update();
-			}
-			function render() {
-				var timer = Date.now() * 0.0005;
-				camera.position.x = Math.cos( timer ) * 3;
-				camera.position.z = Math.sin( timer ) * 3;
-				camera.lookAt( cameraTarget );
-				renderer.render( scene, camera );
-			}
-		</script>
-	</body>
-	</html>
+
+<!-- sets the local directory (the code '../' navigates up one directory from exmples to three.js) -->
+
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+    <!-- imports libraries to import fbx animations -->
+    <script src="./js/three.js"></script>
+    
+    <script src="./js/STLLoader.js"></script>
+
+  
+
+    <script src="js/controls/OrbitControls.js"></script>
+
+    <script src="js/Detector.js"></script>
+    <!--ALREADY IMPORTED-- <script src="js/libs/stats.min.js"></script> -->
+    
+    <script>
+        
+        if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+        
+        var clock = new THREE.Clock();
+        var mixers = [];
+        var stats;
+    
+        
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Init
+    //      sets up how the webpage will be diplayed (fullscreen)
+	//////////////////////////////////////////////////////////////////////////////////
+        // init renderer
+        var renderer	= new THREE.WebGLRenderer({
+            // antialias	: true,
+            alpha: true
+        });
+        renderer.setClearColor(new THREE.Color('lightgrey'), 0)
+        // renderer.setPixelRatio( 1/2 );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.domElement.style.position = 'absolute'
+        renderer.domElement.style.top = '0px'
+        renderer.domElement.style.left = '0px'
+        document.body.appendChild( renderer.domElement );
+        // array of functions for the rendering loop
+        var onRenderFcts= [];
+        // init scene and camera
+        var scene	= new THREE.Scene();
+        
+        light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
+        light.position.set( 0, 200, 0 );
+        scene.add( light );
+        light = new THREE.DirectionalLight( 0xffffff );
+        light.position.set( 0, 200, 100 );
+        light.castShadow = true;
+        light.shadow.camera.top = 180;
+        light.shadow.camera.bottom = -100;
+        light.shadow.camera.left = -120;
+        light.shadow.camera.right = 120;
+        scene.add( light );
+        
+        //////////FROM FBX IMPORT
+        container = document.createElement( 'div' );
+        document.body.appendChild( container );
+        //////////////////////////////////////////////////////////////////////////////////
+        //		Initialize a basic camera
+        //////////////////////////////////////////////////////////////////////////////////
+        //      Create a camera
+        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+        scene.add(camera);
+       
+       
+        //		add objects in the scene
+        //      to comment out or un comment multiple lines select lines and press command + /
+        //      you can copy source code for simple shape from the three.js playground here: http://threejsplaygnd.brangerbriz.net/gui/
+        //      for more on using 3D models with AR.js and A-Frame see here: https://medium.com/@akashkuttappa/using-3d-models-with-ar-js-and-a-frame-84d462efe498
+        //////////////////////////////////////////////////////////////////////////////////
+        
+        var geometry, material, mesh;
+        
+        ///////////////////////////////////////////////////////////
+        // add a static cube
+        geometry = new THREE.CubeGeometry(1,1,1);
+        material = new THREE.MeshNormalMaterial({
+            transparent : true,
+            opacity: 0.5,
+            side: THREE.DoubleSide
+        }); 
+        mesh = new THREE.Mesh( geometry, material );
+        mesh.position.y	= geometry.parameters.height/2
+       
+        // end cube code
+        ///////////////////////////////////////////////////////////
+        
+    
+        
+        ///////////////////////////////////////////////////////////
+        //add icosphere test from 3js playground
+        geometry = new THREE.IcosahedronGeometry(.3, 0); //edit scale (in this code a scale of 1 = size of target image)
+        var material	= new THREE.MeshNormalMaterial(); 
+        var mesh	= new THREE.Mesh( geometry, material );
+        mesh.position.y	= 0.5 //position y equals how far away from target 
+         //instead of adding mesh to the scene right away we add only when the target is detected
+        //end icosphere code
+        ///////////////////////////////////////////////////////////
+        
+        
+        ///////////////////////////////////////////////////////////
+//        // add a taurus with rotation animation
+//        geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+//        material = new THREE.MeshNormalMaterial(); 
+//        mesh = new THREE.Mesh( geometry, material );
+//        mesh.position.y	= 0.5
+//        arWorldRoot.add( mesh );
+//        onRenderFcts.push(function(){
+//            mesh.rotation.x += 0.1
+//        })
+//        // end taurus code
+       ///////////////////////////////////////////////////////////
+        
+        
+       
+        
+        ///////////////////////////////////////////////////////////
+         //add obj model (static)
+         // obj texture
+
+         var manager = new THREE.LoadingManager();
+         manager.onProgress = function ( item, loaded, total ) {
+
+             console.log( item, loaded, total );
+
+         };
+
+        
+
+         // obj model
+         var onProgress = function ( xhr ) {
+             if ( xhr.lengthComputable ) {
+                 var percentComplete = xhr.loaded / xhr.total * 100;
+                 console.log( Math.round(percentComplete, 2) + '% downloaded' );
+             }
+         };
+
+         var onError = function ( xhr ) {
+         };
+
+         var loader = new THREE.STLLoader( manager );
+         loader.load( './models/fox.stl', function ( object ) {
+
+             object.traverse( function ( child ) {
+
+                 if ( child instanceof THREE.Mesh ) {
+
+                     child.material.map = texture;
+
+                 }
+
+             } );
+
+ 			object.position.y = - 95;
+ 			scene.add( object );
+             
+
+         }, onProgress, onError );
+
+         //end obj code
+        ///////////////////////////////////////////////////////////
+        
+        
+        
+    
+</script></body>
