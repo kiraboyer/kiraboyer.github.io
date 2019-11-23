@@ -1,181 +1,206 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
 
-<title>AR on the web for SJSU</title>
-<meta charset="utf-8">
+    <title>Maya</title>
 
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-<!-- import the three.js library --> <!-- import the three.js library -->
-<script src='./js/three.min.js'></script>
-<script src="./js/stats.min.js"></script>
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import the three.js library --> <!-- import the three.js library -->
+<script type="text/javascript"  charset="UTF-8"></script><script src='js/three.min.js'></script>
+<script src="js/stats.min.js"></script>
 
 
-<!-- sets the local directory (the code '../' navigates up one directory from exmples to three.js) -->
 
 
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
-    <!-- imports libraries to import fbx animations -->
-    <script src="./js/three.js"></script>
+<!-- import the ar.js library -->
+<!-- <script src="../build/ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = '../'</script> -->
+
+     <script src="js/three.js"></script>
     
-    <script src="./js/STLLoader.js"></script>
+   <!--  <script src="js/loaders/OBJLoader.js"></script> -->
+     <script src="js/STLLoader.js"></script>
+   <!--  <script src="js/loaders/MTLLoader.js"></script> -->
+    <script src="js/loaders/DDSLoader.js"></script>
 
-  
+    <script src="js/inflate.min.js"></script>
+   <!--  <script src="js/loaders/FBXLoader.js"></script> -->
 
     <script src="js/controls/OrbitControls.js"></script>
 
-    <script src="./js/Detector.js"></script>
-    <!--ALREADY IMPORTED-- <script src="js/libs/stats.min.js"></script> -->
-    
+    <script src="js/Detector.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: hsl(0, 0%, 10%);
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .left,
+        .right {
+            position: absolute;
+            color: #fff;
+            font-family: Geneva, sans-serif;
+        }
+        .left {
+            /*bottom: 1em;
+            left: 1em;*/
+            top:0;
+            left:0;
+            text-align: left;
+        }
+        .right {
+            top: 0;
+            right: 0;
+            text-align: right;
+        }
+        a {
+            color: #f58231;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- <MAP NAME="popupImgMap">
+  <AREA SHAPE=RECT HREF= 
+  ALT="My Popup" COORDS="10,10,120,120" <a onclick="window.open('https://kiraboyer.github.io/index.html', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');">
+  Share Page
+</a>  
+  onClick="return popup(this, 'gloss')">
+  <!-- <AREA SHAPE=RECT HREF="yourpopup.html" ALT="Your Popup" COORDS="140,10,180,50"  onClick="return popup(this, 'gloss')"> -->
+ <!-- <AREA SHAPE=DEFAULT NOHREF>
+</MAP> -->
+
+
+<!--working img pop-up-->
+<!--<IMG SRC="../../data/data/dr.png" HEIGHT=130 WIDTH=190 ALT="Image Map Example" BORDER="0" <a onclick="window.open('https://kiraboyer.github.io/index.html', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');"
+
+</a>  
+-->
+
+
+   <!--   <script> var popupScreenParameters = [ 'height='+screen.height, 'width='+screen.width, 'fullscreen=yes' ].join(','); var windowVariable = window.open('https://kiraboyer.github.io/index.html',"popupName",popupScreenParameters); windowVariable .moveTo(0,0); </script> -->
+
+    <!-- <div class="left"> -->
+       <!--  <p>Maya<p>
+        <p><a href="https://kiraboyer.github.io/index.html" target="_top">exit</a></p> -->
+    <!-- </div> -->
+    <!-- <a class="left" href="https://kiraboyer.github.io/index.html" target="_top">
+
+        <img src="../../data/data/exit.png" width="30px">
+    </a> -->
+ <!-- <a class="right" href="https://kiraboyer.github.io/index.html" target="_top">
+
+        <img src="../../data/data/exit.png">
+    </a>   -->
+ 
     <script>
-        
-        if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-        
-        var clock = new THREE.Clock();
-        var mixers = [];
-        var stats;
-    
-        
-	///////////////////////////////////////////////////////////////////////////////////
-	//		Init
-    //      sets up how the webpage will be diplayed (fullscreen)
-	//////////////////////////////////////////////////////////////////////////////////
-        // init renderer
-        var renderer	= new THREE.WebGLRenderer({
-            // antialias	: true,
-            alpha: true
-        });
-        renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-        // renderer.setPixelRatio( 1/2 );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        renderer.domElement.style.position = 'absolute'
-        renderer.domElement.style.top = '0px'
-        renderer.domElement.style.left = '0px'
-        document.body.appendChild( renderer.domElement );
-        // array of functions for the rendering loop
-        var onRenderFcts= [];
-        // init scene and camera
-        var scene	= new THREE.Scene();
-        
-        light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
-        light.position.set( 0, 200, 0 );
-        scene.add( light );
-        light = new THREE.DirectionalLight( 0xffffff );
-        light.position.set( 0, 200, 100 );
-        light.castShadow = true;
-        light.shadow.camera.top = 180;
-        light.shadow.camera.bottom = -100;
-        light.shadow.camera.left = -120;
-        light.shadow.camera.right = 120;
-        scene.add( light );
-        
-        //////////FROM FBX IMPORT
-        container = document.createElement( 'div' );
-        document.body.appendChild( container );
-        //////////////////////////////////////////////////////////////////////////////////
-        //		Initialize a basic camera
-        //////////////////////////////////////////////////////////////////////////////////
-        //      Create a camera
-        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-        scene.add(camera);
-       
-       
-        //		add objects in the scene
-        //      to comment out or un comment multiple lines select lines and press command + /
-        //      you can copy source code for simple shape from the three.js playground here: http://threejsplaygnd.brangerbriz.net/gui/
-        //      for more on using 3D models with AR.js and A-Frame see here: https://medium.com/@akashkuttappa/using-3d-models-with-ar-js-and-a-frame-84d462efe498
-        //////////////////////////////////////////////////////////////////////////////////
-        
-        var geometry, material, mesh;
-        
-        ///////////////////////////////////////////////////////////
-        // add a static cube
-     
-        // end cube code
-        ///////////////////////////////////////////////////////////
-        
-    
-        
-        ///////////////////////////////////////////////////////////
-        //add icosphere test from 3js playground
-        geometry = new THREE.IcosahedronGeometry(.3, 0); //edit scale (in this code a scale of 1 = size of target image)
-        var material	= new THREE.MeshNormalMaterial(); 
-        var mesh	= new THREE.Mesh( geometry, material );
-        mesh.position.y	= 0.5 //position y equals how far away from target 
-         //instead of adding mesh to the scene right away we add only when the target is detected
-        //end icosphere code
-        ///////////////////////////////////////////////////////////
-        
-        
-        ///////////////////////////////////////////////////////////
-//        // add a taurus with rotation animation
-//        geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
-//        material = new THREE.MeshNormalMaterial(); 
-//        mesh = new THREE.Mesh( geometry, material );
-//        mesh.position.y	= 0.5
-//        arWorldRoot.add( mesh );
-//        onRenderFcts.push(function(){
-//            mesh.rotation.x += 0.1
-//        })
-//        // end taurus code
-       ///////////////////////////////////////////////////////////
-        
-        
-       
-        
-        /////////////////////////////////////////////////////////////
-         //add obj model (static)
-         // obj texture
+        if (!Detector.webgl) {
+            Detector.addGetWebGLMessage();
+        }
+        var container;
+        var camera, controls, scene, renderer;
+        var lighting, ambient, keyLight, fillLight, backLight;
+        init();
+        animate();
+        function init() {
+            container = document.createElement('div');
+            document.body.appendChild(container);
+            /* Camera */
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 3;
+            /* Scene */
+            scene = new THREE.Scene();
+            lighting = false;
+            ambient = new THREE.AmbientLight(0xffffff, 1.0);
+            scene.add(ambient);
+            keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+            keyLight.position.set(-100, 0, 100);
+            fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
+            fillLight.position.set(100, 0, 100);
+            backLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            backLight.position.set(100, 0, -100).normalize();
+            /* Model */
+            THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+           
 
-         var manager = new THREE.LoadingManager();
-         manager.onProgress = function ( item, loaded, total ) {
 
-             console.log( item + ',' + loaded + ',' + total );
-             console.log( 'hello' );
 
-         };
+           //  var mtlLoader = new THREE.MTLLoader();
+           // // // mtlLoader.setBaseUrl('assets/');
+           //  mtlLoader.setPath('../../data/data/');
 
-        
+           // mtlLoader.load('boc.mtl', function (materials) {
+           //       materials.preload();
+                 
 
-         // obj model
-         var onProgress = function ( xhr ) {
-             if ( xhr.lengthComputable ) {
-                 var percentComplete = xhr.loaded / xhr.total * 100;
-                 console.log( Math.round(percentComplete, 2) + '% downloaded' );
-             }
-         };
+                 
 
-         var onError = function ( xhr ) {
-         };
+               
+                var stlLoader = new THREE.STLLoader();
+                // stlLoader.setMaterials(materials);
 
-         var loader = new THREE.STLLoader( manager );
-         loader.load( './models/fox.stl', function ( object ) {
+                stlLoader.setPath('./model');
+                stlLoader.load('fox.stl', function (object) {
+                	object.scale.set(.4, .4, .4);
+                	   //object.material.map = texture;
+object.scale.x = object.scale.y = object.scale.z = 0.1;
+                    scene.add(object);
+                });
+            });
+            /* Renderer */
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
+            container.appendChild(renderer.domElement);
+            /* Controls */
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.enableZoom = false;
+            /* Events */
+            window.addEventListener('resize', onWindowResize, false);
+            window.addEventListener('keydown', onKeyboardEvent, false);
+        }
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        function onKeyboardEvent(e) {
+            if (e.code === 'KeyL') {
+                lighting = !lighting;
+                if (lighting) {
+                    ambient.intensity = 0.25;
+                    scene.add(keyLight);
+                    scene.add(fillLight);
+                    scene.add(backLight);
+                } else {
+                    ambient.intensity = 1.0;
+                    scene.remove(keyLight);
+                    scene.remove(fillLight);
+                    scene.remove(backLight);
+                }
+            }
+        }
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            render();
+        }
+        function render() {
+            renderer.render(scene, camera);
+        }
+    </script>
 
-             object.traverse( function ( child ) {
-
-                 if ( child instanceof THREE.Mesh ) {
-
-                     child.material.map = texture;
-
-                 }
-
-             } );
-
- 			object.position.y = - 95;
- 			scene.add( object );
-             
-
-         }, onProgress, onError );
-
-         //end obj code
-        ////////////////////////////////////////////////////////////
-        
-        
-        
-    
-</script></body>
+</body>
 </html>
