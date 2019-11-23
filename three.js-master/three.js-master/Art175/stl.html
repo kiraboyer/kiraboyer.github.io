@@ -11,12 +11,15 @@
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
 		</div>
-
+<script src="js/DDSLoader.js"></script>
+<script src="js/OBJLoader.js"></script>
+<script src="js/MTLLoader.js"></script>
 		<script type="module">
 			import * as THREE from '../build/three.module.js';
-			import { DDSLoader } from './js/DDSLoader.js';
-			import { MTLLoader } from './js/MTLLoader.js';
-			import { OBJLoader } from './js/OBJLoader.js';
+			// import { DDSLoader } from './js/DDSLoader.js';
+			// import { MTLLoader } from './js/MTLLoader.js';
+			// import { OBJLoader } from './js/OBJLoader.js';
+
 			var container;
 			var camera, scene, renderer;
 			var mouseX = 0, mouseY = 0;
