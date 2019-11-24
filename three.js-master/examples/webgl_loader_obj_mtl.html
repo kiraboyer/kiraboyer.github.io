@@ -76,14 +76,6 @@
 				var manager = new THREE.LoadingManager();
 				manager.addHandler( /\.dds$/i, new DDSLoader() );
 
-				
-
-				 new MTLLoader( manager )
-					.setPath( 'models/obj/male02/' )
-	 				.load( 'boxTest.mtl', function ( materials ) {
- // THREE.RepeatWrapping (default)
-				materials.preload();
-
 // var textureLoader = new THREE.MTLLoader();
 // var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
 // texture1.wrapS = THREE.RepeatWrapping;
@@ -92,26 +84,25 @@
 // texture1.repeat.set(2,2);
 
 ////// texture.preload();
- 
+ 				
 
+						new MTLLoader( manager )
+					.setPath( 'models/obj/male02/' )
+					.load( 'boxTest.mtl', function ( materials ) {
 
- console.log('hi2');
-
+						materials.preload();
+console.log('hi');
 						new OBJLoader( manager )
-						
 							.setMaterials( materials )
-							console.log('hi3');
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
-// object.style.left='0px';
-//////////ffff//// 				object.style.top='0px';
-console.log('hi4');
-								object.position.y =  5;
+
+								object.position.y = - 95;
 								scene.add( object );
 
 							}, onProgress, onError );
 
-					}) ;
+					} );
 
 				///zzzzddddddd/dddddddd///ccccc/////ccc/
 
