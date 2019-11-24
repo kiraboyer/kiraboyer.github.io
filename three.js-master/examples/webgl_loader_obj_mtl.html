@@ -76,14 +76,14 @@
 
 				new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
-					.load( 'Withgun.mtl', function ( materials ) {
+					.load( 'boxTest.mtl', function ( materials ) {
 
 						materials.preload();
 
 						new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
-							.load( 'Withgun.obj', function ( object ) {
+							.load( 'boxTest.obj', function ( object ) {
 
 								object.position.y = - 95;
 								scene.add( object );
