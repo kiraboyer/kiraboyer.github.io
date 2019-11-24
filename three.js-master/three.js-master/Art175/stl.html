@@ -23,7 +23,7 @@ https://threejs.org/editor/-->
 		<script type="module">
 			import * as THREE from '../build/three.module.js';
 			 ///// import { DDSLoader } from './js/DDSLoader.js';
-			// import { MTLLoader } from './js/MTLLoader.js';
+		 import { MTLLoader } from './js/MTLLoader.js';
 			// import { OBJLoader } from './js/OBJLoader.js';
 
 			var container;
@@ -57,10 +57,27 @@ https://threejs.org/editor/-->
 				// manager.addHandler( /\.dds$/i, new DDSLoader() );
 				// comment in the following line and import TGALoader if your asset uses TGA textures
 				// manager.addHandler( /\.tga$/i, new TGALoader() );
-				new MTLLoader( manager )
-					.setPath( '../Art175/models/' )
-					.load( 'Withgun.mtl', function ( materials ) {
-						materials.preload();
+				
+
+
+				// new MTLLoader( manager )
+				// 	.setPath( '../Art175/models/' )
+				// 	.load( 'Withgun.mtl', function ( materials ) {
+				// 		materials.preload();
+
+
+
+
+
+						//
+
+						var MTLLoader = require('three-mtl-loader');
+						var mtlLoader = new MTLLoader();
+						mtlLoader.setBaseUrl('../Art175/models/');
+						mtlLoader.load('Withgun.mtl', function(materials) {
+						  //do something with matl
+// });
+//
 						new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( '../Art175/models/' )
