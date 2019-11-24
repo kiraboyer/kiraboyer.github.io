@@ -76,21 +76,21 @@
 				var manager = new THREE.LoadingManager();
 				manager.addHandler( /\.dds$/i, new DDSLoader() );
 
-// var textureLoader = new THREE.MTLLoader();
-// var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
-// texture1.wrapS = THREE.RepeatWrapping;
+ var textureLoader = new THREE.MTLLoader();
+var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
+ texture1.wrapS = THREE.RepeatWrapping;
 // console.log('hi');
-// texture1.wrapT = THREE.RepeatWrapping;
-// texture1.repeat.set(2,2);
+ texture1.wrapT = THREE.RepeatWrapping;
+ texture1.repeat.set(2,2);
 
 ////// texture.preload();
  				
 
-						new MTLLoader( manager )
-					.setPath( 'models/obj/male02/' )
-					.load( 'boxTest.mtl', function ( materials ) {
+					// 	new MTLLoader( manager )
+					// .setPath( 'models/obj/male02/' )
+					// .load( 'boxTest.mtl', function ( materials ) {
 
-						materials.preload();
+					// 	materials.preload();
 console.log('hi');
 						new OBJLoader( manager )
 							.setMaterials( materials )
@@ -102,7 +102,7 @@ console.log('hi');
 
 							}, onProgress, onError );
 
-					} );
+					} ;
 
 				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
 
