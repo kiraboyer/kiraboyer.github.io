@@ -57,19 +57,19 @@ https://threejs.org/editor/-->
 				// manager.addHandler( /\.dds$/i, new DDSLoader() );
 				// comment in the following line and import TGALoader if your asset uses TGA textures
 				// manager.addHandler( /\.tga$/i, new TGALoader() );
-				var loader = new THREE.MTLLoader( manager )
-					loader.setPath( '../Art175/models/' )
-					loader.load( 'Withgun.mtl', function ( materials ) {
-						materials.preload();
+				// var loader = new THREE.MTLLoader( manager )
+				// 	loader.setPath( '../Art175/models/' )
+				// 	loader.load( 'Withgun.mtl', function ( materials ) {
+				// 		materials.preload();
 
 						var loader2 = new THREE.OBJLoader( manager )
-							loader2.setMaterials( materials )
+							// loader2.setMaterials( materials )
 							loader2.setPath( '../Art175/models/' )
 							loader2.load( 'Withgun.obj', function ( object ) {
 								object.position.y = - 95;
 								scene.add( object );
 							}, onProgress, onError );
-					} );
+					// } );
 				//
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
