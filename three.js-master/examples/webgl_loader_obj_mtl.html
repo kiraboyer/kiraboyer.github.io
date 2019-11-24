@@ -74,16 +74,25 @@
 				var manager = new THREE.LoadingManager();
 				manager.addHandler( /\.dds$/i, new DDSLoader() );
 
-				////ffffff////ccc//s///// comment in the following line and import TGALoader if your asset uses TGA textures
-				// manager.addHandler( /\.tga$/i, new TGALoader() );
+				
 
-				var texture= new MTLLoader( manager )
-					texture.setPath( 'models/obj/male02/' )
-					texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-					texture.repeat.set (2,2);
-					texture.load( 'boxTest.mtl', function ( materials ) {
+	// 			 new MTLLoader( manager )
+	// 				.setPath( 'models/obj/male02/' )
+	// 				.load( 'boxTest.mtl', function ( materials ) {
+ // THREE.RepeatWrapping (default)
+	// 					materials.preload();
 
-						materials.preload();
+var loader = new TREE.TextureLoader();
+var texture.loader.setPath( 'models/obj/male02/' )
+var texture.loader.load( 'boxTest.mtl', function ( materials )
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set(2,2);
+
+
+
+
+ {
 
 						new OBJLoader( manager )
 							.setMaterials( materials )
