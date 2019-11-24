@@ -78,10 +78,10 @@
 				// manager.addHandler( /\.tga$/i, new TGALoader() );
 
 				var texture= new MTLLoader( manager )
-					.setPath( 'models/obj/male02/' )
+					texture.setPath( 'models/obj/male02/' )
 					texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 					texture.repeat.set (2,2);
-					.load( 'boxTest.mtl', function ( materials ) {
+					texture.load( 'boxTest.mtl', function ( materials ) {
 
 						materials.preload();
 
