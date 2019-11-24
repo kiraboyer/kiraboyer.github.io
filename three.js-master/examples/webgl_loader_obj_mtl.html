@@ -78,8 +78,8 @@
 				new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
 					.load( 'boxTest.mtl', function ( materials ) {
-.wrapS = THREE.RepeatWrapping;
-.wrapT = THREE.RepeatWrapping;
+materials.wrapS = THREE.RepeatWrapping;
+materials.wrapT = THREE.RepeatWrapping;
 						materials.preload();
 
 						new OBJLoader( manager )
