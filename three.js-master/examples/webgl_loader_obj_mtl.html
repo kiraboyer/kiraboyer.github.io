@@ -80,9 +80,7 @@
 				new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
 					.load( 'boxTest.mtl', function ( materials ) {
-.wrapS = .wrapT = THREE.RepeatWrapping;
-.repeat.x = 2;
-.repeat.y = 2;
+
 						materials.preload();
 
 						new OBJLoader( manager )
@@ -91,6 +89,9 @@
 							.load( 'boxTest.obj', function ( object ) {
 // object.style.left='0px';
 // 				object.style.top='0px';
+materials.wrapS = materials.wrapT = THREE.RepeatWrapping;
+materials.repeat.x = 2;
+materials.repeat.y = 2;
 								object.position.y =  5;
 								scene.add( object );
 
