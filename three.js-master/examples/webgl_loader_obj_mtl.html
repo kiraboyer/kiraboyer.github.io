@@ -20,8 +20,8 @@
 			import { DDSLoader } from './jsm/loaders/DDSLoader.js';
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
-			import { ImageUtils } from '../src/extras/ImageUtils.js';
-			// import { TextureLoader } from '../src/loaders/TextureLoader.js';
+			// import { ImageUtils } from '../src/extras/ImageUtils.js';
+			import { TextureLoader } from '../src/loaders/TextureLoader.js';
 			// import { RepeatWrapping } from '../src/textures/Texture.js';
 
 
@@ -84,11 +84,11 @@
  // THREE.RepeatWrapping (default)
 	////// 					materials.preload();
 
-var texture = new THREE.ImageUtils.loadTexture( "models/obj/male02/boxTest.mtl");
+var texture = new THREE.TextureLoader( "models/obj/male02/boxTest.mtl");
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set(2,2);
-texture.preload();
+// texture.preload();
 
 
 
