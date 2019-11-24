@@ -91,18 +91,18 @@ console.log('hi');
 texture1.wrapT = THREE.RepeatWrapping;
 texture1.repeat.set(2,2);
 
-//h//// texture.preload();
+////// texture.preload();
  
 
 
  {
 
-						var obj = new THREE.OBJLoader( manager );
+						new OBJLoader( manager )
 						console.log('hi2');
-							obj.setMaterials( texture1 )
+							.setMaterials( texture1 )
 							console.log('hi3');
-							obj.setPath( 'models/obj/male02/' )
-							obj.load( 'boxTest.obj', function ( object ) {
+							.setPath( 'models/obj/male02/' )
+							.load( 'boxTest.obj', function ( object ) {
 // object.style.left='0px';
 //////////ffff//// 				object.style.top='0px';
 console.log('hi4');
