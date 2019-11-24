@@ -79,7 +79,7 @@
 					.setPath( 'models/obj/male02/' )
 					.load( 'boxTest.mtl', function ( materials ) {
 materials.wrapS = materials.wrapT = THREE.RepeatWrapping;
-texture.repeat.set(2,2);
+materials.repeat.set(2,2);
 						materials.preload();
 
 						new OBJLoader( manager )
