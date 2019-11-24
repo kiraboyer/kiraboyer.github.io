@@ -84,7 +84,7 @@
  // THREE.RepeatWrapping (default)
 	////// 					materials.preload();
 
-var textureLoader = new THREE.MTLLoader();
+var textureLoader = new MTLLoader();
 var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
 texture1.wrapS = THREE.RepeatWrapping;
 console.log('hi');
@@ -97,7 +97,7 @@ texture1.repeat.set(2,2);
 
  {
 
-						var obj = new THREE.OBJLoader( manager );
+						var obj = new OBJLoader( manager );
 						console.log('hi2');
 							obj.setMaterials( texture1 )
 							console.log('hi3');
