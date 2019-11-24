@@ -84,18 +84,18 @@
  // THREE.RepeatWrapping (default)
 	////// 					materials.preload();
 
-var texture = new THREE.ImageUtils.loadTexture( 'models/obj/male02/boxTest.mtl', function ( materials )
+var texture = new THREE.ImageUtils.loadTexture( "models/obj/male02/boxTest.mtl");
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set(2,2);
-materials.preload();
+texture.preload();
 
 
 
  {
 
 						new OBJLoader( manager )
-							.setMaterials( materials )
+							.setMaterials( texture )
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
 // object.style.left='0px';
