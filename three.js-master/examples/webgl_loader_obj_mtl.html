@@ -97,12 +97,12 @@ texture1.repeat.set(2,2);
 
  {
 
-						new OBJLoader( manager )
+						var obj = new THREE.OBJLoader( manager );
 						console.log('hi2');
-							.setMaterials( texture1 )
+							obj.setMaterials( texture1 )
 							console.log('hi3');
-							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest.obj', function ( object ) {
+							obj.setPath( 'models/obj/male02/' )
+							obj.load( 'boxTest.obj', function ( object ) {
 // object.style.left='0px';
 //////////ffff//// 				object.style.top='0px';
 console.log('hi4');
