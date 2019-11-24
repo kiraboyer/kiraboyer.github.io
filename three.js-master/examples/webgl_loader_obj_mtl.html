@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
 	</head>
-
+<script src="./src/textures/Texture.js"></script>
 	<body>
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
@@ -19,6 +19,7 @@
 			import { DDSLoader } from './jsm/loaders/DDSLoader.js';
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+
 
 			var container;
 
@@ -77,15 +78,16 @@
 				new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
 					.load( 'boxTest.mtl', function ( materials ) {
-
+.wrapS = THREE.RepeatWrapping;
+.wrapT = THREE.RepeatWrapping;
 						materials.preload();
 
 						new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
-object.style.left='0px';
-				object.style.top='0px';
+// object.style.left='0px';
+// 				object.style.top='0px';
 								object.position.y =  5;
 								scene.add( object );
 
@@ -148,35 +150,35 @@ object.style.left='0px';
 			}
 
 
-			function getKeyAndMove(e){				
-				var key_code=e.which||e.keyCode;
-				switch(key_code){
-					case 37: //left arrow key
-						moveLeft();
-						break;
-					case 38: //Up arrow key
-						moveUp();
-						break;
-					case 39: //right arrow key
-						moveRight();
-						break;
-					case 40: //down arrow key
-						moveDown();
-						break;						
-				}
-			}
-			function moveLeft(){
-				object.style.left=parseInt(object.style.left)-5 +'px';
-			}
-			function moveUp(){
-				object.style.top=parseInt(object.style.top)-5 +'px';
-			}
-			function moveRight(){
-				object.style.left=parseInt(object.style.left)+5 +'px';
-			}
-			function moveDown(){
-				object.style.top=parseInt(object.style.top)+5 +'px';
-			}
+			// function getKeyAndMove(e){				
+			// 	var key_code=e.which||e.keyCode;
+			// 	switch(key_code){
+			// 		case 37: //left arrow key
+			// 			moveLeft();
+			// 			break;
+			// 		case 38: //Up arrow key
+			// 			moveUp();
+			// 			break;
+			// 		case 39: //right arrow key
+			// 			moveRight();
+			// 			break;
+			// 		case 40: //down arrow key
+			// 			moveDown();
+			// 			break;						
+			// 	}
+			// }
+			// function moveLeft(){
+			// 	object.style.left=parseInt(object.style.left)-5 +'px';
+			// }
+			// function moveUp(){
+			// 	object.style.top=parseInt(object.style.top)-5 +'px';
+			// }
+			// function moveRight(){
+			// 	object.style.left=parseInt(object.style.left)+5 +'px';
+			// }
+			// function moveDown(){
+			// 	object.style.top=parseInt(object.style.top)+5 +'px';
+			// }
 
 		</script>
 
