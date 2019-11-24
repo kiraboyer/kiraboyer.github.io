@@ -84,10 +84,12 @@
  // THREE.RepeatWrapping (default)
 	////// 					materials.preload();
 
-var texture = new THREE.TextureLoader( "models/obj/male02/boxTest.mtl");
-texture.wrapS = THREE.RepeatWrapping;
-texture.wrapT = THREE.RepeatWrapping;
-texture.repeat.set(2,2);
+var textureLoader = new THREE.TextureLoader();
+var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
+texture1.wrapS = THREE.RepeatWrapping;
+console.log('hi');
+texture1.wrapT = THREE.RepeatWrapping;
+texture1.repeat.set(2,2);
 // texture.preload();
 
 
