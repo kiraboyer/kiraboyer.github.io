@@ -84,11 +84,11 @@
  // THREE.RepeatWrapping (default)
 	////// 					materials.preload();
 
-var textureLoader = new MTLLoader();
+var textureLoader = new THREE.MTLLoader();
 var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
-texture1.wrapS = RepeatWrapping;
+texture1.wrapS = THREE.RepeatWrapping;
 console.log('hi');
-texture1.wrapT = RepeatWrapping;
+texture1.wrapT = THREE.RepeatWrapping;
 texture1.repeat.set(2,2);
 
 //h//// texture.preload();
@@ -97,7 +97,7 @@ texture1.repeat.set(2,2);
 
  {
 
-						var obj = new OBJLoader( manager );
+						var obj = new THREE.OBJLoader( manager );
 						console.log('hi2');
 							obj.setMaterials( texture1 )
 							console.log('hi3');
@@ -145,7 +145,7 @@ console.log('hi4');
 			// 	mouseX = ( event.clientX - windowHalfX ) / 2;
 			// 	mouseY = ( event.clientY - windowHalfY ) / 2;
 
-			//// }
+			// }
 
 			//
 
