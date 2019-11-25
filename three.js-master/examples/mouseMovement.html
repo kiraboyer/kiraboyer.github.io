@@ -187,6 +187,19 @@ object.onkeyup = function(e) {
     else if (kc === 39) Keys.right = false;
     else if (kc === 40) Keys.down = false;
 };
+if (Keys.up) {
+    dy+=3;
+}
+else if (Keys.down) {  // both up and down does not work so check excl.
+    dy-=3;
+}
+
+if (Keys.left) {
+    dx+=3;
+}
+else if (Keys.right) {
+    dx-=3;
+}
 
 
 			// function getKeyAndMove(e){				
