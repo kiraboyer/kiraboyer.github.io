@@ -129,7 +129,7 @@ function dragendCallback(event) {
 }
 
 ////////////////////////////object 2
-const objects2 = [];
+
 						var j = new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
 					.load( 'theater.mtl', function ( materials ) {
@@ -144,32 +144,11 @@ console.log('hi2');
 
 								object.position.y = 10;
 								scene.add( object );
-								objects2.push( object );
+								
 
 							}, onProgress, onError );
 
 
-
-
-
-
-
-
-
-var controls = new DragControls( objects2, camera, renderer.domElement );
-				controls.addEventListener( 'dragstart', dragStartCallback );
-    controls.addEventListener( 'dragend', dragendCallback );
-				
-
-				} );
-
-function dragStartCallback(event) {
-   event.object.material.emissive.set( 0xaaaaaa );
-}
-
-function dragendCallback(event) {
-    event.object.material.emissive.set( 0x000000 );
-}
 
 ///////////////////////////////obj 2 end
 
