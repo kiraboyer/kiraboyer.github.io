@@ -158,7 +158,26 @@ console.log('hi2');
 
 ///////////////////hi////////////////obj 2 end
 
+/////////////////////////////////////////obj3 start
+var l= new OBJLoader( manager )
+							.setMaterials( materials )
+							.setPath( 'models/obj/male02/' )
+							.load( 'male02.obj', function ( object ) {
 
+								object.position.y = 20;
+								object.position.x = -150;
+								object.position.z = 10;
+								 object.scale.x = .5;
+								  object.scale.y = .5;
+								   object.scale.z = .5;
+								 
+								 object.rotation.x = .2;
+								scene.add( object );
+								
+
+							}, onProgress, onError );
+
+/////////////////////////////////////////obj3 end
 
 				 
 
