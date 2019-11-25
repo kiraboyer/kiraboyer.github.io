@@ -96,7 +96,8 @@ console.log('hi');
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
-
+object.style.left='0px';
+				object.style.top='0px';
 								object.position.y = 5;
 								scene.add( object );
 
@@ -159,37 +160,40 @@ console.log('hi');
 			}
 
 
-			// function getKeyAndMove(e){				
-			// 	var key_code=e.which||e.keyCode;
-			// 	switch(key_code){
-			// 		case 37: //left arrow key
-			// 			moveLeft();
-			// 			break;
-			// 		case 38: //Up arrow key
-			// 			moveUp();
-			// 			break;
-			// 		case 39: //right arrow key
-			// 			moveRight();
-			// 			break;
-			// 		case 40: //down arrow key
-			// 			moveDown();
-			// 			break;						
-			// 	}
-			// }
-			// function moveLeft(){
-			// 	object.style.left=parseInt(object.style.left)-5 +'px';
-			// }
-			// function moveUp(){
-			// 	object.style.top=parseInt(object.style.top)-5 +'px';
-			// }
-			// function moveRight(){
-			// 	object.style.left=parseInt(object.style.left)+5 +'px';
-			// }
-			// function moveDown(){
-			// 	object.style.top=parseInt(object.style.top)+5 +'px';
-			// }
+			
+ 
+
+			function getKeyAndMove(e){				
+				var key_code=e.which||e.keyCode;
+				switch(key_code){
+					case 37: //left arrow key
+						moveLeft();
+						break;
+					case 38: //Up arrow key
+						moveUp();
+						break;
+					case 39: //right arrow key
+						moveRight();
+						break;
+					case 40: //down arrow key
+						moveDown();
+						break;						
+				}
+			}
+			function moveLeft(){
+				object.style.left=parseInt(object.style.left)-5 +'px';
+			}
+			function moveUp(){
+				object.style.top=parseInt(object.style.top)-5 +'px';
+			}
+			function moveRight(){
+				object.style.left=parseInt(object.style.left)+5 +'px';
+			}
+			function moveDown(){
+				object.style.top=parseInt(object.style.top)+5 +'px';
+			}
 
 		</script>
 
-	</body>
+	</body onkeydown='getKeyAndMove(event)'>
 </html>
