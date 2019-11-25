@@ -8,7 +8,7 @@
 	</head>
   <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
-	<body>
+	<body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)">
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
 		</div>
@@ -167,23 +167,6 @@ var v= new OBJLoader( manager )
 							.setPath( 'models/obj/male02/' )
 							.load( 'male02.obj', function ( object ) {
 
-controls = new OrbitControls( camera, renderer.domElement );
-				//controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-				controls.enableDamping = false; // an animation loop is required when either damping or auto-rotation are enabled
-				controls.dampingFactor = 0.05;
-				controls.screenSpacePanning = false;
-				controls.minDistance = 100;
-				controls.maxDistance = 500;
-				controls.maxPolarAngle = Math.PI / 2;
-controls.enableKeys = true;
-	controls.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
-
-
-
-
-
-
-
 
 
 								object.position.y = 10;
@@ -260,7 +243,37 @@ controls.enableKeys = true;
 
 			}
 
+//////////
+function leftArrowPressed() {
+                var element = document.getElementById("floor2");
+                element.style.left = parseInt(element.style.left) - 5 + 'px';
+            }
 
+            function rightArrowPressed() {
+                var element = document.getElementById("floor2");
+                element.style.left = parseInt(element.style.left) + 5 + 'px';
+            }
+
+function moveSelection(event) {                    
+                switch (event.keyCode) {
+                    case 37:
+                        leftArrowPressed();
+                    break;
+
+                    case 39:
+                        rightArrowPressed();
+                    break;
+                }
+            };
+
+
+function gameLoop()
+        {
+            // change position based on speed
+            moveSelection();
+           
+        }
+            ////////////////////////////////
 
 	 
 
@@ -297,6 +310,6 @@ controls.enableKeys = true;
 			// }
 
 		</script>
-
+<img id ="floor2" src= "models/obj/male02/floor2.png" style="position: absolute; left: 15; right: 15; top: 15; bottom: auto; "/>
 	</body>
 </html>
