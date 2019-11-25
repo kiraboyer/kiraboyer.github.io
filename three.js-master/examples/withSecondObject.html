@@ -179,19 +179,19 @@ var v= new OBJLoader( manager )
 							}, onProgress, onError );
 
 
-							var controls = new DragControls( objects2, camera, renderer.domElement );
-				controls.addEventListener( 'dragstart', dragStartCallback );
-    controls.addEventListener( 'dragend', dragendCallback );
+							var controls2 = new DragControls( objects2, camera, renderer.domElement );
+				controls2.addEventListener( 'dragstart', dragStartCallback );
+    controls2.addEventListener( 'dragend', dragendCallback );
 				
 
 				 
 
 function dragStartCallback(event) {
-   event.object.material.emissive.set( 0xaaaaaa );
+   event.object2.material.emissive.set( 0xaaaaaa );
 }
 
 function dragendCallback(event) {
-    event.object.material.emissive.set( 0x000000 );
+    event.object2.material.emissive.set( 0x000000 );
 }
 
 /////////////////////////////////////////obj3 end
