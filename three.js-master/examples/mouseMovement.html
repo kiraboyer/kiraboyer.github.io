@@ -113,21 +113,27 @@ console.log('hi');
 
 
 
-var controls = new THREE.DragControls( objects, camera, renderer.domElement );
-				controls.addEventListener( 'dragstart', function ( event ) {
-					event.l.j.emissive.set( 0xaaaaaa );
+var controls = new DragControls( objects, camera, renderer.domElement );
+				controls.addEventListener( 'dragstart', dragStartCallback );
+    controls.addEventListener( 'dragend', dragendCallback );
+				
+
 				} );
-				controls.addEventListener( 'dragend', function ( event ) {
-					event.l.j.emissive.set( 0x000000 );
-				} );
+
+function dragStartCallback(event) {
+    startColor = event.object.material.color.getHex();
+    event.object.material.color.setHex(0x000000);
+}
+
+function dragendCallback(event) {
+    event.object.material.color.setHex(startColor);
+}
 
 
 
 
 
-
-
-					} );
+				 
 
 				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
 
