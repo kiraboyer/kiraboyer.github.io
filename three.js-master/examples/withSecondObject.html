@@ -9,36 +9,38 @@
   <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
 <script>//////////
-function leftArrowPressed() {
-                var element = document.getElementById("floor2");
-                element.style.left = parseInt(element.style.left) - 5 + 'px';
-            }
+// function leftArrowPressed() {
+//                 var element = document.getElementById("floor2");
+//                 element.style.left = parseInt(element.style.left) - 5 + 'px';
+//             }
 
-            function rightArrowPressed() {
-                var element = document.getElementById("floor2");
-                element.style.left = parseInt(element.style.left) + 5 + 'px';
-            }
+//             function rightArrowPressed() {
+//                 var element = document.getElementById("floor2");
+//                 element.style.left = parseInt(element.style.left) + 5 + 'px';
+//             }
 
-function moveSelection(event) {  
- var key = event.which || event.keyCode;            
-                switch (key) {
-                    case 37:
-                        leftArrowPressed();
-                    break;
-
-                    case 39:
-                        rightArrowPressed();
-                    break;
-                }
-            };
+var moveSelection {  
+ window.addEventListener('keydown', function (e) {
+      moveSelection.key = e.keyCode;
+    })
+    window.addEventListener('keyup', function (e) {
+      moveSelection.key = false;
+    })}
 
 
 function gameLoop()
-        {
-            // change position based on speed
-            moveSelection();
-           
-        }</script>
+        {var element = document.getElementById("image1");
+             // moveSelection.clear();
+ image1.speedX = 0;
+  image1.speedY = 0;
+  if (moveSelection.key && moveSelection.key == 37) {image1.speedX = -1; }
+  if (moveSelection.key && moveSelection.key == 39) {image1.speedX = 1; }
+  if (moveSelection.key && moveSelection.key == 38) {image1.speedY = -1; }
+  if (moveSelection.key && moveSelection.key == 40) {image1.speedY = 1; }
+  image1.newPos();
+  image1.update();
+}
+</script>
 	<body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)">
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
