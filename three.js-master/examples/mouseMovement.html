@@ -92,15 +92,15 @@
 
 						materials.preload();
 console.log('hi');
-						new OBJLoader( manager )
-							.setMaterials( materials )
-							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest.obj', function ( object ) {
-// object.style.left='0px';
-////////// 				object.style.top='0px';
+						var obj = new THREE.OBJLoader( manager )
+							obj.setMaterials( materials )
+							obj.setPath( 'models/obj/male02/' )
+							obj.load( 'boxTest.obj', function ( object ) {
+
 								object.position.y = 5;
 								scene.add( object );
-
+ obj.style.left='0px';
+obj.style.top='0px';
 							}, onProgress, onError );
 
 					} );
@@ -181,16 +181,16 @@ console.log('hi');
 				}
 			}
 			function moveLeft(){
-				object.style.left=parseInt(object.style.left)-5 +'px';
+				obj.style.left=parseInt(obj.style.left)-5 +'px';
 			}
 			function moveUp(){
-				object.style.top=parseInt(object.style.top)-5 +'px';
+				obj.style.top=parseInt(obj.style.top)-5 +'px';
 			}
 			function moveRight(){
-				object.style.left=parseInt(object.style.left)+5 +'px';
+				obj.style.left=parseInt(obj.style.left)+5 +'px';
 			}
 			function moveDown(){
-				object.style.top=parseInt(object.style.top)+5 +'px';
+				obj.style.top=parseInt(obj.style.top)+5 +'px';
 			}
 
 		</script>
