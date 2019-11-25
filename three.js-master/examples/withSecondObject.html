@@ -12,7 +12,7 @@
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
 		</div>
-
+<script src="js/Detector.js"></script>
 		<script type="module">
 
 			import * as THREE from '../build/three.module.js';
@@ -34,8 +34,8 @@ import { DragControls } from './jsm/controls/DragControls2.js';
 
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
-
- 
+//for mobile
+  if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 			init();
 			animate();
 
