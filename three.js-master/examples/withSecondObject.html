@@ -19,7 +19,8 @@ function leftArrowPressed() {
                 element.style.left = parseInt(element.style.left) + 5 + 'px';
             }
 
-function moveSelection(event) {                    
+function moveSelection(event) {  
+event = event || window.event;                   
                 switch (event.keyCode) {
                     case 37:
                         leftArrowPressed();
