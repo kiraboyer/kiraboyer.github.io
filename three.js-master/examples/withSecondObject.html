@@ -8,6 +8,36 @@
 	</head>
   <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
+<script>//////////
+function leftArrowPressed() {
+                var element = document.getElementById("floor2");
+                element.style.left = parseInt(element.style.left) - 5 + 'px';
+            }
+
+            function rightArrowPressed() {
+                var element = document.getElementById("floor2");
+                element.style.left = parseInt(element.style.left) + 5 + 'px';
+            }
+
+function moveSelection(event) {                    
+                switch (event.keyCode) {
+                    case 37:
+                        leftArrowPressed();
+                    break;
+
+                    case 39:
+                        rightArrowPressed();
+                    break;
+                }
+            };
+
+
+function gameLoop()
+        {
+            // change position based on speed
+            moveSelection();
+           
+        }</script>
 	<body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)">
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
@@ -243,36 +273,36 @@ var v= new OBJLoader( manager )
 
 			}
 
-//////////
-function leftArrowPressed() {
-                var element = document.getElementById("floor2");
-                element.style.left = parseInt(element.style.left) - 5 + 'px';
-            }
+// //////////
+// function leftArrowPressed() {
+//                 var element = document.getElementById("floor2");
+//                 element.style.left = parseInt(element.style.left) - 5 + 'px';
+//             }
 
-            function rightArrowPressed() {
-                var element = document.getElementById("floor2");
-                element.style.left = parseInt(element.style.left) + 5 + 'px';
-            }
+//             function rightArrowPressed() {
+//                 var element = document.getElementById("floor2");
+//                 element.style.left = parseInt(element.style.left) + 5 + 'px';
+//             }
 
-function moveSelection(event) {                    
-                switch (event.keyCode) {
-                    case 37:
-                        leftArrowPressed();
-                    break;
+// function moveSelection(event) {                    
+//                 switch (event.keyCode) {
+//                     case 37:
+//                         leftArrowPressed();
+//                     break;
 
-                    case 39:
-                        rightArrowPressed();
-                    break;
-                }
-            };
+//                     case 39:
+//                         rightArrowPressed();
+//                     break;
+//                 }
+//             };
 
 
-function gameLoop()
-        {
-            // change position based on speed
-            moveSelection();
+// function gameLoop()
+//         {
+//             // change position based on speed
+//             moveSelection();
            
-        }
+//         }
             ////////////////////////////////
 
 	 
