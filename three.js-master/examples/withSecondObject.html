@@ -22,6 +22,7 @@
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
 import { DragControls } from './jsm/controls/DragControls2.js';
 import { DragControls3 } from './jsm/controls/DragControls3.js';
+import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			///// import { ImageUtils } from '../src/extras/ImageUtils.js';
 			import { TextureLoader } from '../src/loaders/TextureLoader.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
@@ -160,11 +161,29 @@ console.log('hi2');
 ///////////////////hi////////////////obj 2 end
 
 /////////////////////////////////////////obj3 start
-const objects2 = [];
+
 var v= new OBJLoader( manager )
 							// .setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'male02.obj', function ( object ) {
+
+controls = new OrbitControls( camera, renderer.domElement );
+				//controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
+				controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+				controls.dampingFactor = 0.05;
+				controls.screenSpacePanning = false;
+				controls.minDistance = 100;
+				controls.maxDistance = 500;
+				controls.maxPolarAngle = Math.PI / 2;
+
+
+
+
+
+
+
+
+
 
 								object.position.y = 10;
 								object.position.x = -110;
@@ -175,25 +194,12 @@ var v= new OBJLoader( manager )
 								 
 								 object.rotation.x = .2;
 								scene.add( object );
-								objects2.push( object );
+								
 
 							}, onProgress, onError );
 
 
-							var controls2 = new DragControls3( objects2, camera2, renderer.domElement2 );
-				controls2.addEventListener( 'dragstart', dragStartCallback );
-    controls2.addEventListener( 'dragend', dragendCallback );
-				
-
-				 
-
-function dragStartCallback(event) {
-   event.object2.material.emissive.set( 0xaaaaaa );
-}
-
-function dragendCallback(event) {
-    event.object2.material.emissive.set( 0x000000 );
-}
+							
 
 /////////////////////////////////////////obj3 end
 
