@@ -93,7 +93,7 @@ import { DragControls } from './jsm/controls/DragControls.js';
 
 						materials.preload();
 console.log('hi');
-						new OBJLoader( manager )
+						 var l= new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
@@ -102,6 +102,28 @@ console.log('hi');
 								scene.add( object );
 
 							}, onProgress, onError );
+
+
+
+
+
+
+
+
+
+var controls = new DragControls( objects, camera, renderer.domElement );
+				controls.addEventListener( 'dragstart', function ( event ) {
+					event.l.material.emissive.set( 0xaaaaaa );
+				} );
+				controls.addEventListener( 'dragend', function ( event ) {
+					event.l.material.emissive.set( 0x000000 );
+				} );
+
+
+
+
+
+
 
 					} );
 
