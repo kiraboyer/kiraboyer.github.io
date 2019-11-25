@@ -20,7 +20,7 @@
 			import { DDSLoader } from './jsm/loaders/DDSLoader.js';
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
-
+import { DragControls } from './jsm/controls/DragControls.js';
 			// import { ImageUtils } from '../src/extras/ImageUtils.js';
 			import { TextureLoader } from '../src/loaders/TextureLoader.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
@@ -28,7 +28,7 @@
 
 			var container;
 
-			var camera, scene, renderer, object1;
+			var camera, scene, renderer;
 
 			var mouseX = 0, mouseY = 0;
 
@@ -93,7 +93,7 @@
 
 						materials.preload();
 console.log('hi');
-						object1= new OBJLoader( manager )
+						new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
@@ -161,45 +161,8 @@ console.log('hi');
 
 
 
-			var Keys = {
-        up: false,
-        down: false,
-        left: false,
-        right: false
-    };
+	 
 
-    object1.onkeydown = function(e) {
-    var kc = e.keyCode;
-    e.preventDefault();
-
-    if      (kc === 37) Keys.left = true;  // only one key per event
-    else if (kc === 38) Keys.up = true;    // so check exclusively
-    else if (kc === 39) Keys.right = true;
-    else if (kc === 40) Keys.down = true;
-};
-
-object1.onkeyup = function(e) {
-    var kc = e.keyCode;
-    e.preventDefault();
-
-    if      (kc === 37) Keys.left = false;
-    else if (kc === 38) Keys.up = false;
-    else if (kc === 39) Keys.right = false;
-    else if (kc === 40) Keys.down = false;
-};
-if (Keys.up) {
-    dy+=3;
-}
-else if (Keys.down) {  // both up and down does not work so check excl.
-    dy-=3;
-}
-
-if (Keys.left) {
-    dx+=3;
-}
-else if (Keys.right) {
-    dx-=3;
-}
 
 
 			// function getKeyAndMove(e){				
