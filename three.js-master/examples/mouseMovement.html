@@ -121,12 +121,11 @@ var controls = new DragControls( objects, camera, renderer.domElement );
 				} );
 
 function dragStartCallback(event) {
-    startColor = event.object.material.color.getHex();
-    event.object.material.color.setHex(0x000000);
+   event.object.material.emissive.set( 0xaaaaaa );
 }
 
 function dragendCallback(event) {
-    event.object.material.color.setHex(startColor);
+    event.object.material.emissive.set( 0x000000 );
 }
 
 
