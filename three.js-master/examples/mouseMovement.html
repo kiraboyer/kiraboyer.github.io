@@ -26,11 +26,6 @@ import { DragControls } from './jsm/controls/DragControls.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
 
 
-var dragging = false; // Is the object being dragged?
-var rollover = false; // Is the mouse over the ellipse?
-
-var x, y, w, h;          // Location and size
-var offsetX, offsetY;   
 			var container;
 
 			var camera, scene, renderer;
@@ -91,13 +86,14 @@ var objects = [];
 
 ////// texture.preload();
  				
-
+const objects = [];
 						new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
 					.load( 'boxTest.mtl', function ( materials ) {
 
 						materials.preload();
 console.log('hi');
+
 						 var l= new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
@@ -105,7 +101,7 @@ console.log('hi');
 
 								object.position.y = 5;
 								scene.add( object );
-								objects.push( l );
+								objects.push( object );
 
 							}, onProgress, onError );
 
@@ -117,7 +113,7 @@ console.log('hi');
 
 
 
-var controls = new DragControls( l, camera, renderer.domElement );
+var controls = new DragControls( objects, camera, renderer.domElement );
 				controls.addEventListener( 'dragstart', function ( event ) {
 					event.l.material.emissive.set( 0xaaaaaa );
 				} );
@@ -223,42 +219,6 @@ var controls = new DragControls( l, camera, renderer.domElement );
 			// 	object.style.top=parseInt(object.style.top)+5 +'px';
 			// }
 
-function draw() {
-  background(255);
-  x = 100;
-  y = 100;
-  // Dimensions
-  w = 75;
-  h = 50;
-  
- 
-  
-  // Adjust location if being dragged
-  if (dragging) {
-    x = mouseX + offsetX;
-     
-  }
-
- 
-  rect(x, y, w, h);
-}
-
-
-			
-function mousePressed() {
-  // Did I click on the rectangle?
-  if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
-    dragging = true;
-    // If so, keep track of relative location of click to corner of rectangle
-    offsetX = x-mouseX;
-    offsetY = y-mouseY;
-  }
-}
-
-function mouseReleased() {
-  // Quit dragging
-  dragging = false;
-}
 		</script>
 
 	</body>
