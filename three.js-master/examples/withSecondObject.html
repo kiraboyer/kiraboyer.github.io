@@ -20,7 +20,7 @@ function leftArrowPressed() {
             }
 
 function moveSelection(event) {  
- var key = options.which || options.keyCode;            
+ var key = event.which || event.keyCode;            
                 switch (key) {
                     case 37:
                         leftArrowPressed();
