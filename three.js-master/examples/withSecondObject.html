@@ -169,7 +169,7 @@ var v= new OBJLoader( manager )
 
 controls = new OrbitControls( camera, renderer.domElement );
 				//controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-				controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+				controls.enableDamping = false; // an animation loop is required when either damping or auto-rotation are enabled
 				controls.dampingFactor = 0.05;
 				controls.screenSpacePanning = false;
 				controls.minDistance = 100;
