@@ -175,7 +175,8 @@ controls = new OrbitControls( camera, renderer.domElement );
 				controls.minDistance = 100;
 				controls.maxDistance = 500;
 				controls.maxPolarAngle = Math.PI / 2;
-
+controls.enableKeys = true;
+	controls.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
 
 
 
