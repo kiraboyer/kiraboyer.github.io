@@ -125,6 +125,13 @@ controls = new FlyControls( camera, renderer.domElement );
 				controls.dragToLook = false;
 				 
 
+				 controls.keys = {
+	LEFT: 37, //left arrow
+	UP: 38, // up arrow
+	RIGHT: 39, // right arrow
+	BOTTOM: 40 // down arrow
+}
+
 				window.addEventListener( 'resize', onWindowResize, false );
 
 			}
