@@ -9,48 +9,59 @@
   <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
 <script>//////////
-// function leftArrowPressed() {
-//                 var element = document.getElementById("floor2");
-//                 element.style.left = parseInt(element.style.left) - 5 + 'px';
-//             }
+(function($){$(function(){
+var box = $('.box');
+  
+  $('body').on('keyup', function(e){
+    if (e.keyCode == 38) {
+      box.css('top', box.offset().top - 1);
+    } else if(e.keyCode == 40){
+      box.css('top', box.offset().top + 1);
+    } else if (e.keyCode == 37){ //left
+      box.css('left', box.offset().left - 1);
+    } else if (e.keyCode == 39){ //right
+      box.css('left', box.offset().left + 1);
+    }
+  });
+  
+})})(jQuery);
+// var p1 = document.getElementById('floor2'),
+// keyCodes = { left: 37,   right: 39 },
+// keys = [];
 
-//             function rightArrowPressed() {
-//                 var element = document.getElementById("floor2");
-//                 element.style.left = parseInt(element.style.left) + 5 + 'px';
-//             }
-var p1 = document.getElementById('floor2'),
-keyCodes = { left: 37,   right: 39 },
-keys = [];
+// window.addEventListener('keydown', function (evt) {
+//     keys[evt.keyCode] = true;
+// });
 
-window.addEventListener('keydown', function (evt) {
-    keys[evt.keyCode] = true;
-});
+// window.addEventListener('keyup', function (evt) {
+//     keys[evt.keyCode] = false;
+// });
 
-window.addEventListener('keyup', function (evt) {
-    keys[evt.keyCode] = false;
-});
-
-setInterval(function () {
+// setInterval(function () {
     
-    // get position of div
-    var x = parseInt(p1.style.left, 10),
+//     // get position of div
+//     var x = parseInt(p1.style.left, 10),
         
     
-    // update position
-    // left/right
-    if (keys[keyCodes.left]) {
-        x -= 1;
-    } else if (keys[keyCodes.right]) {
-        x += 1;
-    }
+//     // update position
+//     // left/right
+//     if (keys[keyCodes.left]) {
+//         x -= 1;
+//     } else if (keys[keyCodes.right]) {
+//         x += 1;
+//     }
     
     
-    // set div position
-    p1.style.left = x + 'px';
+//     // set div position
+//     p1.style.left = x + 'px';
     
     
-}, 1/30);
-</script>
+// }, 1/30);
+</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<style>.box {
+ background-image: url('models/obj/male02/floor2.png');
+}</style>
 	<body  >
 		<div id="info">
 		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - OBJLoader + MTLLoader
@@ -353,6 +364,7 @@ var v= new OBJLoader( manager )
 			// }
 
 		</script>
-<img id ="floor2" src= "models/obj/male02/floor2.png" style="position: absolute; left: 15; right: 15; top: 15; bottom: auto; "/>
+<!-- <img id ="floor2" src= "models/obj/male02/floor2.png" style="position: absolute; left: 15; right: 15; top: 15; bottom: auto; "/> -->
+<div class="box"></div>
 	</body>
 </html>
