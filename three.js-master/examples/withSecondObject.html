@@ -159,7 +159,7 @@ console.log('hi2');
 ///////////////////hi////////////////obj 2 end
 
 /////////////////////////////////////////obj3 start
-const objects = [];
+const objects2 = [];
 var v= new OBJLoader( manager )
 							// .setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
@@ -174,12 +174,12 @@ var v= new OBJLoader( manager )
 								 
 								 object.rotation.x = .2;
 								scene.add( object );
-								objects.push( object );
+								objects2.push( object );
 
 							}, onProgress, onError );
 
 
-							var controls = new DragControls( objects, camera, renderer.domElement );
+							var controls = new DragControls( objects2, camera, renderer.domElement );
 				controls.addEventListener( 'dragstart', dragStartCallback );
     controls.addEventListener( 'dragend', dragendCallback );
 				
