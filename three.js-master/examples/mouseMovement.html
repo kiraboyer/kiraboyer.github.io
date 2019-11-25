@@ -28,7 +28,7 @@
 
 			var container;
 
-			var camera, scene, renderer;
+			var camera, scene, renderer, object1;
 
 			var mouseX = 0, mouseY = 0;
 
@@ -93,7 +93,7 @@
 
 						materials.preload();
 console.log('hi');
-						new OBJLoader( manager )
+						object1= new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest.obj', function ( object ) {
@@ -178,7 +178,7 @@ console.log('hi');
     else if (kc === 40) Keys.down = true;
 };
 
-object.onkeyup = function(e) {
+object1.onkeyup = function(e) {
     var kc = e.keyCode;
     e.preventDefault();
 
