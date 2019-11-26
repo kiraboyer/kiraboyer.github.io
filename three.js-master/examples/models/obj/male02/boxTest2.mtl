@@ -1,36 +1,4 @@
-newmtl Alien:base_objSG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd file1-Alien_base_obj.png
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 4.31
-newmtl Alien:base_objSG2
-illum 4
-Kd 0.80 0.00 0.00
-Ka 1.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Alien:high_poly_objSG
-illum 4
-Kd 0.80 0.00 0.00
-Ka 1.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Alien:teeth_shape04_objSG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.40 0.40 0.40
-Tf 0.00 0.00 0.00
-Ni 1.00
-Ks 0.85 0.85 0.85
-Ns 0.06
+
 newmtl initialShadingGroup
 illum 4
 Kd 0.00 0.00 0.00
