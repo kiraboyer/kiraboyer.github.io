@@ -106,37 +106,37 @@ console.log('hi');
 							.load( 'boxTest.obj', function ( object ) {
 
 								object.position.y = 10;
-								// scene.add( object );
-								// objects.push( object );
+								scene.add( object );
+								objects.push( object );
 
-							
-var k = new OBJLoader(  )
-k.setPath( 'models/obj/male02/' )
-							k.load( 'male02.obj', function (p) {
+							}, onProgress, onError );
+var k= new OBJLoader( manager )
+.setPath( 'models/obj/male02/' )
+							.load( 'male02.obj', function ( object ) {
 
 
 
-								p.position.y = 10;
-								p.position.x = -70;
-								p.position.z = 50;
-								 p.scale.x = .5;
-								  p.scale.y = .5;
-								   p.scale.z = .5;
+								object.position.y = 10;
+								object.position.x = -110;
+								object.position.z = 50;
+								 object.scale.x = .5;
+								  object.scale.y = .5;
+								   object.scale.z = .5;
 								 
-								 p.rotation.x = .2;
-								scene.add( object, p );
-								objects.push( object, p );
+								 object.rotation.x = .2;
+								scene.add( object );
+								objects.push( object );
 								
 
-							})
+							}
 
 
-})
 
 
-//////
 
-var controls = new DragControls( objects, camera, render.domElement );
+
+
+var controls = new DragControls( objects, camera, renderer.domElement );
 				controls.addEventListener( 'dragstart', dragStartCallback );
     controls.addEventListener( 'dragend', dragendCallback );
 				
@@ -182,45 +182,45 @@ console.log('hi2');
 ///////////////////hi////////////////obj 2 end
 
 /////////////////////////////////////////obj3 start
-// const objects2 = [];
-// var v= new OBJLoader( manager )
-// 							// .setMaterials( materials )
-// 							.setPath( 'models/obj/male02/' )
-// 							.load( 'male02.obj', function ( object ) {
+const objects2 = [];
+var v= new OBJLoader( manager )
+							// .setMaterials( materials )
+							.setPath( 'models/obj/male02/' )
+							.load( 'male02.obj', function ( object ) {
 
 
 
-// 								object.position.y = 10;
-// 								object.position.x = -110;
-// 								object.position.z = 50;
-// 								 object.scale.x = .5;
-// 								  object.scale.y = .5;
-// 								   object.scale.z = .5;
+								object.position.y = 10;
+								object.position.x = -110;
+								object.position.z = 50;
+								 object.scale.x = .5;
+								  object.scale.y = .5;
+								   object.scale.z = .5;
 								 
-// 								 object.rotation.x = .2;
-// 								scene.add( object );
-// 								objects2.push( object );
+								 object.rotation.x = .2;
+								scene.add( object );
+								objects2.push( object );
 								
 
-// 							}, onProgress, onError );
+							}, onProgress, onError );
 
 
 							
 
-// var controls = new DragControls( objects2, camera, renderer.domElement );
-// 				controls.addEventListener( 'dragstart', dragStartCallback );
-//     controls.addEventListener( 'dragend', dragendCallback );
+var controls = new DragControls( objects2, camera, renderer.domElement );
+				controls.addEventListener( 'dragstart', dragStartCallback );
+    controls.addEventListener( 'dragend', dragendCallback );
 				
 
 				
 
-// function dragStartCallback(event) {
-//    event.object.material.emissive.set( 0xaaaaaa );
-// }
+function dragStartCallback(event) {
+   event.object.material.emissive.set( 0xaaaaaa );
+}
 
-// function dragendCallback(event) {
-//     event.object.material.emissive.set( 0x000000 );
-// }
+function dragendCallback(event) {
+    event.object.material.emissive.set( 0x000000 );
+}
 /////////////////////////////////////////obj3 end
 
 				 
