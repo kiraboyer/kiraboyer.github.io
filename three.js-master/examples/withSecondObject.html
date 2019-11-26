@@ -142,7 +142,7 @@ function dragendCallback(event) {
 
 						var j = new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
-					.load( 'theater.mtl', function ( materials ) {
+					.load( 'theater2.mtl', function ( materials ) {
 
 						materials.preload();
 console.log('hi2');
@@ -150,7 +150,7 @@ console.log('hi2');
 						 var l= new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
-							.load( 'theater.obj', function ( object ) {
+							.load( 'theater2.obj', function ( object ) {
 
 								object.position.y = 20;
 								object.position.x = -150;
