@@ -20,6 +20,7 @@
 			import { DDSLoader } from './jsm/loaders/DDSLoader.js';
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+			import { FBXLoader } from './jsm/loaders/FBXLoader.js';
 import { DragControls } from './jsm/controls/DragControls2.js';
 // import { DragControls3 } from './jsm/controls/DragControls3.js';
 import { OrbitControls } from './jsm/controls/OrbitControls.js';
@@ -169,10 +170,10 @@ console.log('hi2');
 
 /////////////////////////////////////////obj3 start
 
-var v= new OBJLoader( manager )
+var v= new FBXLoader( manager )
 							// .setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
-							.load( 'male02.obj', function ( object ) {
+							.load( 'alienStanding.fbx', function ( object ) {
 
 
 
