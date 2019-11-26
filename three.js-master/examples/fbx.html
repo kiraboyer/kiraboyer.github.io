@@ -206,8 +206,7 @@ const objs = [];
     });
 
     // animation rendering                                                      
-    const clock = new THREE.Clock();
-    (  
+       
 				 
 
 				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
@@ -245,7 +244,8 @@ const objs = [];
 			// }
 
 			//
-
+const clock = new THREE.Clock();
+    (
 			function animate() {
 objs.forEach(({mixer}) => {mixer.update(clock.getDelta());});
         renderer.render(scene, camera);
