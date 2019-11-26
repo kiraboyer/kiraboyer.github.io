@@ -199,7 +199,7 @@ console.log('hi2');
 /////
 
 			var mixers = [];
-	var loader = new THREE.FBXLoader();
+	var loader = new FBXLoader();
 				loader.load( 'models/obj/male02/alienStanding.fbx', function ( object ) {
 					object.mixer = new THREE.AnimationMixer( object );
 					mixers.push( object.mixer );
