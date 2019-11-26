@@ -31,8 +31,11 @@
 			// import { TextureLoader } from '../src/loaders/TextureLoader.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
 
+//FBX clock at top left corner of screen, tracks fps of animation
 	var clock = new THREE.Clock();
+//FBX array variable
 		var mixers = [];
+//defining variables used in code, called again later.
 			var container, stats, controls;
 
 			var camera, scene, renderer;
@@ -41,8 +44,10 @@
 
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
-//for mobile
+
+//for mobile detection
   if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+  //init and animation functions being called
 			init();
 			animate();
 
@@ -55,7 +60,7 @@
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.z = 250;
 
-				////jjj//ddddddddd//bbbbnnnnnnnn// scene
+				//scene
 
 				scene = new THREE.Scene();
 
