@@ -53,17 +53,17 @@
 
 
 			function init() {
-
+//scene in div container
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
-
+//camera viewpoint
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.z = 250;
 
-				//scene
+//scene
 
 				scene = new THREE.Scene();
-
+//lighting
 				var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
 				scene.add( ambientLight );
 
@@ -71,7 +71,7 @@
 				camera.add( pointLight );
 				scene.add( camera );
 
-				// model
+// model download percentage console log tracking
 
 				var onProgress = function ( xhr ) {
 
@@ -84,10 +84,10 @@
 
 				};
 
-				var onError = function () { };
+				// var onError = function () { };
 
-				var manager = new THREE.LoadingManager();
-				manager.addHandler( /\.dds$/i, new DDSLoader() );
+				// var manager = new THREE.LoadingManager();
+				// manager.addHandler( /\.dds$/i, new DDSLoader() );
 
 // var textureLoader = new THREE.MTLLoader();
 // var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
