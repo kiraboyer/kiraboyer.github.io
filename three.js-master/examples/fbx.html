@@ -9,10 +9,10 @@
 	</head>
   <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
-
+<script src="./js/libs/stats.min.js"></script>
 	<body >
 		 
-<script src="js/Detector.js"></script>
+<script src="./js/Detector.js"></script>
 		<script type="module">
 
 			import * as THREE from '../build/three.module.js';
@@ -28,8 +28,8 @@ import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			import { TextureLoader } from '../src/loaders/TextureLoader.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
 
-
-			var container;
+	var clock = new THREE.Clock();
+			var container, stats, controls;
 
 			var camera, scene, renderer;
 
@@ -194,24 +194,52 @@ console.log('hi2');
 							
 
 /////////////////////////////////////////obj3 end
-const objs = [];
-    const loader = new THREE.FBXLoader();
-    loader.load("models/obj/male02/alienStanding.fbx", model => {
-        // model is a THREE.Group (THREE.Object3D)                              
-        const mixer = new THREE.AnimationMixer(model);
-        // animations is a list of THREE.AnimationClip                          
-        mixer.clipAction(model.animations[0]).play();
-        scene.add(model);
-        objs.push({model, mixer});
-    });
+// 
 
-    // animation rendering                                                      
-       
+/////
+
+			var mixers = [];
+	var loader = new THREE.FBXLoader();
+				loader.load( 'models/obj/male02/alienStanding.fbx', function ( object ) {
+					object.mixer = new THREE.AnimationMixer( object );
+					mixers.push( object.mixer );
+
+					object.position.y = 10;
+ 								object.position.x = -110;
+ 								object.position.z = 50;
+ 								 object.scale.x = .5;
+ 								  object.scale.y = .5;
+ 								   object.scale.z = .5;
+								 
+ 								 object.rotation.x = .2;
+
+					var action = object.mixer.clipAction( object.animations[ 0 ] );
+					action.play();
+
+					object.traverse( function ( child ) {
+
+						if ( child.isMesh ) {
+
+							child.castShadow = true;
+							child.receiveShadow = true;
+
+						}
+						/* max to webgl 회전 보정 */
+						if ( child.isGroup ) {
+							child.rotation.x = Math.PI;
+							child.rotation.y = Math.PI;
+							child.rotation.z = Math.PI;
+						}
+
+					} );
+					scene.add( object );
+
+				} );
 				 
 
 				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
 
-				renderer = new THREE.WebGLRenderer()
+				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
@@ -221,7 +249,8 @@ const objs = [];
 				 
 
 				window.addEventListener( 'resize', onWindowResize, false );
-
+	stats = new Stats();
+				container.appendChild( stats.dom );
 			}
 
 			function onWindowResize() {
@@ -244,19 +273,31 @@ const objs = [];
 			// }
 
 			//
-const clock = new THREE.Clock();
-    (
+
 			function animate() {
-objs.forEach(({mixer}) => {mixer.update(clock.getDelta());});
-        renderer.render(scene, camera);
-    
-				requestAnimationFrame( animate );
+
+				 
 				render();
 
+
+
+				requestAnimationFrame( animate );
+
+				if ( mixers.length > 0 ) {
+
+					for ( var i = 0; i < mixers.length; i ++ ) {
+
+						mixers[ i ].update( clock.getDelta() );
+
+					}
+
+				}
+
+				renderer.render( scene, camera );
+
+				stats.update();
+
 			}
-    return objs;
-}
-const objs = main();
 
 			function render() {
 
