@@ -84,10 +84,10 @@
 
 				};
 
-				// var onError = function () { };
+				 var onError = function () { };
 
-				// var manager = new THREE.LoadingManager();
-				// manager.addHandler( /\.dds$/i, new DDSLoader() );
+				 var manager = new THREE.LoadingManager();
+				 manager.addHandler( /\.dds$/i, new DDSLoader() );
 
  
  //constant reference to objects array of the draggable backdrop				
@@ -149,12 +149,12 @@ function dragendCallback(event) {
 
 ////////////////////////////object 2
 
-						var j = new MTLLoader( manager )
-					.setPath( 'models/obj/male02/' )
-					.load( 'theaterWall.mtl', function ( materials ) {
+		var j = new MTLLoader( manager )
+				.setPath( 'models/obj/male02/' )
+				.load( 'theaterWall.mtl', function ( materials ) {
 
-						materials.preload();
-console.log('hi2');
+					materials.preload();
+
 
 						 var l= new OBJLoader( manager )
 							.setMaterials( materials )
@@ -163,49 +163,24 @@ console.log('hi2');
 
 								object.position.y = 20;
 								object.position.x = -150;
-								 object.scale.x = 1.2;
-								  object.scale.y = 1.2;
-								   object.scale.z = 1.1;
-								 
-								 object.rotation.x = .2;
+								object.scale.x = 1.2;
+							    object.scale.y = 1.2;
+								object.scale.z = 1.1;
+								object.rotation.x = .2;
 								scene.add( object );
 								
 
 							}, onProgress, onError );
 
-});
+		});
 
-///////////////////hi////////////////obj 2 end
-
-/////////////////////////////////////////obj3 start
-
-// var v= new FBXLoader( manager )
-// 							// .setMaterials( materials )
-// 							.setPath( 'models/obj/male02/' )
-// 							.load( 'alienStanding.fbx', function ( object ) {
-
-
-
-// 								object.position.y = 10;
-// 								object.position.x = -110;
-// 								object.position.z = 50;
-// 								 object.scale.x = .5;
-// 								  object.scale.y = .5;
-// 								   object.scale.z = .5;
-								 
-// 								 object.rotation.x = .2;
-// 								scene.add( object );
-								
-
-// 							}, onProgress, onError );
 
 
 							
 
-/////////////////////////////////////////obj3 end
-// 
+/////////////////////////////////////////obj2 end
 
-/////
+
 
 		
 	var loader = new FBXLoader();
@@ -213,17 +188,17 @@ console.log('hi2');
 					object.mixer = new THREE.AnimationMixer( object );
 					mixers.push( object.mixer );
 
-					object.position.y = 0;
- 								object.position.x = -50;
- 								object.position.z = 50;
- 								 object.scale.x = .5;
- 								  object.scale.y = .5;
- 								   object.scale.z = .5;
-								 
- 								 object.rotation.x = .2;
+							object.position.y = 0;
+ 							object.position.x = -50;
+ 							object.position.z = 50;
+ 							object.scale.x = .5;
+ 							object.scale.y = .5;
+ 							object.scale.z = .5;
+							object.rotation.x = .2;
 
 					var action = object.mixer.clipAction( object.animations[ 0 ] );
-					action.play();
+						
+						action.play();
 
 					object.traverse( function ( child ) {
 
@@ -241,27 +216,26 @@ console.log('hi2');
 						}
 
 					} );
-					scene.add( object );
+						scene.add( object );
 
 				} );
 				 
 
-				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
+				//rendering based on device's window size
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
 
-				////////// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
-				 
 
 				window.addEventListener( 'resize', onWindowResize, false );
-	stats = new Stats();
+				//for FBX
+				stats = new Stats();
 				container.appendChild( stats.dom );
 			}
 
+//container size
 			function onWindowResize() {
 
 				windowHalfX = window.innerWidth - 2;
@@ -274,22 +248,14 @@ console.log('hi2');
 
 			}
 
-			// function onDocumentMouseMove( event ) {
-
-			// 	mouseX = ( event.clientX - windowHalfX ) / 2;
-			// 	mouseY = ( event.clientY - windowHalfY ) / 2;
-
-			// }
-
-			//
+			
 
 			function animate() {
-
-				 
+//call render function		 
 				render();
 
 
-
+//for FBX animation and FPS clock
 				requestAnimationFrame( animate );
 
 				if ( mixers.length > 0 ) {
@@ -301,15 +267,15 @@ console.log('hi2');
 					}
 
 				}
-
+//render scene and camera
 				renderer.render( scene, camera );
-
+//for FBX
 				stats.update();
 
 			}
-
+//render function
 			function render() {
-
+//camera position in scene
 				camera.position.x += ( mouseX - camera.position.x ) * .05;
 				camera.position.y += ( - mouseY - camera.position.y ) * .05;
 
