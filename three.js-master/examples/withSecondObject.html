@@ -92,7 +92,7 @@ import { OrbitControls } from './jsm/controls/OrbitControls.js';
 const objects = [];
 						var j = new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
-					.load( 'boxTest2.mtl', function ( materials ) {
+					.load( 'boxTest.mtl', function ( materials ) {
 
 						materials.preload();
 console.log('hi');
@@ -100,7 +100,7 @@ console.log('hi');
 						 var l= new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest2.obj', function ( object ) {
+							.load( 'boxTest.obj', function ( object ) {
 
 								object.position.y = 10;
 								scene.add( object );
@@ -251,73 +251,9 @@ var v= new OBJLoader( manager )
 
 			}
 
-// //////////
-// function leftArrowPressed() {
-//                 var element = document.getElementById("floor2");
-//                 element.style.left = parseInt(element.style.left) - 5 + 'px';
-//             }
 
-//             function rightArrowPressed() {
-//                 var element = document.getElementById("floor2");
-//                 element.style.left = parseInt(element.style.left) + 5 + 'px';
-//             }
-
-// function moveSelection(event) {                    
-//                 switch (event.keyCode) {
-//                     case 37:
-//                         leftArrowPressed();
-//                     break;
-
-//                     case 39:
-//                         rightArrowPressed();
-//                     break;
-//                 }
-//             };
-
-
-// function gameLoop()
-//         {
-//             // change position based on speed
-//             moveSelection();
-           
-//         }
-            ////////////////////////////////
-
-	 
-
-
-
-			// function getKeyAndMove(e){				
-			// 	var key_code=e.which||e.keyCode;
-			// 	switch(key_code){
-			// 		case 37: //left arrow key
-			// 			moveLeft();
-			// 			break;
-			// 		case 38: //Up arrow key
-			// 			moveUp();
-			// 			break;
-			// 		case 39: //right arrow key
-			// 			moveRight();
-			// 			break;
-			// 		case 40: //down arrow key
-			// 			moveDown();
-			// 			break;						
-			// 	}
-			// }
-			// function moveLeft(){
-			// 	object.style.left=parseInt(object.style.left)-5 +'px';
-			// }
-			// function moveUp(){
-			// 	object.style.top=parseInt(object.style.top)-5 +'px';
-			// }
-			// function moveRight(){
-			// 	object.style.left=parseInt(object.style.left)+5 +'px';
-			// }
-			// function moveDown(){
-			// 	object.style.top=parseInt(object.style.top)+5 +'px';
-			// }
 
 		</script>
-<img id ="floor2" src= "models/obj/male02/floor2.png" style="position: absolute; left: 15; right: 15; top: 15; bottom: auto; "/>
+ 
 	</body>
 </html>
