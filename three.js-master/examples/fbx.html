@@ -2,16 +2,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - OBJLoader + MTLLoader</title>
+		<title>MonsterBox</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
+		//attributes: fbx code= https://codesandbox.io/s/y2kv8yyw5j
+					  DragControls.js reference = https://threejs.org/docs/#examples/zh/controls/DragControls
+					  DragControls.js reference = https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_drag.html
+		//
 	</head>
-  <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
+//for FBX lib reference
 <script src="./js/libs/stats.min.js"></script>
 	<body >
-		 
+//for phone compatibility 
 <script src="./js/Detector.js"></script>
 		<script type="module">
 
@@ -21,11 +25,10 @@
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
 			import { FBXLoader } from './jsm/loaders/FBXLoader.js';
-import { DragControls } from './jsm/controls/DragControls2.js';
-// import { DragControls3 } from './jsm/controls/DragControls3.js';
-import { OrbitControls } from './jsm/controls/OrbitControls.js';
+			import { DragControls } from './jsm/controls/DragControls2.js';
+			// import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			///// import { ImageUtils } from '../src/extras/ImageUtils.js';
-			import { TextureLoader } from '../src/loaders/TextureLoader.js';
+			// import { TextureLoader } from '../src/loaders/TextureLoader.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
 
 	var clock = new THREE.Clock();
