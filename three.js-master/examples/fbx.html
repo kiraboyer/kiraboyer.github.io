@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>MonsterBox</title>
+		<title>Spin around me like a dream we played out on this movie screen.</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
@@ -26,10 +26,7 @@
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
 			import { FBXLoader } from './jsm/loaders/FBXLoader.js';
 			import { DragControls } from './jsm/controls/DragControls2.js';
-			// import { OrbitControls } from './jsm/controls/OrbitControls.js';
-			///// import { ImageUtils } from '../src/extras/ImageUtils.js';
-			// import { TextureLoader } from '../src/loaders/TextureLoader.js';
-			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
+			 
 
 //FBX clock at top left corner of screen, tracks fps of animation
 	var clock = new THREE.Clock();
@@ -207,11 +204,11 @@ function dragendCallback(event) {
  							object.scale.y = .4;
  							object.scale.z = .4;
 							object.rotation.x = .2;
-
+//create variable "action". clipAction method using object to return AnimationClip
 					var action = object.mixer.clipAction( object.animations[ 0 ] );
-						
+//play animation						
 						action.play();
-
+//????
 					object.traverse( function ( child ) {
 
 						if ( child.isMesh ) {
@@ -228,12 +225,13 @@ function dragendCallback(event) {
 						}
 
 					} );
+//add object to scene					
 						scene.add( object );
 
 				} );
 				 
 
-				//rendering based on device's window size
+//rendering based on device's window size
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -242,7 +240,7 @@ function dragendCallback(event) {
 
 
 				window.addEventListener( 'resize', onWindowResize, false );
-				//for FBX
+//stats js code for FBX. monitors fps
 				stats = new Stats();
 				container.appendChild( stats.dom );
 			}
@@ -269,10 +267,12 @@ function dragendCallback(event) {
 
 //for FBX animation and FPS clock
 				requestAnimationFrame( animate );
-
+//conditional statement. if mixers animation length is greater than 0
 				if ( mixers.length > 0 ) {
-
+//for loop. variable i is equal to 0. i is less than length of mixers animation
+//i + 1
 					for ( var i = 0; i < mixers.length; i ++ ) {
+//mixers with i variable updates clock tracking fps
 
 						mixers[ i ].update( clock.getDelta() );
 
@@ -281,7 +281,7 @@ function dragendCallback(event) {
 				}
 //render scene and camera
 				renderer.render( scene, camera );
-//for FBX
+//update stats of fps for FBX
 				stats.update();
 
 			}
