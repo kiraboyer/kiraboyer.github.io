@@ -209,22 +209,23 @@ function dragendCallback(event) {
 //play animation						
 						action.play();
 //????
-					object.traverse( function ( child ) {
+					// object.traverse( function ( child ) {
 
-						if ( child.isMesh ) {
+					// 	if ( child.isMesh ) {
 
-							child.castShadow = true;
-							child.receiveShadow = true;
+					// 		child.castShadow = true;
+					// 		child.receiveShadow = true;
 
-						}
-						/* max to webgl 회전 보정 */
-						if ( child.isGroup ) {
-							child.rotation.x = Math.PI;
-							child.rotation.y = Math.PI;
-							child.rotation.z = Math.PI;
-						}
+					// 	}
+					// 	 max to webgl 회전 보정 
+					// 	if ( child.isGroup ) {
+					// 		child.rotation.x = Math.PI;
+					// 		child.rotation.y = Math.PI;
+					// 		child.rotation.z = Math.PI;
+					// 	}
 
-					} );
+					// } 
+					// );
 //add object to scene					
 						scene.add( object );
 
