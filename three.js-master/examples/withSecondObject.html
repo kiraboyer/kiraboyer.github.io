@@ -109,15 +109,15 @@ console.log('hi');
 								scene.add( object );
 								// objects.push( object );
 
-							}, onProgress, onError );
-							var k = new OBJLoader( manager )
+							// }, onProgress, onError );
+							// var k = new OBJLoader( manager )
 .setPath( 'models/obj/male02/' )
 							.load( 'male02.obj', function ( object ) {
 
 
 
-								object.position.y = 10;
-								object.position.x = -70;
+								object.position.y = 4;
+								object.position.x = -40;
 								object.position.z = 50;
 								 object.scale.x = .5;
 								  object.scale.y = .5;
@@ -129,6 +129,7 @@ console.log('hi');
 								
 
 							})
+						})
 
 
 
