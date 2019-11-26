@@ -110,7 +110,7 @@ const objects = [];
 							.load( 'boxTest2.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 10;
-								object.position.z = -5;
+								object.position.z = -15;
 								object.rotation.x = .2;
 //add obj to the scene
 								scene.add( object );
@@ -190,12 +190,12 @@ function dragendCallback(event) {
 					object.mixer = new THREE.AnimationMixer( object );
 					mixers.push( object.mixer );
 
-							object.position.y = -40;
+							object.position.y = -36;
  							object.position.x = -20;
  							object.position.z = 50;
- 							object.scale.x = .3;
- 							object.scale.y = .3;
- 							object.scale.z = .3;
+ 							object.scale.x = .4;
+ 							object.scale.y = .4;
+ 							object.scale.z = .4;
 							object.rotation.x = .2;
 
 					var action = object.mixer.clipAction( object.animations[ 0 ] );
