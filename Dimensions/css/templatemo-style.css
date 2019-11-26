@@ -140,7 +140,7 @@ button:focus { outline: none; }
 }
 
 .cd-slider-nav .nav-item.selected .nav-link,
-.cd-slider-nav .nav-link:hover,
+.cd-slider-nav .nav-link,
 .cd-slider-nav .nav-link:focus {
 	color: #d1d1d1;
 }
