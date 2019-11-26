@@ -89,31 +89,33 @@
 				// var manager = new THREE.LoadingManager();
 				// manager.addHandler( /\.dds$/i, new DDSLoader() );
 
-// var textureLoader = new THREE.MTLLoader();
-// var texture1 = textureLoader.load( "models/obj/male02/boxTest.mtl");
-// texture1.wrapS = THREE.RepeatWrapping;
-// console.log('hi');
-// texture1.wrapT = THREE.RepeatWrapping;
-// texture1.repeat.set(2,2);
-
-////// texture.preload();
- 				
+ 
+ //constant reference to objects array of the draggable backdrop				
 const objects = [];
-						var j = new MTLLoader( manager )
+
+//variable j is the MTLLoader.js
+				var j = new MTLLoader( manager )
+//MTLLoader path to load mtl file
 					.setPath( 'models/obj/male02/' )
 					.load( 'boxTest2.mtl', function ( materials ) {
-
+//preload mtl file
 						materials.preload();
-console.log('hi');
 
-						 var l= new OBJLoader( manager )
+//variable l -s the OBJLoader.js
+				var l= new OBJLoader( manager )
+//give the obj it's mtl
 							.setMaterials( materials )
+//path to obj
 							.setPath( 'models/obj/male02/' )
 							.load( 'boxTest2.obj', function ( object ) {
-
+//obj position in scene
 								object.position.y = 10;
+//add obj to the scene
 								scene.add( object );
+
+//push the array "objects", adding "object" to the array
 								objects.push( object );
+//console log information
 
 							}, onProgress, onError );
 
