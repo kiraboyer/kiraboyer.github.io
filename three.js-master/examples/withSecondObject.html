@@ -106,26 +106,26 @@ console.log('hi');
 							.load( 'boxTest.obj', function ( object ) {
 
 								object.position.y = 10;
-								scene.add( object );
+								// scene.add( object );
 								// objects.push( object );
 
 							
-var k = new OBJLoader( manager )
-.setPath( 'models/obj/male02/' )
-							.load( 'male02.obj', function ( object ) {
+var k = new OBJLoader(  )
+k.setPath( 'models/obj/male02/' )
+							k.load( 'male02.obj', function (p) {
 
 
 
-								object.position.y = 10;
-								object.position.x = -70;
-								object.position.z = 50;
-								 object.scale.x = .5;
-								  object.scale.y = .5;
-								   object.scale.z = .5;
+								p.position.y = 10;
+								p.position.x = -70;
+								p.position.z = 50;
+								 p.scale.x = .5;
+								  p.scale.y = .5;
+								   p.scale.z = .5;
 								 
-								 object.rotation.x = .2;
-								scene.add( object );
-								objects.push( object );
+								 p.rotation.x = .2;
+								scene.add( object, p );
+								objects.push( object, p );
 								
 
 							})
@@ -136,7 +136,8 @@ var k = new OBJLoader( manager )
 
 
 
-var controls = new DragControls( objects, camera, renderer.domElement );
+var controls = new DragControls( objects, camera, rendere
+	r.domElement );
 				controls.addEventListener( 'dragstart', dragStartCallback );
     controls.addEventListener( 'dragend', dragendCallback );
 				
