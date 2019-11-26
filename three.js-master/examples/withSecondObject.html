@@ -25,7 +25,6 @@
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
 import { DragControls } from './jsm/controls/DragControls2.js';
-// import { DragControls3 } from './jsm/controls/DragControls3.js';
 import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			///// import { ImageUtils } from '../src/extras/ImageUtils.js';
 			import { TextureLoader } from '../src/loaders/TextureLoader.js';
@@ -135,7 +134,7 @@ function dragendCallback(event) {
 }
 
 ////////////////////////////object 2
-function Test(){
+
 						var j = new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
 					.load( 'theater.mtl', function ( materials ) {
@@ -161,21 +160,7 @@ console.log('hi2');
 							}, onProgress, onError );
 
 });
-}
 
-
-
-//
-function myFunction() {
-  var x = Test();
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-//
 ///////////////////hi////////////////obj 2 end
 
 /////////////////////////////////////////obj3 start
@@ -328,7 +313,7 @@ var v= new OBJLoader( manager )
 			// }
 
 		</script>
- <button onclick="myFunction()">Try it</button>
+ 
 
 	</body>
 </html>
