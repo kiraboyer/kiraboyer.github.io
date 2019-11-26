@@ -170,31 +170,44 @@ console.log('hi2');
 
 /////////////////////////////////////////obj3 start
 
-var v= new FBXLoader( manager )
-							// .setMaterials( materials )
-							.setPath( 'models/obj/male02/' )
-							.load( 'alienStanding.fbx', function ( object ) {
+// var v= new FBXLoader( manager )
+// 							// .setMaterials( materials )
+// 							.setPath( 'models/obj/male02/' )
+// 							.load( 'alienStanding.fbx', function ( object ) {
 
 
 
-								object.position.y = 10;
-								object.position.x = -110;
-								object.position.z = 50;
-								 object.scale.x = .5;
-								  object.scale.y = .5;
-								   object.scale.z = .5;
+// 								object.position.y = 10;
+// 								object.position.x = -110;
+// 								object.position.z = 50;
+// 								 object.scale.x = .5;
+// 								  object.scale.y = .5;
+// 								   object.scale.z = .5;
 								 
-								 object.rotation.x = .2;
-								scene.add( object );
+// 								 object.rotation.x = .2;
+// 								scene.add( object );
 								
 
-							}, onProgress, onError );
+// 							}, onProgress, onError );
 
 
 							
 
 /////////////////////////////////////////obj3 end
+const objs = [];
+    const loader = new THREE.FBXLoader();
+    loader.load("models/obj/male02/alienStanding.fbx", model => {
+        // model is a THREE.Group (THREE.Object3D)                              
+        const mixer = new THREE.AnimationMixer(model);
+        // animations is a list of THREE.AnimationClip                          
+        mixer.clipAction(model.animations[0]).play();
+        scene.add(model);
+        objs.push({model, mixer});
+    });
 
+    // animation rendering                                                      
+    const clock = new THREE.Clock();
+    (  
 				 
 
 				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
@@ -234,11 +247,16 @@ var v= new FBXLoader( manager )
 			//
 
 			function animate() {
-
+objs.forEach(({mixer}) => {mixer.update(clock.getDelta());});
+        renderer.render(scene, camera);
+    
 				requestAnimationFrame( animate );
 				render();
 
-			}
+			}();
+    return objs;
+}
+const objs = main();
 
 			function render() {
 
