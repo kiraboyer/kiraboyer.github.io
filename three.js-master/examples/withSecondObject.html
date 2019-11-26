@@ -25,7 +25,7 @@
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
 import { DragControls } from './jsm/controls/DragControls2.js';
-// import { DragControls } from './jsm/controls/DragControls.js';
+// import { DragControls3 } from './jsm/controls/DragControls3.js';
 import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			///// import { ImageUtils } from '../src/extras/ImageUtils.js';
 			import { TextureLoader } from '../src/loaders/TextureLoader.js';
@@ -110,25 +110,8 @@ console.log('hi');
 								objects.push( object );
 
 							}, onProgress, onError );
-var k= new OBJLoader( manager )
-.setPath( 'models/obj/male02/' )
-							.load( 'male02.obj', function ( object ) {
 
 
-
-								object.position.y = 10;
-								object.position.x = -110;
-								object.position.z = 50;
-								 object.scale.x = .5;
-								  object.scale.y = .5;
-								   object.scale.z = .5;
-								 
-								 object.rotation.x = .2;
-								scene.add( object );
-								objects.push( object );
-								
-
-							}
 
 
 
@@ -182,7 +165,7 @@ console.log('hi2');
 ///////////////////hi////////////////obj 2 end
 
 /////////////////////////////////////////obj3 start
-const objects2 = [];
+
 var v= new OBJLoader( manager )
 							// .setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
@@ -199,7 +182,6 @@ var v= new OBJLoader( manager )
 								 
 								 object.rotation.x = .2;
 								scene.add( object );
-								objects2.push( object );
 								
 
 							}, onProgress, onError );
@@ -207,20 +189,6 @@ var v= new OBJLoader( manager )
 
 							
 
-var controls = new DragControls( objects2, camera, renderer.domElement );
-				controls.addEventListener( 'dragstart', dragStartCallback );
-    controls.addEventListener( 'dragend', dragendCallback );
-				
-
-				
-
-function dragStartCallback(event) {
-   event.object.material.emissive.set( 0xaaaaaa );
-}
-
-function dragendCallback(event) {
-    event.object.material.emissive.set( 0x000000 );
-}
 /////////////////////////////////////////obj3 end
 
 				 
@@ -279,7 +247,71 @@ function dragendCallback(event) {
 
 			}
 
+// //////////
+// function leftArrowPressed() {
+//                 var element = document.getElementById("floor2");
+//                 element.style.left = parseInt(element.style.left) - 5 + 'px';
+//             }
 
+//             function rightArrowPressed() {
+//                 var element = document.getElementById("floor2");
+//                 element.style.left = parseInt(element.style.left) + 5 + 'px';
+//             }
+
+// function moveSelection(event) {                    
+//                 switch (event.keyCode) {
+//                     case 37:
+//                         leftArrowPressed();
+//                     break;
+
+//                     case 39:
+//                         rightArrowPressed();
+//                     break;
+//                 }
+//             };
+
+
+// function gameLoop()
+//         {
+//             // change position based on speed
+//             moveSelection();
+           
+//         }
+            ////////////////////////////////
+
+	 
+
+
+
+			// function getKeyAndMove(e){				
+			// 	var key_code=e.which||e.keyCode;
+			// 	switch(key_code){
+			// 		case 37: //left arrow key
+			// 			moveLeft();
+			// 			break;
+			// 		case 38: //Up arrow key
+			// 			moveUp();
+			// 			break;
+			// 		case 39: //right arrow key
+			// 			moveRight();
+			// 			break;
+			// 		case 40: //down arrow key
+			// 			moveDown();
+			// 			break;						
+			// 	}
+			// }
+			// function moveLeft(){
+			// 	object.style.left=parseInt(object.style.left)-5 +'px';
+			// }
+			// function moveUp(){
+			// 	object.style.top=parseInt(object.style.top)-5 +'px';
+			// }
+			// function moveRight(){
+			// 	object.style.left=parseInt(object.style.left)+5 +'px';
+			// }
+			// function moveDown(){
+			// 	object.style.top=parseInt(object.style.top)+5 +'px';
+			// }
 
 		</script>
  
