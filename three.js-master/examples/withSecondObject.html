@@ -92,7 +92,7 @@ import { OrbitControls } from './jsm/controls/OrbitControls.js';
 const objects = [];
 						var j = new MTLLoader( manager )
 					.setPath( 'models/obj/male02/' )
-					.load( 'boxTest.mtl', function ( materials ) {
+					.load( 'boxTest2.mtl', function ( materials ) {
 
 						materials.preload();
 console.log('hi');
@@ -100,7 +100,7 @@ console.log('hi');
 						 var l= new OBJLoader( manager )
 							.setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest.obj', function ( object ) {
+							.load( 'boxTest2.obj', function ( object ) {
 
 								object.position.y = 10;
 								scene.add( object );
@@ -110,7 +110,7 @@ console.log('hi');
 
 
 
-
+//////////
 
 
 
