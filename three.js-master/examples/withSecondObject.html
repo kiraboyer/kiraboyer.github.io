@@ -9,8 +9,6 @@
 	</head>
   <!----- <script src="../src/textures/Texture.js"></script>   -->
 <script src="../build/three.js"></script>
-<script src="./js/libs/stats.min.js"></script>
-
 
 	<body >
 		 
@@ -105,7 +103,6 @@ console.log('hi');
 							.load( 'boxTest2.obj', function ( object ) {
 
 								object.position.y = 10;
-								 object.rotation.x = .2;
 								scene.add( object );
 								objects.push( object );
 
@@ -171,27 +168,14 @@ console.log('hi2');
 
 ///////////////////hi////////////////obj 2 end
 
-///////////////////////////////////////////////obj3 start
+/////////////////////////////////////////obj3 start
 
 var v= new FBXLoader( manager )
 							// .setMaterials( materials )
 							.setPath( 'models/obj/male02/' )
 							.load( 'alienStanding.fbx', function ( object ) {
 
-object.mixer = new THREE.AnimationMixer( object );
-					mixers.push( object.mixer );
 
-					var action = object.mixer.clipAction( object.animations[ 0 ] );
-					action.play();
-
-					object.traverse( function ( child ) {
-
-						if ( child.isMesh ) {
-
-							child.castShadow = true;
-							child.receiveShadow = true;
-
-						}
 
 								object.position.y = 10;
 								object.position.x = -110;
@@ -207,11 +191,10 @@ object.mixer = new THREE.AnimationMixer( object );
 							}, onProgress, onError );
 
 
-							})
+							
 
 /////////////////////////////////////////obj3 end
-stats = new Stats();
-        container.appendChild( stats.dom );
+
 				 
 
 				///zzzzddddddd/dddvvvvvvddddd///ccccc/////ccc/
@@ -253,10 +236,7 @@ stats = new Stats();
 			function animate() {
 
 				requestAnimationFrame( animate );
-				var delta = clock.getDelta();
-				if (mixer ) mixer.update(delta);
 				render();
-				stats.update();
 
 			}
 
