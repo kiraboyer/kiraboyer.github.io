@@ -29,6 +29,7 @@ import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			///////// import { RepeatWrapping } from '../src/textures/Texture.js';
 
 	var clock = new THREE.Clock();
+		var mixers = [];
 			var container, stats, controls;
 
 			var camera, scene, renderer;
@@ -198,7 +199,7 @@ console.log('hi2');
 
 /////
 
-			var mixers = [];
+		
 	var loader = new FBXLoader();
 				loader.load( 'models/obj/male02/alienStanding.fbx', function ( object ) {
 					object.mixer = new THREE.AnimationMixer( object );
