@@ -110,7 +110,7 @@ const objects = [];
 							.load( 'boxTest2.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 10;
-								object.position.z = -.1;
+								object.position.z = -2;
 								object.rotation.x = .2;
 //add obj to the scene
 								scene.add( object );
@@ -185,11 +185,12 @@ function dragendCallback(event) {
 
 		
 	var loader = new FBXLoader();
+	//side note: fbx texture errors are textures that are not original so I'm not including them
 				loader.load( 'models/obj/male02/alienStanding.fbx', function ( object ) {
 					object.mixer = new THREE.AnimationMixer( object );
 					mixers.push( object.mixer );
 
-							object.position.y = -30;
+							object.position.y = -40;
  							object.position.x = -20;
  							object.position.z = 50;
  							object.scale.x = .5;
