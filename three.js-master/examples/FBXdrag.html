@@ -25,7 +25,7 @@
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
 			import { FBXLoader } from './jsm/loaders/FBXLoader.js';
-			import { DragControls } from './jsm/controls/DragControls.js';
+			import { DragControls } from './jsm/controls/DragControls4.js';
 			 
 
 //FBX clock at top left corner of screen, tracks fps of animation
@@ -137,6 +137,8 @@ const objects = [];
 								object.position.y = 5;
 								object.position.z = -5;
 								object.rotation.x = .2;
+								object.scale.x = -.2;
+								object.scale.y = -.2;
  
 								scene.add( object );
 
