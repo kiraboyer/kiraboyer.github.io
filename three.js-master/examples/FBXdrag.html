@@ -168,6 +168,7 @@ function dragStartCallback(event) {
 //when object is released by releasing mouse click, color of obj returns to normal
 function dragendCallback(event) {
     event.object.material.emissive.set( 0x000000 );
+    //add to scale up objs
     event.object.scale.y = -5;
     event.object.scale.x = -5}
 
@@ -199,8 +200,8 @@ function dragendCallback(event) {
 //obj position/scale in scene
 								object.position.y = 20;
 								object.position.x = -150;
-								object.scale.x = 1.2;
-							    object.scale.y = 1.2;
+								object.scale.x = 1;
+							    object.scale.y = 1;
 								object.scale.z = 1;
 								object.rotation.x = .2;
 //add obj to the scene
