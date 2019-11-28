@@ -166,7 +166,8 @@ function dragStartCallback(event) {
 //when object is released by releasing mouse click, color of obj returns to normal
 function dragendCallback(event) {
     event.object.material.emissive.set( 0x000000 );
-    event.object.scale.y = 1.2;
+    event.object.scale.y = -50;
+    event.object.scale.x = -50;
 }
 
 
