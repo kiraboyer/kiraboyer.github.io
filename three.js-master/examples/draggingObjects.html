@@ -110,6 +110,7 @@ const objects = [];
 								object.position.z = -5;
 								object.rotation.x = .2;
 //add obj to the scene
+ 
 //variable j is the MTLLoader.js
 				var h = new MTLLoader( manager )
 //MTLLoader path to load mtl file
@@ -152,6 +153,7 @@ var controls = new DragControls( objects, camera, renderer.domElement );
 				
 
 				} );
+				});
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
