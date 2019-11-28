@@ -322,12 +322,18 @@ function dragendCallback(event) {
 
 //make a transparent div (the video background or square area in theatre) and give it an id. give ID an onmouseover event, referencing the 2 functions that will size the objects
 
-		</script>
+		</script><script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.rect(20, 20, 150, 100);
+ctx.stroke();
+</script> 
 <!--  using onmouseover attribute with bigOBJ function -->
 <!-- using onmouseout attribute with smallOBJ function -->
 <!-- sizing video same as smallOBJ-->
-<div onmouseover="bigOBJ(this)" onmouseout="smallOBJ(this)" border=0  width="500px" height="300px" z-index="1" background-color="red" overflow= "hidden" 
-position= "relative"></div>
+<div id="myCanvas" onmouseover="bigOBJ(this)" onmouseout="smallOBJ(this)" border=0  width="500px" height="300px" z-index="1" background-color="red" overflow= "hidden" 
+position= "relative" fil></div>
 <script>
 function bigOBJ(s) {
 	s.style.height = "400px";
