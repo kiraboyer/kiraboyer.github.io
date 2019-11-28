@@ -202,6 +202,7 @@ const objects = [];
 //add object to scene					
 						scene.add( object );
 objects.push( object );
+}, onProgress, onError );
 				// } );
 
 				 var loader = new FBXLoader();
@@ -230,7 +231,7 @@ objects.push( object );
 
 
 
-
+}, onProgress, onError );
 
 
 
@@ -244,9 +245,9 @@ var controls = new DragControls( objects, camera, renderer.domElement );
    			    controls.addEventListener( 'dragend', dragendCallback );
 				
 
-				} );
+				} 
 //add 1 of these for each object added
-				} );
+				
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
