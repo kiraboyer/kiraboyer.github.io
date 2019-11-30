@@ -99,15 +99,18 @@ var xsize, ysize, materials;
 xsize = 480;
 ysize = 240;
 
+ux = 1;
+uy = 1;
 var parameters = {color:0xffffff, map: texture};
 
 geometry = new THREE.BoxBufferGeometry (xsize, ysize, xsize);
+change_uvs (geometry, ux, uy, ox, oy);
 materials = new THREE.MeshLambertMaterial (parameters);
 material = materials;
-mesh = new THREE.Mesh (geometry, material);scene.add(mesh);
+mesh = new THREE.Mesh (geometry, material);
 
-
-
+mesh.scale.x=mesh.scale.y=mesh.scale.z=1;
+scene.add(mesh);
 var l= new OBJLoader( manager )
 //give the obj it's mtl///
 							.setMaterials( materials )
