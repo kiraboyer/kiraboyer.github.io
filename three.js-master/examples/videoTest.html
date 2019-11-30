@@ -110,9 +110,18 @@ materials = new THREE.MeshLambertMaterial (parameters);
 material = materials;
 mesh = new THREE.Mesh (geometry, material);
 
-mesh.scale.x=mesh.scale.y=mesh.scale.z=.1;
+mesh.scale.x=mesh.scale.y=mesh.scale.z=.3;
+mesh.position.x=10;
+mesh.position.y=10;
 scene.add(mesh);
+
+
+
+
+
+
 var l= new OBJLoader( manager )
+
 //give the obj it's mtl///
 							.setMaterials( materials )
 //path to obj
