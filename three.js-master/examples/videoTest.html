@@ -95,7 +95,8 @@
 
 
 
-var xsize, ysize, materials, ux, uy , oy, ox;
+var xsize, ysize, materials;
+// var ux, uy , oy, ox;
 xsize = 480;
 ysize = 240;
 
@@ -104,7 +105,7 @@ uy = 1;
 var parameters = {color:0xffffff, map: texture};
 
 geometry = new THREE.BoxBufferGeometry (xsize, ysize, xsize);
-change_uvs (geometry, ux, uy, ox, oy);
+// change_uvs (geometry, ux, uy, ox, oy);
 materials = new THREE.MeshLambertMaterial (parameters);
 material = materials;
 mesh = new THREE.Mesh (geometry, material);
