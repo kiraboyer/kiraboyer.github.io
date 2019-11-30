@@ -158,20 +158,20 @@ var l= new OBJLoader( manager )
 const objects = [];
 
 //variable j is the MTLLoader.js
-				var j = new MTLLoader( manager )
+				// var j = new MTLLoader( manager )
 //MTLLoader path to load mtl file
-					.setPath( 'models/obj/male02/' )
-					.load( 'boxTest2.mtl', function ( materials ) {
+					// .setPath( 'models/obj/male02/' )
+					// .load( 'boxTest2.mtl', function ( materials ) {
 //preload mtl file
-						materials.preload();
+						// materials.preload();
 
 //variable l -s the OBJLoader.js
 				var l= new OBJLoader( manager )
 //give the obj it's mtl
-							.setMaterials( materials )
+							// .setMaterials( materials )
 //path to obj
 							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest2.obj', function ( object ) {
+							.load( 'sphere.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 5;
 								object.position.z = -5;
@@ -186,20 +186,20 @@ const objects = [];
 							}, onProgress, onError );
 
 //obj2
-				var j = new MTLLoader( manager )
+				// var j = new MTLLoader( manager )
  
-					.setPath( 'models/obj/male02/' )
-					.load( 'boxTest2.mtl', function ( materials ) {
+				// 	.setPath( 'models/obj/male02/' )
+				// 	.load( 'boxTest2.mtl', function ( materials ) {
  
-						materials.preload();
+				// 		materials.preload();
 
  
 				var l= new OBJLoader( manager )
  
-							.setMaterials( materials )
+							// .setMaterials( materials )
  
 							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest2.obj', function ( object ) {
+							.load( 'sphere.obj', function ( object ) {
  
 								object.position.y = 5;
 								object.position.z = -5;
@@ -224,9 +224,9 @@ var controls = new DragControls( objects, camera, renderer.domElement );
    			    controls.addEventListener( 'dragend', dragendCallback );
 				
 
-				} );
+				// } );
 //add 1 of these for each object added
-				} );
+				// } );
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
