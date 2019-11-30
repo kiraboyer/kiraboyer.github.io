@@ -183,7 +183,7 @@ const objects = [];
 								objects.push( object );
 //console log information
 
-							}, onProgress, onError );
+							// }, onProgress, onError );
 
 //obj2
 				// var j = new MTLLoader( manager )
@@ -213,7 +213,9 @@ const objects = [];
 								objects.push( object );
  
 
-							}, onProgress, onError );
+							// }
+							// , onProgress, onError 
+							// );
 
 
 //controls variable is equal to DragControls.js, add objects array, camera, and the domElement
@@ -224,9 +226,9 @@ var controls = new DragControls( objects, camera, renderer.domElement );
    			    controls.addEventListener( 'dragend', dragendCallback );
 				
 
-				// } );
+				} );
 //add 1 of these for each object added
-				// } );
+				 } );
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
