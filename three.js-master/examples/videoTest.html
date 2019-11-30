@@ -1,0 +1,386 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Spin around me like a dream we played out on this movie screen.</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+	 <!-- attributes: fbx code= https://codesandbox.io/s/y2kv8yyw5j
+					  DragControls.js reference = https://threejs.org/docs/#examples/zh/controls/DragControls
+					  DragControls.js reference = https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_drag.html -->
+		
+	</head>
+<script src="../build/three.js"></script>
+<!-- for FBX lib reference -->
+<script src="./js/libs/stats.min.js"></script>
+	<body >
+<!-- for phone compatibility  -->
+<script src="./js/Detector.js"></script>
+		<script type="module">
+
+			import * as THREE from '../build/three.module.js';
+
+			import { DDSLoader } from './jsm/loaders/DDSLoader.js';
+			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
+			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+			import { FBXLoader } from './jsm/loaders/FBXLoader.js';
+			import { DragControls } from './jsm/controls/DragControls4.js';
+			 
+
+//FBX clock at top left corner of screen, tracks fps of animation
+	var clock = new THREE.Clock();
+//FBX array variable
+		var mixers = [];
+//defining variables used in code, called again later.
+			var container, stats, controls;
+
+			var camera, scene, renderer;
+			var video, texture, material,mesh;
+
+			var mouseX = 0, mouseY = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+//for mobile detection
+  if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+  //init and animation functions being called
+			init();
+			animate();
+
+
+			function init() {
+//scene in div container
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+//camera viewpoint
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.z = 250;
+
+//scene
+
+				scene = new THREE.Scene();
+//lighting
+				var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+				scene.add( ambientLight );
+
+				var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				camera.add( pointLight );
+				scene.add( camera );
+
+
+				video = document.getElementById('video');
+				video.play();
+
+				texture = new THREE.VideoTexture(video);
+
+// model download percentage console log tracking
+
+				var onProgress = function ( xhr ) {
+
+					if ( xhr.lengthComputable ) {
+
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
+
+					}
+
+				};
+
+				 var onError = function () { };
+
+				 var manager = new THREE.LoadingManager();
+				 manager.addHandler( /\.dds$/i, new DDSLoader() );
+
+
+
+var xsize, ysize;
+xsize = 480;
+ysize = 240;
+
+var parameters = {color:0xffffff, map: texture};
+
+geometry = new THREE.BoxBufferGeometry (xsize, ysize, xsize);
+materials = new THREE.MeshLambertMaterial (parameters);
+material = materials;
+mesh = new THREE.Mesh (geometry, material);scene.add(mesh);
+
+
+
+var l= new OBJLoader( manager )
+//give the obj it's mtl
+							.setMaterials( materials )
+//path to obj
+							.setPath( 'models/obj/male02/' )
+							.load( 'boxTest2.obj', function ( object ) {
+//obj position in scene
+								object.position.y = 5;
+								object.position.z = -5;
+								object.rotation.x = .2;
+//add obj to the scene
+								scene.add( object );
+
+//push the array "objects", adding "object" to the array
+								objects.push( object );
+//console log information
+
+							}, onProgress, onError );
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ //constant reference to objects array of the draggable backdrop			//wrap around all objs	
+const objects = [];
+
+//variable j is the MTLLoader.js
+				var j = new MTLLoader( manager )
+//MTLLoader path to load mtl file
+					.setPath( 'models/obj/male02/' )
+					.load( 'boxTest2.mtl', function ( materials ) {
+//preload mtl file
+						materials.preload();
+
+//variable l -s the OBJLoader.js
+				var l= new OBJLoader( manager )
+//give the obj it's mtl
+							.setMaterials( materials )
+//path to obj
+							.setPath( 'models/obj/male02/' )
+							.load( 'boxTest2.obj', function ( object ) {
+//obj position in scene
+								object.position.y = 5;
+								object.position.z = -5;
+								object.rotation.x = .2;
+//add obj to the scene
+								scene.add( object );
+
+//push the array "objects", adding "object" to the array
+								objects.push( object );
+//console log information
+
+							}, onProgress, onError );
+
+//obj2
+				var j = new MTLLoader( manager )
+ 
+					.setPath( 'models/obj/male02/' )
+					.load( 'boxTest2.mtl', function ( materials ) {
+ 
+						materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							.setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'boxTest2.obj', function ( object ) {
+ 
+								object.position.y = 5;
+								object.position.z = -5;
+								object.rotation.x = .2;
+								object.scale.x = -.2;
+								object.scale.y = -.2;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							}, onProgress, onError );
+
+
+//controls variable is equal to DragControls.js, add objects array, camera, and the domElement
+var controls = new DragControls( objects, camera, renderer.domElement );
+//event listener for mouse clicking
+				controls.addEventListener( 'dragstart', dragStartCallback );
+//event listener for mouse release
+   			    controls.addEventListener( 'dragend', dragendCallback );
+				
+
+				} );
+//add 1 of these for each object added
+				} );
+//when object is clicked and dragged it turns a lighter color
+function dragStartCallback(event) {
+   event.object.material.emissive.set( 0xaaaaaa );
+}
+
+//when object is released by releasing mouse click, color of obj returns to normal
+function dragendCallback(event) {
+    event.object.material.emissive.set( 0x000000 );
+    //add to scale up objs
+    event.object.scale.y = -5;
+    event.object.scale.x = -5}
+
+
+
+
+
+				 
+
+
+////////////////////////////object 2
+
+//variable j is the MTLLoader.js
+
+		var j = new MTLLoader( manager )
+//MTLLoader path to load mtl file
+				.setPath( 'models/obj/male02/' )
+				.load( 'theaterWall.mtl', function ( materials ) {
+//preload mtl file
+					materials.preload();
+
+//variable l -s the OBJLoader.js
+						 var l= new OBJLoader( manager )
+//give the obj it's mtl
+							.setMaterials( materials )
+//path to obj
+							.setPath( 'models/obj/male02/' )
+							.load( 'theaterWall.obj', function ( object ) {
+//obj position/scale in scene
+								object.position.y = 20;
+								object.position.x = -150;
+								object.scale.x = 1;
+							    object.scale.y = 1;
+								object.scale.z = 1;
+								object.rotation.x = .2;
+//add obj to the scene
+								scene.add( object );
+								
+//console log information
+							}, onProgress, onError );
+
+		});
+
+
+
+							
+
+/////////////////////////////////////////obj2 end
+
+/////////////////////////////////////////obj3
+
+
+//side note: fbx texture errors are textures that are not original so I'm not including them
+//variable loader is the FBXLoader.js import
+	var loader = new FBXLoader();
+//use FBXLoader to import fbx file , make object function
+				loader.load( 'models/obj/male02/alienStanding.fbx', function ( object ) {
+//mixer array and fbx object. fbx animation will be played by three.js AnimationMixer constructor
+					object.mixer = new THREE.AnimationMixer( object );
+//push the array "mixers", adding "object" and mixer to the array
+					mixers.push( object.mixer );
+//fbx position/scale in scene
+							object.position.y = -36;
+ 							object.position.x = -20;
+ 							object.position.z = 50;
+ 							object.scale.x = .4;
+ 							object.scale.y = .4;
+ 							object.scale.z = .4;
+							object.rotation.x = .2;
+//create variable "action". clipAction method using object to return AnimationClip
+					var action = object.mixer.clipAction( object.animations[ 0 ] );
+//play animation						
+						action.play();
+ 
+//add object to scene					
+						scene.add( object );
+
+				} );
+				 
+
+//rendering based on device's window size
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+
+				window.addEventListener( 'resize', onWindowResize, false );
+//stats js code for FBX. monitors fps
+				stats = new Stats();
+				container.appendChild( stats.dom );
+			}
+
+//container size
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth - 2;
+				windowHalfY = window.innerHeight - 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			
+
+			function animate() {
+//call render function		 
+				render();
+
+
+//for FBX animation and FPS clock
+				requestAnimationFrame( animate );
+//conditional statement. if mixers animation length is greater than 0
+				if ( mixers.length > 0 ) {
+//for loop. variable i is equal to 0. i is less than length of mixers animation
+//i + 1
+					for ( var i = 0; i < mixers.length; i ++ ) {
+//mixers with i variable updates clock tracking fps
+
+						mixers[ i ].update( clock.getDelta() );
+
+					}
+
+				}
+//render scene and camera
+				renderer.render( scene, camera );
+//update stats of fps for FBX
+				stats.update();
+
+			}
+//render function
+			function render() {
+//camera position in scene
+				camera.position.x += ( mouseX - camera.position.x ) * .05;
+				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+
+				camera.lookAt( scene.position );
+
+				renderer.render( scene, camera );
+
+			}
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+		</script>
+ <video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
+ 	<source src="models/obj/male02/Boyer24_1.mp4" type='video/mp4'></video>
+	</body>
+</html>
