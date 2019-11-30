@@ -174,9 +174,11 @@ const objects = [];
 							.load( 'sphere.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 5;
-								object.position.z = -5;
+								object.position.z = 10;
 								object.rotation.x = .2;
-//add obj to the scene
+								object.scale.x = 5;
+								object.scale.y = 5;
+//add obj to the Scene
 								scene.add( object );
 
 //push the array "objects", adding "object" to the array
@@ -202,10 +204,10 @@ const objects = [];
 							.load( 'sphere.obj', function ( object ) {
  
 								object.position.y = 5;
-								object.position.z = -5;
+								object.position.z = 50;
 								object.rotation.x = .2;
-								object.scale.x = -.2;
-								object.scale.y = -.2;
+								object.scale.x = 5;
+								object.scale.y = 5;
  
 								scene.add( object );
 
