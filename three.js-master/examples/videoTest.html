@@ -175,12 +175,10 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'star.obj', function ( object ) {
 //obj position in scene
-var box = new THREE.Box3().setFromObject( object );
+					var box = new THREE.Box3().setFromObject( object );
   var center = new THREE.Vector3();
   box.getCenter( center );
-  object.position.sub( center ); 
-								 
-								object.position.z = 40;
+  object.position.sub( center ); 								object.position.z = 40;
 								object.rotation.x = .2;
 								object.scale.x = 27;
 								object.scale.y = 27;
@@ -209,8 +207,7 @@ var box = new THREE.Box3().setFromObject( object );
 							.setPath( 'models/obj/male02/' )
 							.load( 'moon.obj', function ( object ) {
  
-								object.position.y = window.innerHeight/2;
-								object.position.x = window.innerWidth/2;
+								object.position.y = 8;
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.scale.x = 7;
