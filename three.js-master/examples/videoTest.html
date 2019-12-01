@@ -176,10 +176,10 @@ const objects = [];
 							.load( 'star.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 5;
-								object.position.z = 10;
+								object.position.z = 50;
 								object.rotation.x = .2;
-								object.scale.x = 5;
-								object.scale.y = 5;
+								object.scale.x = 15;
+								object.scale.y = 15;
 //add obj to the Scene
 								scene.add( object );
 
@@ -208,8 +208,8 @@ const objects = [];
 								object.position.y = -10;
 								object.position.z = 50;
 								object.rotation.x = .2;
-								object.scale.x = 5;
-								object.scale.y = 5;
+								object.scale.x = 15;
+								object.scale.y = 15;
  
 								scene.add( object );
 
@@ -242,8 +242,8 @@ function dragStartCallback(event) {
 function dragendCallback(event) {
     event.object.material.emissive.set( 0x000000 );
     //add to scale up objs
-    event.object.scale.y = -5;
-    event.object.scale.x = -5}
+    event.object.scale.y = -15;
+    event.object.scale.x = -15}
 
 
 
