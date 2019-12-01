@@ -163,7 +163,7 @@ const objects = [];
 				 var j = new MTLLoader( manager )
 //MTLLoader path to load mtl file
 					 .setPath( 'models/obj/male02/' )
-					 .load( 'moon.mtl', function ( materials ) {
+					 .load( 'star.mtl', function ( materials ) {
 //preload mtl file
 						 materials.preload();
 
@@ -173,7 +173,7 @@ const objects = [];
 							 .setMaterials( materials )
 //path to obj
 							.setPath( 'models/obj/male02/' )
-							.load( 'moon.obj', function ( object ) {
+							.load( 'star.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 5;
 								object.position.z = 80;
