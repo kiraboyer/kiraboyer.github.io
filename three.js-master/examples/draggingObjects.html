@@ -122,7 +122,7 @@ const objects = [];
 				var j = new MTLLoader( manager )
  
 					.setPath( 'models/obj/male02/' )
-					.load( 'boxTest2.mtl', function ( materials ) {
+					.load( 'star.mtl', function ( materials ) {
  
 						materials.preload();
 
@@ -132,7 +132,7 @@ const objects = [];
 							.setMaterials( materials )
  
 							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest2.obj', function ( object ) {
+							.load( 'star.obj', function ( object ) {
  
 								object.position.y = 5;
 								object.position.z = -5;
