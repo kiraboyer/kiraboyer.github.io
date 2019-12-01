@@ -111,8 +111,8 @@ material = materials;
 mesh = new THREE.Mesh (geometry, material);
 
 mesh.scale.x=mesh.scale.y=mesh.scale.z=.3;
-mesh.position.x= 20;
-mesh.position.y=0;
+mesh.position.y= window.innerHeight/2;
+								object.position.x = window.innerWidth/2;
 mesh.position.z=-15;
 mesh.rotation.x = .2;
 scene.add(mesh);
@@ -273,8 +273,8 @@ function dragendCallback(event) {
 							.setPath( 'models/obj/male02/' )
 							.load( 'theaterWall.obj', function ( object ) {
 //obj position/scale in scene
-								object.position.y = 20;
-								object.position.x = -150;
+								object.position.y = window.innerHeight/2;
+								object.position.x = window.innerWidth/2;
 								object.scale.x = 1;
 							    object.scale.y = 1;
 								object.scale.z = 1;
