@@ -159,20 +159,20 @@ object.position.x = 5;
 const objects = [];
 
 //variable j is the MTLLoader.js
-				// var j = new MTLLoader( manager )
+				 var j = new MTLLoader( manager )
 //MTLLoader path to load mtl file
-					// .setPath( 'models/obj/male02/' )
-					// .load( 'boxTest2.mtl', function ( materials ) {
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'star.mtl', function ( materials ) {
 //preload mtl file
-						// materials.preload();
+						 materials.preload();
 
 //variable l -s the OBJLoader.js
 				var l= new OBJLoader( manager )
 //give the obj it's mtl
-							// .setMaterials( materials )
+							 .setMaterials( materials )
 //path to obj
 							.setPath( 'models/obj/male02/' )
-							.load( 'sphere.obj', function ( object ) {
+							.load( 'star.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 5;
 								object.position.z = 10;
@@ -186,23 +186,23 @@ const objects = [];
 								objects.push( object );
 //console log information
 
-							// }, onProgress, onError );
+							 }, onProgress, onError );
 
 //obj2
-				// var j = new MTLLoader( manager )
+				 var j = new MTLLoader( manager )
  
-				// 	.setPath( 'models/obj/male02/' )
-				// 	.load( 'boxTest2.mtl', function ( materials ) {
+					.setPath( 'models/obj/male02/' )
+					.load( 'moon.mtl', function ( materials ) {
  
-				// 		materials.preload();
+						materials.preload();
 
  
 				var l= new OBJLoader( manager )
  
-							// .setMaterials( materials )
+							 .setMaterials( materials )
  
 							.setPath( 'models/obj/male02/' )
-							.load( 'sphere.obj', function ( object ) {
+							.load( 'moon.obj', function ( object ) {
  
 								object.position.y = -10;
 								object.position.z = 50;
@@ -216,9 +216,9 @@ const objects = [];
 								objects.push( object );
  
 
-							// }
-							// , onProgress, onError 
-							// );
+							 }
+							 , onProgress, onError 
+							 );
 
 
 //controls variable is equal to DragControls.js, add objects array, camera, and the domElement
