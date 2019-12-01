@@ -111,8 +111,8 @@ material = materials;
 mesh = new THREE.Mesh (geometry, material);
 
 mesh.scale.x=mesh.scale.y=mesh.scale.z=.3;
-mesh.position.x= 20;
-mesh.position.y=0;
+mesh.position.x= 50;
+mesh.position.y=10;
 mesh.position.z=-15;
 mesh.rotation.x = .2;
 scene.add(mesh);
@@ -122,26 +122,26 @@ scene.add(mesh);
 
 
 
-var l= new OBJLoader( manager )
+// var l= new OBJLoader( manager )
 
-//give the obj it's mtl///
-							.setMaterials( materials )
-//path to obj
-							.setPath( 'models/obj/male02/' )
-							.load( 'boxTest2.obj', function ( object ) {
-//obj position in scene
-object.position.x = 5;
-								object.position.y = 25;
-								object.position.z = -5;
-								object.rotation.x = .2;
-//add obj to the scene
-								scene.add( object );
+// //give the obj it's mtl///
+// 							.setMaterials( materials )
+// //path to obj
+// 							.setPath( 'models/obj/male02/' )
+// 							.load( 'boxTest2.obj', function ( object ) {
+// //obj position in scene
+// object.position.x = 5;
+// 								object.position.y = 25;
+// 								object.position.z = -5;
+// 								object.rotation.x = .2;
+// //add obj to the scene
+// 								scene.add( object );
 
-//push the array "objects", adding "object" to the array
-								objects.push( object );
-//console log information
+// //push the array "objects", adding "object" to the array
+// 								objects.push( object );
+// //console log information
 
-							}, onProgress, onError );
+// 							}, onProgress, onError );
 
 
 
