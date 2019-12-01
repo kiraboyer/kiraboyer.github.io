@@ -119,17 +119,17 @@ const objects = [];
 							}, onProgress, onError );
 
 //obj2
-				// var j = new MTLLoader( manager )
+				var j = new MTLLoader( manager )
  
-				// 	.setPath( 'models/obj/male02/' )
-				// 	.load( 'star2.mtl', function ( materials ) {
+					.setPath( 'models/obj/male02/' )
+					.load( 'star2.mtl', function ( materials ) {
  
-				// 		materials.preload();
+						materials.preload();
 
  
 				var l= new OBJLoader( manager )
  
-							// .setMaterials( materials )
+							.setMaterials( materials )
  
 							.setPath( 'models/obj/male02/' )
 							.load( 'star2.obj', function ( object ) {
@@ -157,7 +157,7 @@ var controls = new DragControls( objects, camera, renderer.domElement );
 
 				} );
 //add 1 of these for each object added
-				// } );
+				} );
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
