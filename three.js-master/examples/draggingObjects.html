@@ -94,7 +94,7 @@ const objects = [];
 				var j = new MTLLoader( manager )
 //MTLLoader path to load mtl file
 					.setPath( 'models/obj/male02/' )
-					.load( 'star.mtl', function ( materials ) {
+					.load( 'boxTest2.mtl', function ( materials ) {
 //preload mtl file
 						materials.preload();
 
@@ -104,10 +104,10 @@ const objects = [];
 							.setMaterials( materials )
 //path to obj
 							.setPath( 'models/obj/male02/' )
-							.load( 'star.obj', function ( object ) {
+							.load( 'boxTest2.obj', function ( object ) {
 //obj position in scene
 								object.position.y = 5;
-								object.position.z = 20;
+								object.position.z = -5;
 								object.rotation.x = .2;
 //add obj to the scene
 								scene.add( object );
@@ -122,7 +122,7 @@ const objects = [];
 				var j = new MTLLoader( manager )
  
 					.setPath( 'models/obj/male02/' )
-					.load( 'moon.mtl', function ( materials ) {
+					.load( 'boxTest2.mtl', function ( materials ) {
  
 						materials.preload();
 
@@ -132,10 +132,10 @@ const objects = [];
 							.setMaterials( materials )
  
 							.setPath( 'models/obj/male02/' )
-							.load( 'moon.obj', function ( object ) {
+							.load( 'boxTest2.obj', function ( object ) {
  
 								object.position.y = 5;
-								object.position.z = 20;
+								object.position.z = -5;
 								object.rotation.x = .5;
  
 								scene.add( object );
@@ -169,8 +169,8 @@ function dragendCallback(event) {
     event.object.material.emissive.set( 0x000000 );
 }
 
-///
- 
+
+//make a transparent div (the video background or square area in theatre) and give it an id. give ID an onmouseover event, referencing the 2 functions that will size
 
 
 				 
