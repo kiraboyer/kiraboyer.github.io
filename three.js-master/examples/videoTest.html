@@ -206,7 +206,8 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'moon.obj', function ( object ) {
  
-								object.position.y = 8;
+								object.position.y = window.innerHeight/2;
+								object.position.x = window.innerWidth/2;
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.scale.x = 7;
