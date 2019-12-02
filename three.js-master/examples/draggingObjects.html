@@ -147,6 +147,35 @@ const objects = [];
 							}, onProgress, onError );
 
 
+
+							var j = new MTLLoader( manager )
+ 
+					.setPath( 'models/obj/male02/' )
+					.load( 'cloud.mtl', function ( materials ) {
+ 
+						materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							.setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'cloud.obj', function ( object ) {
+ 
+								object.position.y = 5;
+								object.position.z = -5;
+								object.rotation.x = .5;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							}, onProgress, onError );
+
+
 //controls variable is equal to DragControls.js, add objects array, camera, and the domElement
 var controls = new DragControls( objects, camera, renderer.domElement );
 //event listener for mouse clicking
