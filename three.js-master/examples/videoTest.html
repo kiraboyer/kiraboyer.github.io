@@ -257,6 +257,40 @@ object.position.x = 40;
 							 );
 
 
+							 var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'water.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'water.obj', function ( object ) {
+  	
+								object.position.y = 8;
+								object.position.z = 90;
+								object.rotation.x = .2;
+								object.rotation.y = 3;
+					 
+								object.scale.x = 1;
+								object.scale.y = 1;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+
 //controls variable is equal to DragControls.js, add objects array, camera, and the domElement
 var controls = new DragControls( objects, camera, renderer.domElement );
 //event listener for mouse clicking
@@ -269,6 +303,7 @@ var controls = new DragControls( objects, camera, renderer.domElement );
 //add 1 of these for each object added
 				  } );
 					 } );
+					  } );
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
