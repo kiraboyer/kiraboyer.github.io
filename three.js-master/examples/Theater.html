@@ -139,9 +139,9 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'moon.obj', function ( object ) {
 //obj position in scene
-object.position.x = 40;
-					  					object.position.y = 40;			
-  								object.position.z = 80;
+								object.position.x = 60;
+					  			object.position.y = 40;			
+  								object.position.z = 74;
 								object.rotation.x = .2;
 								object.scale.x = 1.3;
 								object.scale.y = 1.3;
@@ -322,6 +322,73 @@ object.position.x = 40;
 							 }
 							 , onProgress, onError 
 							 );
+							 var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'water2.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'water2.obj', function ( object ) {
+  	
+								object.position.y = 8;
+								object.position.z = 88;
+								object.rotation.x = .5;
+								object.rotation.y = 0;
+					 
+								object.scale.x = 1;
+								object.scale.y = 1;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+							 var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'water2.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'water2.obj', function ( object ) {
+  	
+								object.position.y = 8;
+								object.position.z = 87;
+								object.rotation.x = .6;
+								object.rotation.y = 0;
+					 
+								object.scale.x = 1;
+								object.scale.y = 1;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+
 
 
 //controls variable is equal to DragControls.js, add objects array, camera, and the domElement
@@ -339,6 +406,8 @@ var controls = new DragControls( objects, camera, renderer.domElement );
 					  } );
 					 } );
 					 } );
+ } );
+ 					 } );
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
@@ -411,7 +480,7 @@ function dragendCallback(event) {
 							.load( 'box.obj', function ( object ) {
   	
 								object.position.x =  37;
-								object.position.y = -20;
+								object.position.y = -40;
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.rotation.y = 3;
