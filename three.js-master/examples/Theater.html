@@ -141,10 +141,11 @@ const objects = [];
 //obj position in scene
 object.position.x = 40;
 					  					object.position.y = 40;			
-  								object.position.z = 90;
+  								object.position.z = 80;
 								object.rotation.x = .2;
-								object.scale.x = 2;
-								object.scale.y = 2;
+								object.scale.x = 1.3;
+								object.scale.y = 1.3;
+								object.scale.z = 1.3;
 //add obj to the Scene
 								scene.add( object );
 
@@ -173,8 +174,8 @@ object.position.x = 40;
 								object.position.y = 8;
 								object.position.z = 90;
 								object.rotation.x = .2;
-								object.scale.x = 1;
-								object.scale.y = 1;
+								object.scale.x = .6;
+								object.scale.y = .6;
  
 								scene.add( object );
 
@@ -339,8 +340,8 @@ function dragendCallback(event) {
 							.setPath( 'models/obj/male02/' )
 							.load( 'box.obj', function ( object ) {
   	
-								object.position.x =  43;
-								object.position.y = -9;
+								object.position.x =  41;
+								object.position.y = -20;
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.rotation.y = 3;
