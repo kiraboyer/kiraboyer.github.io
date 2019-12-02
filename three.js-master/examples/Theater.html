@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Spin around me like a dream we played out on this movie screen.</title>
+		<title>Arrange the scene for showtime!</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
@@ -13,7 +13,7 @@
 	</head>
 <script src="../build/three.js"></script>
 <!-- for FBX lib reference -->
-<script src="./js/libs/stats.min.js"></script>
+<!-- <script src="./js/libs/stats.min.js"></script>  -->
 	<body >
 <!-- for phone compatibility  -->
 <script src="./js/Detector.js"></script>
@@ -24,14 +24,10 @@
 			import { DDSLoader } from './jsm/loaders/DDSLoader.js';
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
-			// import { FBXLoader } from './jsm/loaders/FBXLoader.js';
 			import { DragControls } from './jsm/controls/DragControls4.js';
 			 
 
-//FBX clock at top left corner of screen, tracks fps of animation
-// 	var clock = new THREE.Clock();
-// //FBX array variable
-// 		var mixers = [];
+ 
 //defining variables used in code, called again later.
 			var container, controls;
 
@@ -96,16 +92,15 @@
 
 
 var xsize, ysize, materials;
-// var ux, uy , oy, ox;
+ 
 xsize = 480;
 ysize = 240;
 
-// ux = 1;
-// uy = 1;
+ 
 var parameters = {color:0xffffff, map: texture};
 
 geometry = new THREE.BoxBufferGeometry (xsize, ysize, xsize);
-// change_uvs (geometry, ux, uy, ox, oy);
+ 
 materials = new THREE.MeshLambertMaterial (parameters);
 material = materials;
 mesh = new THREE.Mesh (geometry, material);
@@ -116,33 +111,6 @@ mesh.position.y=22; //20
 mesh.position.z=-15;
 mesh.rotation.x = .2;
 scene.add(mesh);
-
-
-
-
-
-
-// var l= new OBJLoader( manager )
-
-// //give the obj it's mtl///
-// 							.setMaterials( materials )
-// //path to obj
-// 							.setPath( 'models/obj/male02/' )
-// 							.load( 'boxTest2.obj', function ( object ) {
-// //obj position in scene
-// object.position.x = 5;
-// 								object.position.y = 25;
-// 								object.position.z = -5;
-// 								object.rotation.x = .2;
-// //add obj to the scene
-// 								scene.add( object );
-
-// //push the array "objects", adding "object" to the array
-// 								objects.push( object );
-// //console log information
-
-// 							}, onProgress, onError );
-
 
 
 
@@ -317,9 +285,9 @@ function dragendCallback(event) {
 
 
 				 
+//static objects//
 
 
-////////////////////////////object 2
 
 //variable j is the MTLLoader.js
 
@@ -372,13 +340,13 @@ function dragendCallback(event) {
 							.load( 'box.obj', function ( object ) {
   	
 								object.position.x =  50;
-								object.position.y = -10;
+								object.position.y = 0;
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.rotation.y = 3;
 					 
-								object.scale.x = 2;
-								object.scale.y = 2;
+								object.scale.x = 4;
+								object.scale.y = 4;
  
 								scene.add( object );
 
@@ -392,39 +360,8 @@ function dragendCallback(event) {
 
 });
 
-							
+//static objects end///							
 
-/////////////////////////////////////////obj2 end
-
-/////////////////////////////////////////obj3
-
-
-// //side note: fbx texture errors are textures that are not original so I'm not including them
-// //variable loader is the FBXLoader.js import
-// 	var loader = new FBXLoader();
-// //use FBXLoader to import fbx file , make object function
-// 				loader.load( 'models/obj/male02/alienStanding.fbx', function ( object ) {
-// //mixer array and fbx object. fbx animation will be played by three.js AnimationMixer constructor
-// 					object.mixer = new THREE.AnimationMixer( object );
-// //push the array "mixers", adding "object" and mixer to the array
-// 					mixers.push( object.mixer );
-// //fbx position/scale in scene
-// 							object.position.y = -36;
-//  							object.position.x = -20;
-//  							object.position.z = 50;
-//  							object.scale.x = .4;
-//  							object.scale.y = .4;
-//  							object.scale.z = .4;
-// 							object.rotation.x = .2;
-// //create variable "action". clipAction method using object to return AnimationClip
-// 					var action = object.mixer.clipAction( object.animations[ 0 ] );
-// //play animation						
-// 						action.play();
- 
-// //add object to scene					
-// 						scene.add( object );
-
-// 				} );
 				 
 
 //rendering based on device's window size
@@ -505,6 +442,7 @@ function dragendCallback(event) {
  
 
 		</script>
+		<!-- video background will autoplay if muted, will work on mobile of using playsinline, loop will make the video loop forever. -->
  <video id="video" loop crossOrigin="anonymous" muted playsinline style="display:none">
  	<source src="models/obj/male02/sky.mp4" type='video/mp4'></video>
 	</body>
