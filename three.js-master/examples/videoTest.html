@@ -370,18 +370,19 @@ function dragendCallback(event) {
 							.setPath( 'models/obj/male02/' )
 							.load( 'box.obj', function ( object ) {
   	
-								object.position.y = 8;
+								object.position.x = -50;
+								object.position.y = 0;
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.rotation.y = 3;
 					 
-								object.scale.x = 7;
-								object.scale.y = 7;
+								object.scale.x = 2;
+								object.scale.y = 2;
  
 								scene.add( object );
 
  
-								objects.push( object );
+								 
  
 
 							 }
