@@ -326,7 +326,7 @@ function dragendCallback(event) {
 		var j = new MTLLoader( manager )
 //MTLLoader path to load mtl file
 				.setPath( 'models/obj/male02/' )
-				.load( 'theaterWall.mtl', function ( materials ) {
+				.load( 'theaterCurtains.mtl', function ( materials ) {
 //preload mtl file
 					materials.preload();
 
@@ -336,7 +336,7 @@ function dragendCallback(event) {
 							.setMaterials( materials )
 //path to obj
 							.setPath( 'models/obj/male02/' )
-							.load( 'theaterWall.obj', function ( object ) {
+							.load( 'theaterCurtains.obj', function ( object ) {
 //obj position/scale in scene
 
 								object.position.y = 20;
