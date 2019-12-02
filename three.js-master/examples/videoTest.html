@@ -223,6 +223,38 @@ object.position.x = 40;
 							 );
 
 
+							 var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'cloud3.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'cloud3.obj', function ( object ) {
+  	
+								object.position.y = 8;
+								object.position.z = 90;
+								object.rotation.x = .2;
+								object.scale.x = 7;
+								object.scale.y = 7;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+
 //controls variable is equal to DragControls.js, add objects array, camera, and the domElement
 var controls = new DragControls( objects, camera, renderer.domElement );
 //event listener for mouse clicking
