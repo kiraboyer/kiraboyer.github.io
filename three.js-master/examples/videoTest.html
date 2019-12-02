@@ -146,42 +146,7 @@ scene.add(mesh);
 
 
 
-
-	 var j = new MTLLoader( manager )
  
-					 .setPath( 'models/obj/male02/' )
-					 .load( 'box.mtl', function ( materials ) {
- 
-					  	materials.preload();
-
- 
-				var l= new OBJLoader( manager )
- 
-							 .setMaterials( materials )
- 
-							.setPath( 'models/obj/male02/' )
-							.load( 'box.obj', function ( object ) {
-  	
-								object.position.y = 8;
-								object.position.z = 90;
-								object.rotation.x = .2;
-								object.rotation.y = 3;
-					 
-								object.scale.x = 7;
-								object.scale.y = 7;
- 
-								scene.add( object );
-
- 
-								objects.push( object );
- 
-
-							 }
-							 , onProgress, onError 
-							 );
-
-});
-
 
 
 
@@ -389,6 +354,41 @@ function dragendCallback(event) {
 		});
 
 
+
+	 var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'box.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'box.obj', function ( object ) {
+  	
+								object.position.y = 8;
+								object.position.z = 90;
+								object.rotation.x = .2;
+								object.rotation.y = 3;
+					 
+								object.scale.x = 7;
+								object.scale.y = 7;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+});
 
 							
 
