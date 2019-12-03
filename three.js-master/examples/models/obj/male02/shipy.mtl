@@ -12,7 +12,7 @@ Tf 1.00 1.00 1.00
 Ni 1.00
 newmtl ship:phong3SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd outerWheel.png
@@ -21,7 +21,7 @@ Ks 0.50 0.50 0.50
 Ns 18.00
 newmtl ship:phong4SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd innerWheel.png
@@ -30,7 +30,7 @@ Ks 0.50 0.50 0.50
 Ns 18.00
 newmtl ship:phong5SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd boatRed.png
@@ -39,7 +39,7 @@ Ks 0.50 0.50 0.50
 Ns 18.00
 newmtl ship:phong6SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd boat.png
@@ -48,7 +48,7 @@ Ks 0.50 0.50 0.50
 Ns 18.00
 newmtl ship3:phong6SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd boat.png
