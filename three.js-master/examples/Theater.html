@@ -9,7 +9,14 @@
 	 <!-- attributes: fbx code= https://codesandbox.io/s/y2kv8yyw5j
 					  DragControls.js reference = https://threejs.org/docs/#examples/zh/controls/DragControls
 					  DragControls.js reference = https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_drag.html -->
-		
+		<style>
+			.divy{
+		 width:100%;
+		 height:10%;
+		 text-align:center;
+
+
+		}</style>
 	</head>
 <script src="../build/three.js"></script>
 <!-- for FBX lib reference -->
@@ -630,5 +637,8 @@ function dragendCallback(event) {
 		<!-- video background will autoplay if muted, will work on mobile of using playsinline, loop will make the video loop forever. -->
  <video id="video" loop crossOrigin="anonymous" muted playsinline style="display:none">
  	<source src="models/obj/male02/sky.mp4" type='video/mp4'></video>
+ 		<div class="divy"><p>Kira Boyer - <i>Theater</i></p>
+ 			<p>Click or press and drag objects from the prop box into the theater scene. For optimal viewing on mobile phone device, hold device in landscape mode. </p>
+ 		</div>
 	</body>
 </html>
