@@ -5,6 +5,8 @@
 		<title>Arrange the scene for showtime!</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="main.css">
 	 <!-- attributes: fbx code= https://codesandbox.io/s/y2kv8yyw5j
 					  DragControls.js reference = https://threejs.org/docs/#examples/zh/controls/DragControls
@@ -16,7 +18,9 @@
 		 text-align:center;
 
 
-		}</style>
+		}
+
+	p{font-family: 'Roboto', sans-serif;}</style>
 	</head>
 <script src="../build/three.js"></script>
 <!-- for FBX lib reference -->
@@ -150,7 +154,7 @@ const objects = [];
 //obj position in scene
 								object.position.x = 104; //113
 					  			object.position.y = -2;			
-  								object.position.z = 74;
+  								object.position.z = 80;
 								object.rotation.x = .2;
 								object.scale.x = 1.3;
 								object.scale.y = 1.3;
@@ -252,9 +256,9 @@ const objects = [];
  
 							.setPath( 'models/obj/male02/' )
 							.load( 'cloud3.obj', function ( object ) {
-  	object.position.x= 80;
+  								object.position.x= 80;
 								object.position.y = -5;
-								object.position.z = 90;
+								object.position.z = 96;
 								object.rotation.x = .2;
 								object.rotation.y = 3;
 					 
