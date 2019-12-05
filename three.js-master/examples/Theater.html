@@ -72,6 +72,7 @@
 //scene
 
 				scene = new THREE.Scene();
+				DragControls.install({THREE: THREE})
 //lighting
 //ambient lighting everywhere
 				var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
