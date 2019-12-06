@@ -193,7 +193,7 @@ const objects = [];
 							.load( 'star5.obj', function ( object ) {
   	object.position.x = 78;
 								object.position.y = -20;
-								object.position.z = 90;
+								object.position.z = 100;
 								object.rotation.x = .2;
 								object.scale.x = .6;
 								object.scale.y = .6;
@@ -209,13 +209,12 @@ const objects = [];
 							 );
 
 
-							//using MTLLoader and manager
-				 var j = new MTLLoader( manager )
+ var j = new MTLLoader( manager )
 
 //file path to star model
 					 .setPath( 'models/obj/male02/' )
 //load star material
-					 .load( 'boatp.mtl', function ( materials ) {
+					 .load( 'star5.mtl', function ( materials ) {
 //preload materials
  
 					  	materials.preload();
@@ -226,14 +225,13 @@ const objects = [];
 							 .setMaterials( materials )
  
 							.setPath( 'models/obj/male02/' )
-							.load( 'boatp.obj', function ( object ) {
-  	
-								// object.position.y =  0
-								 object.position.x =  -20
-								  object.position.z = -23;
-								// object.rotation.x = .2;
-								object.scale.x = .3;
-								object.scale.y = .3;
+							.load( 'star5.obj', function ( object ) {
+  								object.position.x = 78;
+								object.position.y = -20;
+								object.position.z = 100;
+								object.rotation.x = .2;
+								object.scale.x = .6;
+								object.scale.y = .6;
  
 								scene.add( object );
 
@@ -245,6 +243,79 @@ const objects = [];
 							 , onProgress, onError 
 							 );
 
+
+
+ var j = new MTLLoader( manager )
+
+//file path to star model
+					 .setPath( 'models/obj/male02/' )
+//load star material
+					 .load( 'star5.mtl', function ( materials ) {
+//preload materials
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'star5.obj', function ( object ) {
+  	object.position.x = 78;
+								object.position.y = -20;
+								object.position.z = 100;
+								object.rotation.x = .2;
+								object.scale.x = .6;
+								object.scale.y = .6;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+
+ var j = new MTLLoader( manager )
+
+//file path to star model
+					 .setPath( 'models/obj/male02/' )
+//load star material
+					 .load( 'star5.mtl', function ( materials ) {
+//preload materials
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'star5.obj', function ( object ) {
+  	object.position.x = 78;
+								object.position.y = -20;
+								object.position.z = 100;
+								object.rotation.x = .2;
+								object.scale.x = .6;
+								object.scale.y = .6;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+							//using MTLLoader and manager
+				
 
 
 							 var j = new MTLLoader( manager )
@@ -263,6 +334,75 @@ const objects = [];
 							.load( 'cloud3.obj', function ( object ) {
   								object.position.x= 90;
 								object.position.y = -20;
+								object.position.z = 96;
+								object.rotation.x = .2;
+								object.rotation.y = 3;
+					 
+								object.scale.x = 3;
+								object.scale.y = 3;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+
+
+ var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'cloud3.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'cloud3.obj', function ( object ) {
+  								object.position.x= 95;
+								object.position.y = -20;
+								object.position.z = 96;
+								object.rotation.x = .2;
+								object.rotation.y = 3;
+					 
+								object.scale.x = 3;
+								object.scale.y = 3;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+
+ var j = new MTLLoader( manager )
+ 
+					 .setPath( 'models/obj/male02/' )
+					 .load( 'cloud3.mtl', function ( materials ) {
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'cloud3.obj', function ( object ) {
+  								object.position.x= 96;
+								object.position.y = -25;
 								object.position.z = 96;
 								object.rotation.x = .2;
 								object.rotation.y = 3;
@@ -332,7 +472,8 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'water2.obj', function ( object ) {
   	
-								object.position.y = 8;
+								object.position.y = -35;
+								object.position.x = 95;
 								object.position.z = 89;
 								object.rotation.x = .3;
 								object.rotation.y = 0;
@@ -365,7 +506,8 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'water2.obj', function ( object ) {
   	
-								object.position.y = 8;
+								object.position.y = -35;
+								object.position.x = 95;
 								object.position.z = 89;
 								object.rotation.x = .4;
 								object.rotation.y = 0;
@@ -397,7 +539,8 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'water2.obj', function ( object ) {
   	
-								object.position.y = 8;
+								object.position.y = -35;
+								object.position.x = 95;
 								object.position.z = 88;
 								object.rotation.x = .5;
 								object.rotation.y = 0;
@@ -430,7 +573,8 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'water2.obj', function ( object ) {
   	
-								object.position.y = 8;
+								object.position.y = -35;
+								object.position.x = 95;
 								object.position.z = 87;
 								object.rotation.x = .6;
 								object.rotation.y = 0;
@@ -468,7 +612,13 @@ var controls = new DragControls( objects, camera, renderer.domElement );
 					 } );
  } );
  					 } );
-  } ); 
+   } );
+					 } );
+					 } );
+ } );
+ 					 } );
+
+ 
 //when object is clicked and dragged it turns a lighter color
 function dragStartCallback(event) {
    event.object.material.emissive.set( 0xaaaaaa );
