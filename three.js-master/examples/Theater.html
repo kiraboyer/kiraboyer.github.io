@@ -296,8 +296,8 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'water2.obj', function ( object ) {
   	
-								object.position.y = -5;
-								object.position.x = 88;//83
+								object.position.y = -9;
+								object.position.x = 91;//88
 								object.position.z = 90;
 								object.rotation.x = .2;
 								object.rotation.y = 0;
@@ -561,6 +561,43 @@ function dragendCallback(event) {
 							 );
 
 });
+
+					  var j = new MTLLoader( manager )
+
+//file path to star model
+					 .setPath( 'models/obj/male02/' )
+//load star material
+					 .load( 'boatp.mtl', function ( materials ) {
+//preload materials
+ 
+					  	materials.preload();
+
+ 
+				var l= new OBJLoader( manager )
+ 
+							 .setMaterials( materials )
+ 
+							.setPath( 'models/obj/male02/' )
+							.load( 'boatp.obj', function ( object ) {
+  	
+								// object.position.y =  0
+								 object.position.x =  -20
+								  object.position.z = -23;
+								// object.rotation.x = .2;
+								object.scale.x = .3;
+								object.scale.y = .3;
+ 
+								scene.add( object );
+
+ 
+								objects.push( object );
+ 
+
+							 }
+							 , onProgress, onError 
+							 );
+
+							});
 
 //static objects end///							
 
