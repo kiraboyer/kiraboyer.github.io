@@ -765,13 +765,12 @@ function dragendCallback(event) {
 // //push the array "mixers", adding "object" and mixer to the array
   					mixers.push( object.mixer );
 // //fbx position/scale in scene
-// 							object.position.y = -36;
-//  							object.position.x = -20;
-//  							object.position.z = 50;
-   							object.scale.x = .4;
-   							object.scale.y = .4;
-//  							object.scale.z = .4;
-// 							object.rotation.x = .2;
+// 							 object.position.y =  3;
+								 object.position.x =  -20;
+								  object.position.z = -49;//40
+								// object.rotation.x = .2;
+								object.scale.x = .4;
+								object.scale.y = .4;
 // //create variable "action". clipAction method using object to return AnimationClip
  					var action = object.mixer.clipAction( object.animations[ 0 ] );
 // //play animation						
