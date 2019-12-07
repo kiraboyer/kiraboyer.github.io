@@ -716,42 +716,42 @@ function dragendCallback(event) {
 
 });
 
-					  var j = new MTLLoader( manager )
+// 					  var j = new MTLLoader( manager )
 
-//file path to star model
-					 .setPath( 'models/obj/male02/' )
-//load star material
-					 .load( 'boatp.mtl', function ( materials ) {
-//preload materials
+// //file path to star model
+// 					 .setPath( 'models/obj/male02/' )
+// //load star material
+// 					 .load( 'boatp.mtl', function ( materials ) {
+// //preload materials
  
-					  	materials.preload();
+// 					  	materials.preload();
 
  
-				var l= new OBJLoader( manager )
+// 				var l= new OBJLoader( manager )
  
-							 .setMaterials( materials )
+// 							 .setMaterials( materials )
  
-							.setPath( 'models/obj/male02/' )
-							.load( 'boatp.obj', function ( object ) {
+// 							.setPath( 'models/obj/male02/' )
+// 							.load( 'boatp.obj', function ( object ) {
   	
-								 object.position.y =  3;
-								 object.position.x =  -20;
-								  object.position.z = -49;//40
-								// object.rotation.x = .2;
-								object.scale.x = .4;
-								object.scale.y = .4;
+// 								 object.position.y =  3;
+// 								 object.position.x =  -20;
+// 								  object.position.z = -49;//40
+// 								// object.rotation.x = .2;
+// 								object.scale.x = .4;
+// 								object.scale.y = .4;
  
-								scene.add( object );
+// 								scene.add( object );
 
  
 								 
  
 
-							 }
-							 , onProgress, onError 
-							 );
+// 							 }
+// 							 , onProgress, onError 
+// 							 );
 
-							});
+// 							});
 
 //static objects end///							
 ///fbx begins
