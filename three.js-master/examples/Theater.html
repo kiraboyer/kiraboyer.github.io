@@ -12,18 +12,17 @@
 					  DragControls.js reference = https://threejs.org/docs/#examples/zh/controls/DragControls
 					  DragControls.js reference = https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_drag.html -->
 		<style>
-			.divy{
+			
+	.divy{
 		 width:100%;
-		/* height:5%;*/
 		 text-align:center;
-
-
 		}
 
 	p{
-	font-family: 'Roboto', sans-serif;
-	text-align:center;
+		font-family: 'Roboto', sans-serif;
+		text-align:center;
 }
+
 </style>
 	</head>
 <script src="../build/three.js"></script>
@@ -111,38 +110,42 @@
 				 var manager = new THREE.LoadingManager();
 				 manager.addHandler( /\.dds$/i, new DDSLoader() );
 
+//video code				 
+
 
 //calling out some variables for a video.
 var xsize, ysize, materials;
- 
+ //size variables of box
 xsize = 480;
 ysize = 240;
 
- 
+ //box variables, color of box, mapping texture
 var parameters = {color:0xffffff, map: texture};
-
+//box size, box is "geometry"
 geometry = new THREE.BoxBufferGeometry (xsize, ysize, xsize);
- 
+ //using parameters to map texture materials
 materials = new THREE.MeshLambertMaterial (parameters);
 material = materials;
+//mesh is the box and materials
 mesh = new THREE.Mesh (geometry, material);
-
+//scale/position/rotation of video mesh on box
 mesh.scale.x=mesh.scale.y=mesh.scale.z=.3;
-mesh.position.x= -20; //-20
-mesh.position.y=22; //20
+mesh.position.x= -20;  
+mesh.position.y=22;  
 mesh.position.z=-15;
 mesh.rotation.x = .2;
+//add video (mesh) to the js scene
 scene.add(mesh);
 
+//end of video code
+
+ 
+
+
 
 
  
-
-
-
-
- 
- //constant reference to objects array of the draggable backdrop			//wrap around all objs	
+ //constant reference to objects array of the draggable backdrop			//wrapped around all draggable objs	
 const objects = [];
 
 //variable j is the MTLLoader.js
@@ -153,7 +156,7 @@ const objects = [];
 //preload mtl file
 						 materials.preload();
 
-//variable l -s the OBJLoader.js
+//variable l is the OBJLoader.js
 				var l= new OBJLoader( manager )
 //give the obj it's mtl
 							 .setMaterials( materials )
@@ -161,7 +164,7 @@ const objects = [];
 							.setPath( 'models/obj/male02/' )
 							.load( 'moon.obj', function ( object ) {
 //obj position in scene
-								object.position.x = 104; //113
+								object.position.x = 104;  
 					  			object.position.y = -20;			
   								object.position.z = 80;
 								object.rotation.x = .2;
@@ -188,31 +191,31 @@ const objects = [];
  
 					  	materials.preload();
 
- 
+ //variable l is the OBJLoader.js
 				var l= new OBJLoader( manager )
- 
+ //give the obj it's mtl
 							 .setMaterials( materials )
- 
+ //path to obj
 							.setPath( 'models/obj/male02/' )
 							.load( 'star5.obj', function ( object ) {
-  	object.position.x = 78;
+  								object.position.x = 78;
 								object.position.y = -20;
 								object.position.z = 98;
 								object.rotation.x = .2;
 								object.scale.x = .6;
 								object.scale.y = .6;
- 
+ //add obj to the scene
 								scene.add( object );
 
- 
+ //push the array "objects", adding "object" to the array
 								objects.push( object );
- 
+//console log information
 
 							 }
 							 , onProgress, onError 
 							 );
 
-
+//using MTLLoader and manager
  var j = new MTLLoader( manager )
 
 //file path to star model
@@ -248,7 +251,7 @@ const objects = [];
 							 );
 
 
-
+//using MTLLoader and manager
  var j = new MTLLoader( manager )
 
 //file path to star model
@@ -283,7 +286,7 @@ const objects = [];
 							 , onProgress, onError 
 							 );
 
-
+//using MTLLoader and manager
  var j = new MTLLoader( manager )
 
 //file path to star model
@@ -318,10 +321,10 @@ const objects = [];
 							 , onProgress, onError 
 							 );
 
-							//using MTLLoader and manager
+						 
 				
 
-
+//using MTLLoader and manager
 							 var j = new MTLLoader( manager )
  
 					 .setPath( 'models/obj/male02/' )
@@ -356,7 +359,7 @@ const objects = [];
 							 );
 
 
-
+//using MTLLoader and manager
  var j = new MTLLoader( manager )
  
 					 .setPath( 'models/obj/male02/' )
@@ -390,7 +393,7 @@ const objects = [];
 							 , onProgress, onError 
 							 );
 
-
+//using MTLLoader and manager
  var j = new MTLLoader( manager )
  
 					 .setPath( 'models/obj/male02/' )
@@ -441,8 +444,8 @@ const objects = [];
 							.load( 'water2.obj', function ( object ) {
   	
 								object.position.y = -35;
-								object.position.x = 97;//91
-								object.position.z = 93;//90
+								object.position.x = 97; 
+								object.position.z = 93; 
 								object.rotation.x = .2;
 								object.rotation.y = 0;
 					 
@@ -478,7 +481,7 @@ const objects = [];
   	
 								object.position.y = -35;
 								object.position.x = 97;
-								object.position.z = 92;//89
+								object.position.z = 92; 
 								object.rotation.x = .3;
 								object.rotation.y = 0;
 					 
@@ -512,7 +515,7 @@ const objects = [];
   	
 								object.position.y = -35;
 								object.position.x = 97;
-								object.position.z = 91;//89
+								object.position.z = 91;
 								object.rotation.x = .4;
 								object.rotation.y = 0;
 					 
@@ -545,7 +548,7 @@ const objects = [];
   	
 								object.position.y = -35;
 								object.position.x = 97;
-								object.position.z = 84;//88
+								object.position.z = 84; 
 								object.rotation.x = .5;
 								object.rotation.y = 0;
 					 
@@ -575,19 +578,20 @@ var controls = new DragControls( objects, camera, renderer.domElement );
    			    controls.addEventListener( 'dragend', dragendCallback );
 				
 
-				} );
-//add 1 of these for each object added
-				  } );
-					 } );
-					  } );
-					 } );
-					 } );
- } );
- 					 } );
-   } );
-					 } );
-					 } );
- } );
+				
+//add 1 of these closing brackets/parenthesis for each drag object 
+					} ); 
+				 	} );
+					} );
+					} );
+					} );
+					} );
+ 					} );
+ 					} );
+   					} );
+					} );
+					} );
+					} );
  					 
 
  
@@ -607,7 +611,7 @@ function dragendCallback(event) {
 
 
 
-				 
+//end of draggable objects				 
 //static objects//
 
 
@@ -631,7 +635,7 @@ function dragendCallback(event) {
 //obj position/scale in scene
 
 								object.position.y = 40;
-								object.position.x = -26; //-22
+								object.position.x = -26;  
 								object.position.z = -105;
 								object.scale.x = 1;
 							    object.scale.y = 1;
@@ -662,10 +666,10 @@ function dragendCallback(event) {
 							.setPath( 'models/obj/male02/' )
 							.load( 'box.obj', function ( object ) {
   	
-								object.position.x =  33;//37
+								object.position.x =  33; 
 								object.position.y = -38;
-								object.position.z = 72; //80
-								// object.rotation.x = .2;
+								object.position.z = 72;  
+								 
 								object.rotation.y = 3;
 					 
 								object.scale.x = 4.5;
@@ -684,46 +688,10 @@ function dragendCallback(event) {
 
 });
 
-// 					  var j = new MTLLoader( manager )
-
-// //file path to star model
-// 					 .setPath( 'models/obj/male02/' )
-// //load star material
-// 					 .load( 'boatp.mtl', function ( materials ) {
-// //preload materials
  
-// 					  	materials.preload();
-
- 
-// 				var l= new OBJLoader( manager )
- 
-// 							 .setMaterials( materials )
- 
-// 							.setPath( 'models/obj/male02/' )
-// 							.load( 'boatp.obj', function ( object ) {
-  	
-// 								 object.position.y =  3;
-// 								 object.position.x =  -20;
-// 								  object.position.z = -49;//40
-// 								// object.rotation.x = .2;
-// 								object.scale.x = .4;
-// 								object.scale.y = .4;
- 
-// 								scene.add( object );
-
- 
-								 
- 
-
-// 							 }
-// 							 , onProgress, onError 
-// 							 );
-
-// 							});
 
 //static objects end///							
-///fbx begins
-// //side note: fbx texture errors are textures that are not original so I'm not including them
+///fbx begins 		
 // //variable loader is the FBXLoader.js import
   	var loader = new FBXLoader();
 // //use FBXLoader to import fbx file , make object function
@@ -733,10 +701,9 @@ function dragendCallback(event) {
 // //push the array "mixers", adding "object" and mixer to the array
   					mixers.push( object.mixer );
 // //fbx position/scale in scene
- 							 object.position.y =  -5;
-								 object.position.x =  -20;
-								  object.position.z = -99;//97
-								// object.rotation.x = .2;
+ 							 	object.position.y =  -5;
+								object.position.x =  -20;
+								object.position.z = -99;  
 								object.scale.x = .6;
 								object.scale.y = .6;
 // //create variable "action". clipAction method using object to return AnimationClip
@@ -770,7 +737,7 @@ function dragendCallback(event) {
 
 				window.addEventListener( 'resize', onWindowResize, false );
 //stats js code for FBX. monitors fps
-				 stats = new Stats();
+				  stats = new Stats();
 				  container.appendChild( stats.dom );
 			}
 
@@ -838,12 +805,20 @@ function dragendCallback(event) {
  
 
 		</script>
-		<!-- video background will autoplay if muted, will work on mobile of using playsinline, loop will make the video loop forever. -->
+		<!-- video background will autoplay if muted, will work on mobile of using playsinline, loop will make the video loop forever.Id is called upon in the javascript -->
  <video id="video" loop crossOrigin="anonymous" muted playsinline style="display:none">
  	<source src="models/obj/male02/sky.mp4" type='video/mp4'></video>
- 		<div class="divy"><p>Kira Boyer - <i>Theater</i> - <a href="https://kiraboyer.github.io/">Artist's Website</a></p>
- 			<p>Click or press and drag objects from the prop box into the theater scene. For optimal viewing on a mobile phone device, hold device in landscape mode. </p><p> Attributions: <a href="https://threejs.org/docs/#examples/zh/controls/DragControls">DragControls.js reference</a>, 
-					  <a href=" https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_drag.html">DragControls.js code</a>, <a href="https://codesandbox.io/s/y2kv8yyw5j"> fbx code</a></p>
+ 	<!-- 	paragraph div at the top of the page-->
+ 		<div class="divy">
+ 			<p>Kira Boyer - 
+ 				<!-- italicize title. link website -->
+ 				<i>Theater</i> - <a href="https://kiraboyer.github.io/">Artist's Website</a>
+ 			</p>
+ 			<p>Click or press and drag objects from the prop box into the theater scene. For optimal viewing on a mobile phone device, hold device in landscape mode. 
+ 			</p>
+ 			<p> Attributions: <a href="https://threejs.org/docs/#examples/zh/controls/DragControls">DragControls.js reference</a>, 
+					  <a href=" https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_drag.html">DragControls.js code</a>, <a href="https://codesandbox.io/s/y2kv8yyw5j"> fbx code</a>
+					</p>
  		</div>
 	</body>
 </html>
