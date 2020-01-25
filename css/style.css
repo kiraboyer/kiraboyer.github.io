@@ -340,6 +340,17 @@ margin-top:75px!important;
  	margin-left:50px;
 }
 
+.art-left1{
+
+  width:45%;
+  margin-top:-20px;
+/*  float:left;*/
+  display:inline-flex;
+  margin-left:50px;
+
+  border:none;
+}
+
 
 .art-if{
 	width:600px;
