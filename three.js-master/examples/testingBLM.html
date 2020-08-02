@@ -37,13 +37,13 @@
 				scene = new THREE.Scene();
 				scene.fog = new THREE.FogExp2( 0x000000, 0.001 );
 
-				// var geometry2 = new THREE.BufferGeometry();
+				var geometry = new THREE.BufferGeometry();
 				var vertices = [];
 
 				// var sprite = new THREE.TextureLoader().load( 'textures/sprites/disc.png' );
 				var sprite = new THREE.FontLoader();
 				sprite.load('fonts/helvetiker_regular.typeface.json', function( font ){
-					var geometry= new THREE.TextGeometry('Hello',{
+					var textGeometry= new THREE.TextGeometry("Hello",{
 						font: font,
 						sizeheight: 4,
 						curveSegments: 12,
@@ -68,10 +68,10 @@
 
 				  geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
 
-				material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: false, map: sprite, alphaTest: 0.5, transparent: true } );
-				material.color.setHSL( 1.0, 0.3, 0.7 );
+				 material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: false, map: sprite, alphaTest: 0.5, transparent: true } );
+				 material.color.setHSL( 1.0, 0.3, 0.7 );
 
-				var particles = new THREE.Points( geometry, material );
+				 var particles = new THREE.Points( geometry, material );
 				scene.add( particles );
 
 				//
