@@ -43,7 +43,7 @@
 				// var sprite = new THREE.TextureLoader().load( 'textures/sprites/disc.png' );
 				var sprite = new THREE.FontLoader();
 				sprite.load('fonts/helvetiker_regular.typeface.json', function( font ){
-					var geometry= new Three.TextGeometry('Hello',{
+					var geometry= new THREE.TextGeometry('Hello',{
 						font: font,
 						sizeheight: 5,
 						curveSegments: 12,
@@ -70,7 +70,7 @@
 				material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: false, map: sprite, alphaTest: 0.5, transparent: true } );
 				material.color.setHSL( 1.0, 0.3, 0.7 );
 
-				var particles = new THREE.Points( geometry, material );
+				var particles = new THREE.Points( geometry2, material );
 				scene.add( particles );
 
 				//
