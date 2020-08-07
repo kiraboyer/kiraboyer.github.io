@@ -79,7 +79,7 @@ background-color:transparent !important;}
 				var sprite4 = textureLoader.load( 'textures/sprites/wordTest4.png' );
 				var sprite5 = textureLoader.load( 'textures/sprites/wordTest5.png' );
 
-				for ( var i = 0; i < 7000; i ++ ) {
+				for ( var i = 0; i < 10000; i ++ ) {
 
 					var x = Math.random() * 2000 - 1000;
 					var y = Math.random() * 2000 - 1000;
@@ -121,9 +121,12 @@ background-color:transparent !important;}
 
 					var particles = new THREE.Points( geometry, materials[ i ] );
 
-					particles.rotation.x = Math.random() * 6;
-					particles.rotation.y = Math.random() * 6;
-					particles.rotation.z = Math.random() * 6;
+					// particles.rotation.x = Math.random() * 6;
+					// particles.rotation.y = Math.random() * 6;
+					// particles.rotation.z = Math.random() * 6;
+					particles.rotation.x = Math.random() * 2;
+					particles.rotation.y = Math.random() * 2;
+					particles.rotation.z = Math.random() * 2;
 
 					scene.add( particles );
 
