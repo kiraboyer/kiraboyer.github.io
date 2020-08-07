@@ -12,9 +12,8 @@
   
  
    }
-   .div2{background-color: transparent;
-   	justify-content:center;
-   	align-items:center;}
+   .parent{display:flex;}
+   	.child{margin: auto 0;}
     p {  text-align: center; 
     	/*writing-mode: vertical-rl;
   text-orientation: upright; */
@@ -29,7 +28,7 @@
 		</div> -->
 <div id="info" ><p>BLACK</p><p>LIVES</p><p>MATTER</p></div>
 <!--  -->
-<div class="div2"><img src="textures/sprites/arrow.png"></img></div>
+<div class="parent, child"><img src="textures/sprites/arrow.png"></img></div>
 <!--x  -->
 
 
@@ -67,10 +66,10 @@
 				var textureLoader = new THREE.TextureLoader();
 
 				var sprite1 = textureLoader.load( 'textures/sprites/wordTest.png' );
-				var sprite2 = textureLoader.load( 'textures/sprites/wordTest.png' );
-				var sprite3 = textureLoader.load( 'textures/sprites/wordTest.png' );
-				var sprite4 = textureLoader.load( 'textures/sprites/wordTest.png' );
-				var sprite5 = textureLoader.load( 'textures/sprites/snowflake5.png' );
+				var sprite2 = textureLoader.load( 'textures/sprites/wordTest2.png' );
+				var sprite3 = textureLoader.load( 'textures/sprites/wordTest3.png' );
+				var sprite4 = textureLoader.load( 'textures/sprites/wordTest4.png' );
+				var sprite5 = textureLoader.load( 'textures/sprites/wordTest5.png' );
 
 				for ( var i = 0; i < 10000; i ++ ) {
 
