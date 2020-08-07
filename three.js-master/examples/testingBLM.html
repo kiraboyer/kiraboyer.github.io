@@ -13,16 +13,17 @@
  
    }
    .parent{display:flex;}
-   	.child{margin: auto 0;}
+   	.child{flex:0 1 auto;
+  align-self: flex-end;}
     p {  text-align: center; 
     	/*writing-mode: vertical-rl;
   text-orientation: upright; */
-        font-size:2em !important;} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+        font-size:5em !important;} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
 </style>
 	</head>
 	<body>
  
-		<!--. <div id="info">
+		<!--.. <div id="info">
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - webgl particle sprites example<br/>
 			snowflakes by <a href="http://en.wikipedia.org/wiki/File:Sketch_of_snow_crystal_by_Ren%C3%A9_Descartes.jpg">Ren&eacute;  Descartes</a>
 		</div> -->
