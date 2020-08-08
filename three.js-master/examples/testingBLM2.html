@@ -151,7 +151,7 @@ geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3
 
 					var particles = new THREE.Points( geometry, materials[ i ] );
 
-					 particles.rotation.x = Math.random() * 6;
+					 particles.rotation.x = Math.random() * 16;
 					 particles.rotation.y = Math.random() * 6;
 					 particles.rotation.z = Math.random() * 6;
 					
@@ -263,8 +263,8 @@ geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3
 
 			function render() {
 
-				// var time = Date.now() * 0.00005;
-				var time = Date.now() * 0.00001;
+				// var time = Date.now() * 0.00001;
+				var time = Date.now() * 0.00005;
 
 				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
 				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
