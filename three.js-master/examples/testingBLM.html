@@ -42,11 +42,13 @@ align-items:center;}*/
 	z-index: 1; /* TODO Solve this in HTML */
 }
     p {  text-align: center;
+    /*	delete to center*/
     width:fit-content; 
 
     	/*writing-mode: vertical-rl;
   text-orientation: upright; */
         font-size:100% !important;} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+        @media only screen and (max-width: 800px){body{font-size:21vw;}}
 </style>
 	</head>
 	<body>
