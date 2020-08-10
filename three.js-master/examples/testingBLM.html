@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - particles - sprites</title>
+		<title>BLM Zine</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
 		<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet">
-<style type="text/css">
-   body { /*background-color: transparent;*/
-   font-family: 'Bitter', serif;
-  font-size:11vw; 
- 
-   }
-   img{background-color:transparent !important;
-  /*. 	min-width:30%;*/
-  width:30%;
-   	padding:none;}
-   .parent{ position: absolute;
-right: 0px;
-padding:none;
-bottom: 0px;
-padding-bottom:10px;
-padding-right:10px;
-text-align:right;
-/*width:2vw*/
-background-color:transparent !important;}
-/*d...title{background-color:transparent;
-align-items:center;}*/
-   	 #info2 {
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	width: 100%;
-	padding-left:10px;
-	/*padding: 10px;*/
-	box-sizing: border-box;
-	text-align: center;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
-}
-    p {  text-align: center;
-    /*below	delete to center*/
-    width:fit-content; 
 
-    	/*writing-mode: vertical-rl;
-  text-orientation: upright; */
-        font-size:100% !important;} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-        @media only screen and (max-width: 800px){body{font-size:18vw;}}
+<style type="text/css">
+   body {
+   			font-family: 'Bitter', serif;
+  			font-size:11vw;
+   		}
+   img {
+   			background-color:transparent !important;
+  			width:30%;
+   			padding:none;
+   		}
+  .arrow { 
+   			position: absolute;
+			right: 0px;
+			padding:none;
+			bottom: 0px;
+			padding-bottom:10px;
+			padding-right:10px;
+			text-align:right;
+			background-color:transparent !important;
+		}
+
+   #title {
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+			width: 100%;
+			padding-left:10px;
+			box-sizing: border-box;
+			text-align: center;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			pointer-events: none;
+			z-index: 1; 
+		}
+    p {  
+    		text-align: center;
+    		/*below	delete to center*/
+    		width:fit-content; 
+        	font-size:100% !important;
+        } 
+   @media only screen and (max-width: 800px){
+   		body{
+   				font-size:18vw;
+   			}
+				}
 </style>
+
 	</head>
 	<body>
  
@@ -58,14 +62,16 @@ align-items:center;}*/
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - webgl particle sprites example<br/>
 			snowflakes by <a href="http://en.wikipedia.org/wiki/File:Sketch_of_snow_crystal_by_Ren%C3%A9_Descartes.jpg">Ren&eacute;  Descartes</a>
 		</div> -->
-<div id="info2" ><p>BLACK</p><p>LIVES</p><p>MATTER</p></div> 
+		<div id="title" >
+			<p>BLACK</p><p>LIVES</p><p>MATTER</p>
+		</div> 
 
-<!--  -->
-<div class="parent">
-<!-- <div class="child"> -->
-	<img src="textures/sprites/arrow.png"></img></div>
-<!-- </div> -->
-<!--vx  -->
+ 
+		<div class="arrow">
+ 
+			<img src="textures/sprites/arrow.png"></img>
+		</div>
+ 
 
 
 
@@ -74,11 +80,11 @@ align-items:center;}*/
 
 			import * as THREE from '../build/three.module.js';
 
-			// import Stats from './jsm/libs/stats.module.js';
+		
 
 			import { GUI } from './jsm/libs/dat.gui.module.js';
 
-			// var camera, scene, renderer, stats, materials = [], parameters;
+			
 			var camera, scene, renderer , materials = [], parameters;
 			var mouseX = 0, mouseY = 0;
 
@@ -92,7 +98,7 @@ align-items:center;}*/
 
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 2000 );
 				 camera.position.z = 1000;
-				//camera.position.z = 500;
+				
 
 				scene = new THREE.Scene();
 				scene.fog = new THREE.FogExp2( 0x000000, 0.0008 );
@@ -114,9 +120,7 @@ align-items:center;}*/
 					var y = Math.random() * 2000 - 1000;
 					var z = Math.random() * 2000 - 1000;
 
-					// var x = Math.random() * 2000 - 1000;
-					// var y = Math.random() * 2000 - 1000;
-					// var z = Math.random() * 2000 - 1000;
+				
 
 					vertices.push( x, y, z );
 
@@ -161,47 +165,14 @@ align-items:center;}*/
 
 
 
-				//
+				 
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
 
-				//
-
-				// stats = new Stats();
-				// document.body.appendChild( stats.dom );
-
-				//
-
-			// 	var gui = new GUI();
-
-			// 	var params = {
-			// 		texture: true
-			// 	};
-
-			// 	gui.add( params, 'texture' ).onChange( function ( value ) {
-
-			// 		for ( var i = 0; i < materials.length; i ++ ) {
-
-			// 			materials[ i ].map = ( value === true ) ? parameters[ i ][ 1 ] : null;
-			// 			materials[ i ].needsUpdate = true;
-
-			// 		}
-
-			// 	} );
-
-			// 	gui.open();
-
-			// 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-			// 	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-			// 	document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
-			// 	//
-
-			// 	window.addEventListener( 'resize', onWindowResize, false );
-
+				
 			 }
 
 			function onWindowResize() {
@@ -249,20 +220,21 @@ align-items:center;}*/
 
 			}
 
-			//
+			
 
 			function animate() {
 
 				requestAnimationFrame( animate );
 
 				render();
-				// stats.update();
+				
 
 			}
 
 			function render() {
 
 				// var time = Date.now() * 0.00005;
+				//slow down the background
 				var time = Date.now() * 0.00001;
 
 				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
